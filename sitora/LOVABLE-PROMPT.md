@@ -16,6 +16,13 @@ Klart och fungerar:
 
 Blockerat: Shopify-integrationen gick inte att nå från API-sessionen. Den måste slås på i Lovable-editorn, och sedan körs steg 2 (butik, priser, checkout).
 
+**28 sep, 18:24: steg 2 skickat till Lovable**
+- Shopify-koppling och testprodukt. Varukorgen går via Storefront API med line attributes.
+- Bolagsuppgifter från metodkoll.se/villkor läggs i `src/config/company.ts`: enskild näringsidkare som driver Sitora, inte AB. Telefon saknas och är platshållare.
+- WCAG 2.2 AA: guld #B8925A (ca 2,7:1 mot bakgrunden) används inte för text, i stället #8A6A3B (ca 4,7:1). Tangentbord, fokus, produktsökning.
+- Hero-bilden görs om med svensk gravyr ("Alltid med dig").
+- Ärligt utkast till "Om Sitora".
+
 Att fylla i:
 - bolagsuppgifter
 - tillverkare och EU-ansvarig per produkt
