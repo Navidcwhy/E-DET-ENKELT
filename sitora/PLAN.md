@@ -64,6 +64,29 @@
 
 **Huvudrisken med Ownprint** är att de är små: kapaciteten i Q4 och appens synk är oprövade för er. *Motåtgärd:* prover plus testorder innan annonserna startar, och ShineOn förberett som backup (för meddelandekort-produkter utan å/ä/ö).
 
+### 4b. CJdropshipping: går det? Ja, men inte som primär inför jul
+
+CJ är lagligt och fungerar. För just den här kampanjen (personliga julklappar i Sverige, Q4) kostar Kina-leveransen dock mer än den sparar:
+
+| | Ownprint (EU) | CJ (Kina) |
+|---|---|---|
+| Sista beställningsdag för jul | ca 7 dec | ca 27 nov. Ni tappar en av högsäsongens bästa veckor |
+| Leveranslöfte på sajten | ca 1–2 veckor | ca 2–3 veckor (CJPacket 9–18 dagar + produktion) |
+| Tull och moms för kunden | Ingen | Kräver egen IOSS-registrering, annars betalar kunden moms + avgift vid leverans |
+| Presentask och meddelandekort | Ingår | Extra kostnad eller minsta order |
+| Kemikalieansvar | Leverantören uppger REACH-test | Ni bär ansvaret. KemI 2025: 72 % av varorna från dropshipping-butiker hade otillåtna halter |
+| Inköpspris | ca 210 kr inkl. frakt | Troligen 50–100 kr billigare per order (uppskattning; CJ visar priser först inloggad) |
+| Gravyrtexten från Shopify till fabriken | Dokumenterat block. Headless-flödet måste testas | Svagt dokumenterat. Måste testas |
+
+- **Kärnan:** CJ sparar kanske 50–100 kr per order. En förlorad julvecka, eller ett Meta-konto som stryps av låga kundbetyg på grund av långa leveranstider, kostar mer än så på en enda dag.
+- **Där CJ är rätt:** laserskurna namnhalsband (som Ownprint saknar) och som reserv för kapacitet. Villkor:
+  - 316L-stål
+  - labbtest (nickel enligt EN 1811, bly, kadmium) innan försäljning
+  - egen IOSS
+  - ärlig leveranstid på 2–3 veckor
+  - tidigare julklappsdeadline för de produkterna
+- **Snabbaste valideringen:** beställ prover från båda leverantörerna samtidigt. Mät verklig leveranstid till dörren, kvalitet, å/ä/ö och förpackning, och besluta runt 12 okt. Lovable-sajten växlar leverantör i `src/config/supplier.ts` (EU/CN), inklusive leveranstid och deadline.
+
 ---
 
 ## 5. Teknik: det automatiska orderflödet
@@ -178,7 +201,7 @@ Kund (mobil, från IG/TikTok)
 ## 10. Nästa steg
 
 **Idag–imorgon**
-1. Skapa konto hos Ownprint. Beställ 6 prover: namn med **Å/Ä/Ö/é** (Åsa, Björn, Märta, Linnéa), guld och silver, fram- och baksida, meddelandekort på svenska.
+1. Skapa konto hos Ownprint. Beställ 6 prover: namn med **Å/Ä/Ö/é** (Åsa, Björn, Märta, Linnéa), guld och silver, fram- och baksida, meddelandekort på svenska. Beställ samma namn som namnhalsband hos CJ (316L-stål) för en jämförelse sida vid sida (avsnitt 4b).
 2. Skicka frågorna i `LEVERANTORSMEJL.md` till Ownprint.
 3. Säkra domän, Shopify-konto (samma e-post som Lovable), Shopify Payments + Klarna, Meta Business + annonskonto, TikTok Ads.
 
