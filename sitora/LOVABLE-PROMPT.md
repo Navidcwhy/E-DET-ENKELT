@@ -1,6 +1,26 @@
 # Lovable-prompt – Sitora-butiken
 
-*v2 · 28 sep 2026: leverantörsneutral (Ownprint eller CJdropshipping). Skickad till Lovable-projektet "Sitora" i workspace "Navid's Lovable".*
+*v2 · 28 sep 2026: leverantörsneutral (Ownprint eller CJdropshipping). Skickad till Lovable i workspace "Navid's Lovable".*
+
+**Status 28 sep 2026, 14:41: steg 1 klart**
+- Projekt: https://lovable.dev/projects/8532ae5e-908b-45df-8d28-00525d2e69c7 (auto-namn "Sitora's Sentiments")
+- Förhandsvisning: https://id-preview--8532ae5e-908b-45df-8d28-00525d2e69c7.lovable.app
+
+Klart och fungerar:
+- design, startsida, kollektion och produktsida med personaliserare (live-förhandsvisning, å/ä/ö, meddelandekort, baksidesgravyr)
+- varukorg med testdata
+- config för leverantör, kampanj och personalisering
+- leveransberäkning
+- sidstommar
+- Lovable Cloud påslaget
+
+Blockerat: Shopify-integrationen gick inte att nå från API-sessionen. Den måste slås på i Lovable-editorn, och sedan körs steg 2 (butik, priser, checkout).
+
+Att fylla i:
+- bolagsuppgifter
+- tillverkare och EU-ansvarig per produkt
+- text till "Om Sitora"
+- riktiga produktbilder (hero-bilden är AI-genererad med engelsk text)
 
 **Efter första bygget**
 
