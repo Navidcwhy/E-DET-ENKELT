@@ -23,6 +23,28 @@ Blockerat: Shopify-integrationen gick inte att nå från API-sessionen. Den mås
 - Hero-bilden görs om med svensk gravyr ("Alltid med dig").
 - Ärligt utkast till "Om Sitora".
 
+**29 sep, 17:24: steg 2 klart**
+- Shopify-sandbox skapad (SEK, SE), testprodukt 599 kr i 3 färger, varukorg och kassa via Storefront API.
+- Produktsökning, bolagsuppgifter, svensk hero-bild och WCAG-fixar.
+
+Granskning av koden hittade:
+- Baksidesgravyren +99 kr visades men debiterades inte i Shopify.
+- Summorna räknades lokalt.
+- Erbjudandet "2 för 999" syntes utan att någon rabatt fanns i Shopify.
+- Köpknappen var inaktiverad utan förklaring.
+
+**29 sep, 17:30: skickat till Lovable**
+- Rättelser av punkterna ovan. Baksidesgravyren ingår tills vidare. Summorna hämtas från cart.cost. Paketerbjudandet stängs av till Black Week.
+- Telefonnummer ifyllt.
+- Steg 3: köpvillkor (ARN, ingen ODR-länk), integritetspolicy, cookie-banner med Consent Mode v2, ångerformulär och produktsäkerhet.
+
+**Att göra för ägaren (Shopify admin, efter claim)**
+- Claima butiken senast ca 29 okt.
+- Butiksnamn "Sitora".
+- Aktivera Shopify Payments och Klarna.
+- Policies i Shopify (villkor, integritet, retur) med samma text som på sajten.
+- Radera testprodukten före lansering.
+
 Att fylla i:
 - bolagsuppgifter
 - tillverkare och EU-ansvarig per produkt
