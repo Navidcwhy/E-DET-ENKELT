@@ -38,12 +38,33 @@ Granskning av koden hittade:
 - Telefonnummer ifyllt.
 - Steg 3: köpvillkor (ARN, ingen ODR-länk), integritetspolicy, cookie-banner med Consent Mode v2, ångerformulär och produktsäkerhet.
 
+**29 sep, 18:02: steg 3 klart och granskat**
+- Rättat och verifierat i koden:
+  - telefon
+  - baksidesgravyr för 0 kr ("ingår")
+  - summor från Shopifys cart.cost och discountAllocations
+  - paketerbjudandet avstängt
+  - köpknappen visar vad som saknas
+- Juridiska sidor klara: köpvillkor (ARN, ingen ODR-länk), integritetspolicy, leverans och reklamation, cookiepolicy, produktsäkerhet och ångerformulär. Ångerformuläret lagras i tabellen `withdrawal_requests` med låst RLS.
+- E-postkvittot till ångerformuläret är blockerat tills en egen e-postdomän finns. Sajten påstår inte att mejl skickas.
+- Cookie-rutan (1,6 krediter):
+  - Är nu en icke-blockerande panel längst ned.
+  - X och Esc betyder "Endast nödvändiga".
+  - Consent Mode v2 är denied som standard.
+- Shopify via Storefront API: Sverige har frakt "Normal" 0 kr och "Express" 99 kr. Express bör tas bort tills leverantören erbjuder express.
+- Lovables Shopify-verktyg kan inte byta butiksnamn. Det görs i Shopify admin.
+- Klistra-in-texter till Shopify-policyer finns i `SHOPIFY-POLICYER.md`.
+- DNS-kontroll: sitora.se och sitorasmycken.se ger NXDOMAIN (troligen lediga, verifiera hos registrar). sitora.com är registrerad.
+
 **Att göra för ägaren (Shopify admin, efter claim)**
 - Claima butiken senast ca 29 okt.
 - Butiksnamn "Sitora".
 - Aktivera Shopify Payments och Klarna.
-- Policies i Shopify (villkor, integritet, retur) med samma text som på sajten.
+- Policies i Shopify: klistra in texterna från `SHOPIFY-POLICYER.md`.
 - Radera testprodukten före lansering.
+- Skatter: slå på "Priser inkluderar moms" och lägg in svenskt momsregistreringsnummer.
+- Frakt: ta bort "Express 99 kr" om leverantören inte skickar express.
+- Domän: registrera sitora.se. Koppla den sedan i Lovable (egen domän och e-postdomän) för e-post som kundservice@sitora.se.
 
 Att fylla i:
 - bolagsuppgifter
