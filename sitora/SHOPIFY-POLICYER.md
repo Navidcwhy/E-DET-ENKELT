@@ -1,4 +1,4 @@
-# Shopify-policyer för Sitora (klistra in)
+# Shopify-policyer för Vermo (klistra in)
 
 **Var:** Shopify admin → Inställningar → Policyer. Fyll i varje fält med texten under rubriken med samma namn.
 **Varför:** Shopifys kassa länkar till dessa texter. De ska stämma med sajtens sidor, som Lovable byggde i steg 3.
@@ -12,7 +12,7 @@
 Personligt graverade smycken tillverkas enligt dina anvisningar och är därför undantagna från ångerrätten enligt 2 kap. 11 § 3 p. lagen (2005:59) om distansavtal och avtal utanför affärslokaler.
 
 Presentkort och icke-personaliserade varor har 14 dagars ångerrätt från den dag du tog emot varan. Så gör du:
-- Använd sidan "Ångra köp" på vår webbplats, eller kontakta oss på info@metodkoll.se eller 073-536 28 68.
+- Använd sidan "Ångra köp" på vår webbplats, eller kontakta oss på kundservice@vermo.se eller 073-536 28 68.
 - Vid ånger står du för returfrakten.
 - Vi återbetalar senast 14 dagar efter att vi tagit emot ditt meddelande om ånger. Vi får vänta med återbetalningen tills varan har kommit tillbaka eller du har visat att den har skickats.
 
@@ -42,11 +42,11 @@ Du kan vända dig till Allmänna reklamationsnämnden (ARN), Box 174, 101 23 Sto
 ## Köpvillkor (Användarvillkor)
 
 **Säljare**
-Navid Ahmed Chowdhury, enskild näringsidkare, som bedriver verksamhet under namnet Sitora.
+Navid Ahmed Chowdhury, enskild näringsidkare, som bedriver verksamhet under namnet Vermo.
 - Org.nr 020130-6156
 - Momsreg.nr SE020130615601
 - Postadress: Regnbågsvägen 5 B, 141 32 Huddinge
-- E-post: info@metodkoll.se
+- E-post: kundservice@vermo.se
 - Telefon: 073-536 28 68
 
 **Priser och betalning**
@@ -69,7 +69,7 @@ Allmänna reklamationsnämnden (ARN), Box 174, 101 23 Stockholm, www.arn.se. Vi 
 ## Integritetspolicy
 
 **Personuppgiftsansvarig**
-Navid Ahmed Chowdhury, enskild näringsidkare (Sitora), org.nr 020130-6156, Regnbågsvägen 5 B, 141 32 Huddinge, info@metodkoll.se, 073-536 28 68.
+Navid Ahmed Chowdhury, enskild näringsidkare (Vermo), org.nr 020130-6156, Regnbågsvägen 5 B, 141 32 Huddinge, kundservice@vermo.se, 073-536 28 68.
 
 **Uppgifter vi behandlar**
 - Namn, adress, e-post, telefon och orderuppgifter.
@@ -107,9 +107,9 @@ Du kan begära tillgång, rättelse, radering, begränsning och dataportabilitet
 
 ## Kontaktinformation
 
-- Sitora: Navid Ahmed Chowdhury, enskild näringsidkare
+- Vermo: Navid Ahmed Chowdhury, enskild näringsidkare
 - Org.nr 020130-6156
 - Momsreg.nr SE020130615601
 - Regnbågsvägen 5 B, 141 32 Huddinge
-- info@metodkoll.se
+- kundservice@vermo.se
 - 073-536 28 68

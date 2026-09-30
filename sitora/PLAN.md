@@ -2,6 +2,8 @@
 
 *Version 1 · 28 sep 2026 · Fakta verifierade mot källor samma dag (se längst ner). Antaganden är markerade.*
 
+> **Uppdatering 30 sep 2026: butiken heter nu Vermo och ligger på vermo.se.** Juridisk säljare är fortfarande Navid Ahmed Chowdhury, enskild näringsidkare (verksamhetsnamn Vermo). Där planen säger "Sitora" om butiken gäller det numera Vermo. Faktureringstjänsten som låg på vermo.se ersätts, enligt ägarens beslut.
+
 ---
 
 ## 1. Rekommendation

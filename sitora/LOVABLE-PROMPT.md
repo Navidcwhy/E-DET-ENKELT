@@ -56,6 +56,17 @@ Granskning av koden hittade:
 - Klistra-in-texter till Shopify-policyer finns i `SHOPIFY-POLICYER.md`.
 - DNS-kontroll: sitora.se och sitorasmycken.se ger NXDOMAIN (troligen lediga, verifiera hos registrar). sitora.com är registrerad.
 
+**30 sep, 13:29: namnbyte till Vermo och domänen vermo.se (ägarens beslut)**
+- vermo.se: DNS hos One.com. A-posten pekar redan på Lovable (185.158.133.1), men domänen serverar idag Lovable-projektet "Vermo" (faktureringstjänsten). Den ersätts via "Move and connect" i samma workspace.
+- vermo.se har null-MX ("0 ."), alltså ingen e-post idag. Adressen kundservice@vermo.se kräver att e-post skapas hos One.com.
+- Skickat till Lovable:
+  - namnbyte till Vermo
+  - company.ts med kundservice@vermo.se
+  - förlanseringsläge ("Öppnar i oktober" med nyhetsbrevsanmälan och ?preview=vermo2026 för att se hela butiken)
+  - uppsättning av e-postdomän med lista över DNS-poster
+  - butiksnamnet i Shopify, om verktyget klarar det
+- Ordningen är viktig: publicera först, flytta sedan domänen, annars ligger vermo.se nere en stund.
+
 **Att göra för ägaren (Shopify admin, efter claim)**
 - Claima butiken senast ca 29 okt.
 - Butiksnamn "Sitora".
