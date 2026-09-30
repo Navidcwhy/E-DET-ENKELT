@@ -67,6 +67,19 @@ Granskning av koden hittade:
   - butiksnamnet i Shopify, om verktyget klarar det
 - Ordningen är viktig: publicera först, flytta sedan domänen, annars ligger vermo.se nere en stund.
 
+**30 sep, 14:41–15:00: Vermo live i förlanseringsläge**
+- Lovable: namnbytet till Vermo är klart, liksom sidan /om-vermo med omdirigering från /om-sitora, metadata och sitemap, förlanseringsgrinden (PRELAUNCH=true, ?preview=vermo2026 via HttpOnly-cookie) och tabellen för nyhetsbrevsanmälningar (låst).
+- Publicerat som vermo-smycken.lovable.app, som omdirigerar till vermo.se. Ägaren har flyttat domänen.
+- Verifierat via HTTP:
+  - vermo.se visar "Öppnar i oktober | Vermo".
+  - /smycken/hjartat är spärrad för besökare.
+  - /integritetspolicy går att nå.
+- Shopify (Storefront API): butiksnamnet är "Vermo". Integritetspolicyn är Shopifys engelska standardmall och måste ersättas. Retur-, frakt- och köpvillkor är tomma. Kort och plånböcker är inte aktiverade. Frakten "Express 99 kr" finns kvar.
+- Öppna problem:
+  - vermo.se har fortfarande null-MX, så kundservice@vermo.se (som syns publikt) tar inte emot mejl.
+  - www.vermo.se pekar på One.com (46.30.211.38) och ger 503. Den ska pekas mot 185.158.133.1.
+  - E-postdomänen: ägaren klickar "Konfigurera notify.vermo.se" i Lovable-editorn och lägger in DNS-posterna hos One.com.
+
 **Att göra för ägaren (Shopify admin, efter claim)**
 - Claima butiken senast ca 29 okt.
 - Butiksnamn "Sitora".
