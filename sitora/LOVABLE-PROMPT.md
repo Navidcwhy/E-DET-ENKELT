@@ -120,6 +120,30 @@ Granskning av koden hittade:
   - PRELAUNCH=false. Det är inte publicerat ännu. Publicera inte förrän produkterna är kopplade.
 - DNS: steg för steg i ONECOM-DNS.md.
 
+**1 okt, kl. 12: Lovable-ändringarna är klara (commit ed8cda5, 4,3 krediter)**
+- Granskat i diffen. Alla sju punkterna är gjorda:
+  - materialtext per färg
+  - inget ursprung på produktsidan; ursprung på leveranssidan och i FAQ
+  - Sitora som tillverkare, ingen EU-ansvarig
+  - endast Sverige
+  - integritetspolicy
+  - @inContext SE/SV
+  - FAQ
+- Extra ändring av Lovable: Klarna är borttaget från förtroenderaden och produktsidan, eftersom Klarna inte är aktiverat. Läggs tillbaka om Klarna aktiveras.
+- Oförändrat:
+  - PRELAUNCH=false
+  - Sitora
+  - header och footer
+  - butiken är inte publicerad
+- Eget test mot Storefront API:
+  - Varukorgen skapas med svensk kontext, och totalen blir 599 SEK.
+  - Kassalänken hamnar på /password. Det bekräftar att lösenordet på Online Store blockerar kassan.
+  - Kassans språk kan inte kontrolleras förrän lösenordet är borttaget.
+- Förhandsvisningen kräver inloggning (401). Sidorna är därför kontrollerade via koden och Lovables eget webbläsartest.
+- Små saker till nästa Lovable-runda, som görs ihop med de riktiga gravyrnycklarna:
+  - Varukorgen visar de tekniska fältnamnen på engelska ("Front Engraving", "Spelling Approved"). De bör visas med svenska etiketter.
+  - FAQ säger "Vi levererar endast inom Sverige" två gånger.
+
 **Att göra för ägaren (Shopify admin, efter claim)**
 - Claima butiken senast ca 29 okt.
 - Butiksnamn "Sitora".
