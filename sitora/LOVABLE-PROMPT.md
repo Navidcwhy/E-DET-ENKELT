@@ -93,6 +93,33 @@ Granskning av koden hittade:
   - www.vermo.se pekar på One.com.
   - Policyerna i kassan är inte bytta.
 
+**1 okt, eftermiddag: Shopify-inställningar, policyer, Lovable och DNS**
+- Shopify (via API):
+  - Svenska är aktiverat och publicerat.
+  - Bekräftat: Sverige är den enda aktiva marknaden, så butiken säljer bara till Sverige.
+- Shopify (ägaren behöver ändra själv):
+  - Tidszonen är America/New_York. Ändra till Stockholm.
+  - Standardspråket är engelska. Ändra till svenska.
+  - Kontakt-e-posten är Gmail. Ändra till kundservice@vermo.se när brevlådan fungerar.
+  - Butikens telefonnummer saknas.
+  - Primär domän är myshopify.com. Byt till shop.vermo.se, se ONECOM-DNS.md.
+- Online Store är lösenordsskyddat, och det blockerar headless-kassan.
+  - Vid lansering: ta bort lösenordet och skicka Shopify-temats sidor vidare till vermo.se.
+  - Provbeställningar före lansering: ange butikslösenordet i samma webbläsare först.
+- Policyer: Shopify-kopplingen saknar `write_legal_policies`. SHOPIFY-POLICYER.md är uppdaterad för inklistring.
+- Lovable: ändringarna är skickade (umsg_01m3vmg1ace0k83p18g1vgqw20) och väntar på att ägaren godkänner planen i editorn. De gäller:
+  - materialtext per färg
+  - ursprung flyttat från produktsidan till leveranssidan och FAQ
+  - GPSR: Sitora som tillverkare
+  - endast Sverige
+  - integritetspolicy
+  - svensk kassa (@inContext)
+  - FAQ
+- Ägarens egna ändringar i Lovable:
+  - Sitora som moderbolagsnamn.
+  - PRELAUNCH=false. Det är inte publicerat ännu. Publicera inte förrän produkterna är kopplade.
+- DNS: steg för steg i ONECOM-DNS.md.
+
 **Att göra för ägaren (Shopify admin, efter claim)**
 - Claima butiken senast ca 29 okt.
 - Butiksnamn "Sitora".

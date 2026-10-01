@@ -20,9 +20,10 @@ Kunden ser en produkt och väljer **Snabb leverans** (EU-partnern Ownprint) elle
   - Annars hade Express sålts utan att någon partner kan leverera det.
 - **Ownprint-profilen:** Sverige ändrat från €6,95 till "Fri frakt" för 0. Kontrolleras igen när Ownprint har skapat produkterna, ifall appen skriver över värdet.
 - **Återställning:** i allmän profil "Normal" 65 kr med gratis frakt från 470 kr och "Express" 99 kr. I Ownprint-profilen Sverige €6,95.
-- **Ej ändrat:** EU-zonen och den internationella zonen (299 kr i allmän profil) samt Ownprints övriga länder.
-  - Ägaren behöver besluta om försäljningen ska begränsas till Sverige vid lanseringen.
-  - Rekommendation: begränsa till Sverige. Villkoren är svenska, och det slipper hantera OSS-moms och tull.
+- **Beslut 1 okt: bara Sverige vid lanseringen.**
+  - I Shopify är Sverige den enda aktiva marknaden, så bara svenska adresser kan gå till kassan. EU-zonerna i fraktprofilerna används därför inte.
+  - EU utan OSS går inte: 10 000-euro-gränsen gäller bara varor som skickas från Sverige, och Ownprint skickar från Nederländerna.
+  - EU prövas när den svenska försäljningen fungerar, och då med OSS-registrering.
 
 ## Produktval
 | Vermo | Snabb: Ownprint (exakt namn i appen) | Standard: CJ (sökord i CJ-appen) |
@@ -64,6 +65,8 @@ Ownprints frakt inom EU kostar €6,95 för första varan och €3 per extra var
    I dag står "18K guldpläterat" även för Silver.
 
 ## Instruktion till Claude i Desktop-appen (klistra in)
+
+Kör den i en **ny lokal chatt** i Claude Desktop, med Claude in Chrome eller datorstyrning påslaget. Molnsessionen som sköter repot kan inte styra din webbläsare.
 
 > Logga in i Shopify-admin för butiken "Vermo" (sitora-s-sentiments-m92xh) i min webbläsare. Jag sköter inloggningen själv. Gör sedan detta och fråga mig innan du betalar eller beställer något:
 >
