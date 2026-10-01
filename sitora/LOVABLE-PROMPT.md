@@ -80,6 +80,19 @@ Granskning av koden hittade:
   - www.vermo.se pekar på One.com (46.30.211.38) och ger 503. Den ska pekas mot 185.158.133.1.
   - E-postdomänen: ägaren klickar "Konfigurera notify.vermo.se" i Lovable-editorn och lägger in DNS-posterna hos One.com.
 
+**1 okt: två leveransval och Shopify-kontroll**
+- Lovable har byggt två leveransval per smycke, Snabb (EU) och Standard (CN). Standard är dolt publikt (`ECONOMY_ENABLED = false`).
+- Shopify kontrollerades via Admin-kopplingen:
+  - Butiken har bara testprodukten.
+  - Ownprint är kopplad (leveransplats och fraktprofil finns).
+  - CJ syns inte.
+  - Säljkanalen för sajten heter "Lovable".
+- Frakt till Sverige: "Fri frakt" för 0 kr i både allmän profil och Ownprint-profilen. Express 99 kr och Normal 65 kr är borttagna. Detaljer och återställningsvärden finns i PRODUKTER.md.
+- Fortfarande öppet:
+  - vermo.se har null-MX.
+  - www.vermo.se pekar på One.com.
+  - Policyerna i kassan är inte bytta.
+
 **Att göra för ägaren (Shopify admin, efter claim)**
 - Claima butiken senast ca 29 okt.
 - Butiksnamn "Sitora".
@@ -87,7 +100,7 @@ Granskning av koden hittade:
 - Policies i Shopify: klistra in texterna från `SHOPIFY-POLICYER.md`.
 - Radera testprodukten före lansering.
 - Skatter: slå på "Priser inkluderar moms" och lägg in svenskt momsregistreringsnummer.
-- Frakt: ta bort "Express 99 kr" om leverantören inte skickar express.
+- ~~Frakt: ta bort "Express 99 kr" om leverantören inte skickar express.~~ Klart 1 okt (via API).
 - Domän: registrera sitora.se. Koppla den sedan i Lovable (egen domän och e-postdomän) för e-post som kundservice@sitora.se.
 
 Att fylla i:

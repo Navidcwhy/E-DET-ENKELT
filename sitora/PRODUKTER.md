@@ -2,6 +2,28 @@
 
 Kunden ser en produkt och väljer **Snabb leverans** (EU-partnern Ownprint) eller **Standardleverans** (CN-partnern CJdropshipping). Partnernas namn syns aldrig på sajten. Varje val är en egen Shopify-produkt från respektive app, så ordern går automatiskt till rätt partner.
 
+## Läget 1 okt (kontrollerat via Shopify-kopplingen)
+| Område | Läge |
+|---|---|
+| Produkter | 1 produkt totalt, oavsett status: testprodukten. Inga produkter från Ownprint eller CJ finns, inte ens som utkast. |
+| Ownprint | Kopplad. Leveransplatsen "Ownprint Fulfillment" och fraktprofilen "Ownprint" finns. |
+| CJ | Syns inte i Shopify. CJ:s koppling märks inte förrän en produkt listas, så kontrollera i CJ-appen att butiken står som auktoriserad. |
+| Säljkanal för sajten | "Lovable" (`vibe-ide-app-lovable`). Apparna publicerar normalt bara till Online Store. Jag publicerar därför nya produkter till "Lovable" via API. |
+| Shopify-temat (Online Store) | Lösenordsskyddat. Bra. |
+| Moms | Priserna anges inklusive moms. Bra. |
+| Policyer i kassan | Bara Shopifys engelska integritetsmall finns. Den visar Gmail-adressen och saknar telefonnummer. Övriga policyer saknas. Byts mot SHOPIFY-POLICYER.md. |
+| Lovable | Två leveransval är byggda. Testprodukten är platshållare för Hjärtat med snabb leverans. |
+
+**Frakt till Sverige, ändrat 1 okt**
+- **Allmän fraktprofil:** "Normal" (65 kr, gratis från 470 kr) och "Express" (99 kr) är ersatta med "Fri frakt" för 0 kr.
+  - Annars hade Standardvalet för 449 kr fått 65 kr i frakt, trots att sajten lovar fri frakt.
+  - Annars hade Express sålts utan att någon partner kan leverera det.
+- **Ownprint-profilen:** Sverige ändrat från €6,95 till "Fri frakt" för 0. Kontrolleras igen när Ownprint har skapat produkterna, ifall appen skriver över värdet.
+- **Återställning:** i allmän profil "Normal" 65 kr med gratis frakt från 470 kr och "Express" 99 kr. I Ownprint-profilen Sverige €6,95.
+- **Ej ändrat:** EU-zonen och den internationella zonen (299 kr i allmän profil) samt Ownprints övriga länder.
+  - Ägaren behöver besluta om försäljningen ska begränsas till Sverige vid lanseringen.
+  - Rekommendation: begränsa till Sverige. Villkoren är svenska, och det slipper hantera OSS-moms och tull.
+
 ## Produktval
 | Vermo | Snabb: Ownprint (exakt namn i appen) | Standard: CJ (sökord i CJ-appen) |
 |---|---|---|
@@ -34,8 +56,12 @@ Ownprints frakt inom EU kostar €6,95 för första varan och €3 per extra var
 ## Steg för ägaren
 1. **Ownprint-appen:** skapa de fyra produkterna med tre färger var, sätt priserna i kolumnen "Snabb leverans" och publicera till Shopify.
 2. **CJ-appen:** välj fyra motsvarigheter enligt kraven ovan, sätt priserna i kolumnen "Standardleverans" och skicka dem till Shopify.
-3. **Shopify:** publicera de åtta produkterna till försäljningskanalen som Lovable-butiken använder. Annars syns de inte för butiken; idag syns bara testprodukten.
-4. **Säg till.** Då läser jag av produkterna och lägger in dem i Lovables konfiguration (`productGroups.ts`).
+3. **Säg till.** Jag publicerar då de åtta produkterna till kanalen "Lovable" via API och kontrollerar priser och frakt.
+4. **Lovable:** jag fyller i handles och färgnamn per val i `productGroups.ts`. I samma ändring blir materialtexten per färg:
+   - Silver: rostfritt stål.
+   - Guld och Roséguld: stål med plätering.
+
+   I dag står "18K guldpläterat" även för Silver.
 
 ## Instruktion till Claude i Desktop-appen (klistra in)
 
@@ -58,7 +84,7 @@ Ownprints frakt inom EU kostar €6,95 för första varan och €3 per extra var
 > 3. Lägg till dem i butiken med försäljningspris 449 kr. Coin/familj: 529 kr.
 >
 > **Shopify**
-> 1. Publicera de åtta produkterna till den försäljningskanal som den headless Lovable-butiken använder.
+> 1. Publicera de åtta produkterna till försäljningskanalen "Lovable".
 > 2. Ändra inga befintliga produkter, och radera ingenting.
 > 3. Rapportera alla handles, variantnamn, inköpspriser och vad som inte gick.
 
@@ -68,6 +94,10 @@ Ownprints frakt inom EU kostar €6,95 för första varan och €3 per extra var
 3. **Testrapport för nickel (EN 1811), bly och kadmium.** Vi är importör och har ansvaret.
 4. **Materialtext** bekräftad för varje CJ-produkt.
 5. **Förpackning:** antingen köps CJ-förpackning och kort, eller så visar sajten tydligt vad som ingår, vilket den redan gör per val.
+6. **Ursprung och policyer:**
+   - Visa på sajten att Standard skickas från Kina, utan att nämna partnern. Annars kan kunden tro att den skickas från EU som Snabb, vilket kan räknas som vilseledande utelämnande.
+   - Lägg till överföringen av personuppgifter till Kina, med skyddsåtgärd, i integritetspolicyn.
+   - Lägg till Standardtiderna i Fraktpolicy.
 
 ## Sista beställningsdag för jul
 - Snabb leverans: 7 december.
