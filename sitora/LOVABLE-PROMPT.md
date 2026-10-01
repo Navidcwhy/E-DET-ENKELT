@@ -169,6 +169,11 @@ Granskning av koden hittade:
   - DNS för info.vermo.se (NS och TXT) är korrekt. Lovables status är "Verifying your domain". Lovable stoppade enligt instruktion innan ångermejlen byggdes (1 kredit). Uppdraget skickas igen när domänen är aktiv.
   - Shopifys autentisering av avsändaradressen (s1–s4._domainkey) saknas.
 - **Prompt för produkterna:** DESKTOP-PROMPT.md.
+- **Kontroll kl. 15.25:**
+  - Klart: Refund policy har info@, butikens telefon (0735362868) är ifylld, och alla sex policyer stämmer.
+  - Shopifys avsändarautentisering: inga DKIM-poster hittades under de vanliga namnen (s1–s4._domainkey, shopify1/2._domainkey), inte heller med dubbel domän. Ägaren behöver kontrollera i Settings → Notifications att den visar "Authenticated".
+  - Bygget av ångermejlen är skickat igen (umsg_01m3vt1jw4fhdrmyjhp31zpesq) efter att ägaren klickat Verify Domain.
+  - Ägaren kör DESKTOP-PROMPT.md i en ny chatt i Claude Desktop.
 - Små saker till nästa Lovable-runda, som görs ihop med de riktiga gravyrnycklarna:
   - Varukorgen visar de tekniska fältnamnen på engelska ("Front Engraving", "Spelling Approved"). De bör visas med svenska etiketter.
   - FAQ säger "Vi levererar endast inom Sverige" två gånger.
