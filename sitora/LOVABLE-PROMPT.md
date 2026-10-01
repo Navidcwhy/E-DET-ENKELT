@@ -174,6 +174,15 @@ Granskning av koden hittade:
   - Shopifys avsändarautentisering: inga DKIM-poster hittades under de vanliga namnen (s1–s4._domainkey, shopify1/2._domainkey), inte heller med dubbel domän. Ägaren behöver kontrollera i Settings → Notifications att den visar "Authenticated".
   - Bygget av ångermejlen är skickat igen (umsg_01m3vt1jw4fhdrmyjhp31zpesq) efter att ägaren klickat Verify Domain.
   - Ägaren kör DESKTOP-PROMPT.md i en ny chatt i Claude Desktop.
+- **Ångermejlen är klara (commit 0e31864, 4,3 krediter), granskade i diffen:**
+  - info.vermo.se är verifierad.
+  - Kunden får en bekräftelse på svenska från "Vermo <noreply@vermo.se>" med svar till info@vermo.se. Den innehåller tid i svensk tid, uppgifterna kunden lämnade, referens (8 tecken), nästa steg (returinfo inom två arbetsdagar), återbetalningsregeln, undantaget för gravyr, kontaktuppgifter och säljaruppgifter.
+  - En intern notis går till info@vermo.se. Svar går direkt till kunden.
+  - Om utskicket misslyckas sparas anmälan ändå, felet loggas och kunden ser reservtexten. Kvittotexten på sidan är uppdaterad.
+  - Utformning: Georgia och #8A6A3B, utan spårningspixlar. Lovable lägger alltid till en avregistreringslänk.
+  - Diffen innehåller bara mejlfilerna, Lovables e-postställning och WithdrawalForm/withdrawal.functions. Inget annat ändrades och inget publicerades.
+  - Test: TEST-1 skickades till info@vermo.se (ref. 42611156) och testraden raderades.
+  - **Ägaren åtar sig** att svara med returinformation inom två arbetsdagar.
 - Små saker till nästa Lovable-runda, som görs ihop med de riktiga gravyrnycklarna:
   - Varukorgen visar de tekniska fältnamnen på engelska ("Front Engraving", "Spelling Approved"). De bör visas med svenska etiketter.
   - FAQ säger "Vi levererar endast inom Sverige" två gånger.
