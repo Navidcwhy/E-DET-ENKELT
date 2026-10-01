@@ -161,6 +161,14 @@ Granskning av koden hittade:
   - Skicka ett mejl till kunden som bekräftar ånger (ångerknappen kräver bekräftelse på varaktigt medium).
   - Skicka en notis till info@vermo.se när någon ångrar ett köp.
   - Ta bort texten "E-postbekräftelse aktiveras …".
+- **Kontroll kl. 15.15:**
+  - Standardspråk är svenska. Shopifys automatiska svenska policymallar (med Gmail-adressen) är borta.
+  - Alla sex policyer är ifyllda. Refund policy har fortfarande en förekomst av kundservice@.
+  - Tidszonen är Europe/Madrid. Klockan är densamma som i Stockholm, så det fungerar.
+  - Butikens telefonnummer saknas fortfarande.
+  - DNS för info.vermo.se (NS och TXT) är korrekt. Lovables status är "Verifying your domain". Lovable stoppade enligt instruktion innan ångermejlen byggdes (1 kredit). Uppdraget skickas igen när domänen är aktiv.
+  - Shopifys autentisering av avsändaradressen (s1–s4._domainkey) saknas.
+- **Prompt för produkterna:** DESKTOP-PROMPT.md.
 - Små saker till nästa Lovable-runda, som görs ihop med de riktiga gravyrnycklarna:
   - Varukorgen visar de tekniska fältnamnen på engelska ("Front Engraving", "Spelling Approved"). De bör visas med svenska etiketter.
   - FAQ säger "Vi levererar endast inom Sverige" två gånger.

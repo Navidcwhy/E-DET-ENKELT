@@ -64,32 +64,13 @@ Ownprints frakt inom EU kostar €6,95 för första varan och €3 per extra var
 
    I dag står "18K guldpläterat" även för Silver.
 
-## Instruktion till Claude i Desktop-appen (klistra in)
+## Instruktion till Claude i Desktop-appen
 
-Kör den i en **ny lokal chatt** i Claude Desktop, med Claude in Chrome eller datorstyrning påslaget. Molnsessionen som sköter repot kan inte styra din webbläsare.
-
-> Logga in i Shopify-admin för butiken "Vermo" (sitora-s-sentiments-m92xh) i min webbläsare. Jag sköter inloggningen själv. Gör sedan detta och fråga mig innan du betalar eller beställer något:
->
-> **Ownprint-appen**
-> 1. Skapa produkterna Heart Necklace (Fine Link), Coin Necklace with Birthstone, Horizontal Bar Necklace och Premium Engraved Men's Leather Bracelet.
-> 2. Varje produkt ska ha färgerna Silver, Gold och Rose Gold (där de finns), med kundens egen gravyrtext på framsidan och baksidan.
-> 3. Försäljningspris: 599 kr. Coin Necklace with Birthstone: 699 kr.
-> 4. Publicera till Shopify.
->
-> **CJdropshipping-appen**
-> 1. Hitta en motsvarighet till varje produkt. Kraven:
->    - rostfritt stål 316L, inte alloy eller copper
->    - färgerna silver, guld och roséguld
->    - kundens egen gravyrtext
->    - frakt till Sverige med CJPacket
->    - bra betyg
-> 2. Anteckna inköpspris och frakt till Sverige.
-> 3. Lägg till dem i butiken med försäljningspris 449 kr. Coin/familj: 529 kr.
->
-> **Shopify**
-> 1. Publicera de åtta produkterna till försäljningskanalen "Lovable".
-> 2. Ändra inga befintliga produkter, och radera ingenting.
-> 3. Rapportera alla handles, variantnamn, inköpspriser och vad som inte gick.
+Den aktuella prompten finns i **DESKTOP-PROMPT.md** (uppdaterad 1 okt).
+- Kör den i en ny lokal chatt i Claude Desktop, med Claude in Chrome påslaget.
+- Prompten har titlar och priser för alla åtta produkterna.
+- Den sätter säkerhetsregler: fråga före allt som kostar, rör inte frakt och policyer, inga jämförpriser och inga leverantörsnamn.
+- Den ber om en rapport med gravyrfältens exakta namn.
 
 ## Innan standardleveransen öppnas för kunder (ECONOMY_ENABLED)
 1. **IOSS:** registrera IOSS hos Skatteverket, eller använd tillfälligt CJ:s, och lägg in numret i CJ. Annars får kunden betala moms och avgift vid leverans.
