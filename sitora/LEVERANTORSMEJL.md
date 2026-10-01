@@ -1,4 +1,4 @@
-# Mejl till Ownprint (skicka från Sitoras adress)
+# Mejl till Ownprint (skicka från kundservice@vermo.se när brevlådan finns)
 
 **Till:** Ownprint support (kontaktformulär eller supportmejl på ownprint.co)
 **Ämne:** New Swedish brand – onboarding questions before Q4 2026
@@ -7,7 +7,7 @@
 
 Hi Ownprint team,
 
-We are Sitora, a VAT-registered Swedish company launching a personalized jewelry brand for the Swedish market on 15 October 2026. We plan to use Ownprint as our primary production partner (EU facility), and we are ordering samples this week. Before we commit our Q4 volume, could you please confirm the following?
+We are Vermo (vermo.se), a VAT-registered Swedish sole trader (VAT SE020130615601) launching a personalized jewelry brand for the Swedish market on 15 October 2026. We plan to use Ownprint as our primary production partner (EU facility), and we are ordering samples this week. Before we commit our Q4 volume, could you please confirm the following?
 
 1. **Swedish characters:** Do engravings (front and back) and printed message cards fully support Å, Ä, Ö, å, ä, ö and é? Which fonts support them?
 2. **Headless storefront:** Our storefront is headless (Shopify Storefront API, Shopify checkout). Which exact line item property keys does your app read for front engraving, back engraving, message card text and birthstone? If an order carries those keys, is it processed exactly like an order created through your personalization block? Do you offer an order API?
@@ -30,4 +30,4 @@ Thank you – we would like to be live by mid-October, so a quick reply is much 
 
 Best regards,
 [Namn]
-Sitora · [org.nr] · [e-post] · [telefon]
+Vermo · vermo.se · kundservice@vermo.se · +46 73 536 28 68
