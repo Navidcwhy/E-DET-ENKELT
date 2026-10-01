@@ -1,4 +1,4 @@
-# Mejl till Ownprint (skicka från kundservice@vermo.se när brevlådan finns)
+# Mejl till Ownprint (skicka från info@vermo.se när brevlådan finns)
 
 **Till:** Ownprint support (kontaktformulär eller supportmejl på ownprint.co)
 **Ämne:** New Swedish brand – onboarding questions before Q4 2026
@@ -30,4 +30,4 @@ Thank you – we would like to be live by mid-October, so a quick reply is much 
 
 Best regards,
 [Namn]
-Vermo · vermo.se · kundservice@vermo.se · +46 73 536 28 68
+Vermo · vermo.se · info@vermo.se · +46 73 536 28 68

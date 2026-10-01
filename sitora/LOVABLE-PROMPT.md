@@ -140,6 +140,27 @@ Granskning av koden hittade:
   - Kassalänken hamnar på /password. Det bekräftar att lösenordet på Online Store blockerar kassan.
   - Kassans språk kan inte kontrolleras förrän lösenordet är borttaget.
 - Förhandsvisningen kräver inloggning (401). Sidorna är därför kontrollerade via koden och Lovables eget webbläsartest.
+- **Uppföljning kl. 15 (commit 3fe6b9a, 2,2 krediter):**
+  - E-post: info@vermo.se i company.ts och __root.tsx. Kundservice-adressen är borttagen i hela koden.
+  - FAQ: den dubbla raden är borta.
+  - Varukorgen visar svenska etiketter för gravyrfälten. Nycklarna som skickas till Shopify är oförändrade.
+- **Ägarens ändringar, granskade kl. 15:**
+  - shop.vermo.se är primär domän i Shopify, med SSL.
+  - Kundernas kontaktadress i Shopify är info@vermo.se.
+  - www, MX och SPF fungerar.
+  - Lovables avsändardomän är info.vermo.se. TXT-posten finns, men **NS-posterna saknas**.
+  - Lovable skapade engelska mallar för inloggningsmejl. De används inte, eftersom butiken inte har kundkonton.
+- **Kvar i Shopify:**
+  - Tidszonen är Europe/Helsinki. Ändra till Stockholm.
+  - Standardspråket är engelska.
+  - Butikens telefonnummer saknas.
+  - Tre policyer har kundservice@ och ska klistras in igen.
+  - Privacy, Terms of service och Legal notice saknas.
+  - Avsändaradressen är inte autentiserad.
+- **Nästa steg i Lovable, när info.vermo.se är verifierad:**
+  - Skicka ett mejl till kunden som bekräftar ånger (ångerknappen kräver bekräftelse på varaktigt medium).
+  - Skicka en notis till info@vermo.se när någon ångrar ett köp.
+  - Ta bort texten "E-postbekräftelse aktiveras …".
 - Små saker till nästa Lovable-runda, som görs ihop med de riktiga gravyrnycklarna:
   - Varukorgen visar de tekniska fältnamnen på engelska ("Front Engraving", "Spelling Approved"). De bör visas med svenska etiketter.
   - FAQ säger "Vi levererar endast inom Sverige" två gånger.

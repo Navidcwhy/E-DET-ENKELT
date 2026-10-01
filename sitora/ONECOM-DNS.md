@@ -1,55 +1,47 @@
-# One.com: DNS för vermo.se (1 okt 2026)
+# One.com: DNS för vermo.se (uppdaterad 1 okt 2026, kl. 15)
 
-**Läget nu:**
+**Hitta rätt sida:** logga in på one.com → Kontrollpanelen → välj **vermo.se** → **Avancerade inställningar** → **DNS-inställningar** → fliken **DNS-poster**. One.com stöder A-, CNAME-, MX-, TXT- och NS-poster.
 
-| Namn | Post | Pekar på | Status |
+## Läget (kontrollerat via DNS)
+
+| Namn | Post | Värde | Status |
 |---|---|---|---|
-| `vermo.se` | A | 185.158.133.1 (Lovable) | Rätt |
-| `www.vermo.se` | A | 46.30.211.38 (One.com webbhotell) | **Fel:** SSL-fel och 503 |
-| `vermo.se` | MX | `0 .` (null-MX: tar inte emot e-post) | **Fel:** kundservice@vermo.se fungerar inte |
-| `_lovable.vermo.se` | TXT | två `lovable_verify=…` | Rätt, rör inte |
-| `_dmarc.vermo.se` | TXT | `v=DMARC1; p=none;` | Rätt |
-| `shop.vermo.se` | finns inte | | Ska skapas (kassan) |
+| `vermo.se` | A | 185.158.133.1 (Lovable) | Klart |
+| `www.vermo.se` | A | 185.158.133.1 | Klart. www skickas vidare till vermo.se. |
+| `shop.vermo.se` | CNAME | shops.myshopify.com | Klart. Shopifys primära domän, SSL fungerar. |
+| `vermo.se` | MX | mx1–mx4.mailpod16-cph3.g1i.one.com | Klart. info@vermo.se tar emot e-post. |
+| `vermo.se` | TXT (SPF) | `v=spf1 include:_custspf.one.com ~all` | Klart |
+| `_dmarc.vermo.se` | TXT | `v=DMARC1; p=none` | Klart |
+| `_lovable-email.vermo.se` | TXT | `lovable_email_verify=ecef…c9db` | Klart |
+| `info.vermo.se` | NS | ns3.lovable.cloud och ns4.lovable.cloud | **Saknas.** Lovable kan inte skicka e-post förrän posterna finns. |
+| `_lovable.vermo.se` | TXT | två `lovable_verify=…` | Klart, rör inte |
 
-**Hitta rätt sida:** logga in på one.com → Kontrollpanelen → välj **vermo.se** → **Avancerade inställningar** → **DNS-inställningar** → fliken **DNS-poster**. Där kan du skapa egna poster. En egen post med samma namn ersätter One.coms standardpost.
+## Kvar att göra
 
-## 1. www.vermo.se → sajten (5 min)
-- Skapa en A-post: värdnamn `www`, värde `185.158.133.1`, och låt TTL stå kvar på standardvärdet.
-- Om det redan finns en egen post för `www` med 46.30.211.38: ändra den, eller ta bort den och skapa en ny.
-- Om www bara finns som One.com-standardpost (webbhotell): skapa den egna posten ovan, eller stäng av standardposterna för webbplatsen.
-- Skapa ingen AAAA-post.
-- Lovable: kontrollera under Project Settings → Domains att `www.vermo.se` finns med. Lägg annars till den. Lovable skickar www vidare till vermo.se.
+### 1. Lovables e-post: info.vermo.se (5 min)
+Skapa två NS-poster:
 
-## 2. E-post: kundservice@vermo.se
-- Skapa brevlådan `kundservice@vermo.se` i One.com under E-post. Det kan kräva ett e-postpaket hos One.com.
-- Brevlådan fungerar först när MX pekar på One.coms e-postservrar.
-- Om MX fortfarande är `0 .` efter att brevlådan skapats: ta bort den MX-posten och aktivera One.coms standardposter för e-post. Då läggs MX och SPF in automatiskt.
-- Annan e-postleverantör, till exempel Google Workspace eller Zoho: lägg in exakt de MX- och TXT-poster som leverantören visar.
+| Typ | Värdnamn | Pekar på |
+|---|---|---|
+| NS | `info` | `ns3.lovable.cloud` |
+| NS | `info` | `ns4.lovable.cloud` |
 
-## 3. shop.vermo.se → Shopify-kassan (5 min + Shopify)
-**Varför:** kassan visar i dag adressen `sitora-s-sentiments-m92xh-0dypfzx1.myshopify.com`. Med egen domän visas `shop.vermo.se` i stället, och det ger mer förtroende i kassan.
+- Ändra inte domänens egna namnservrar (ns01/ns02.one.com). De här posterna gäller bara underdomänen `info`.
+- Brevlådan info@vermo.se påverkas inte. Den använder MX-posterna för vermo.se.
+- Om Lovable ber om en `_dmarc`-post: ändra den befintliga `_dmarc`-posten i stället för att skapa en ny. En domän får bara ha en DMARC-post.
+- Klicka sedan **Verify Domain** under Cloud → Emails i Lovable och säg till mig, så kontrollerar jag.
 
-**I One.com:** skapa en CNAME-post med värdnamn `shop` och värde `shops.myshopify.com`.
+### 2. Shopify-mejl från info@vermo.se
+1. Gå till Shopify → Settings → Notifications → Sender email och klicka **Authenticate** för vermo.se.
+2. Shopify visar några CNAME-poster. Lägg in dem exakt som de står i One.com.
 
-**I Shopify:**
-1. Gå till Inställningar → Domäner → Anslut befintlig domän.
-2. Skriv `shop.vermo.se` och verifiera.
-3. Välj Ändra primär domän och välj `shop.vermo.se`.
-
-**Gör inte:** koppla inte `vermo.se` eller `www.vermo.se` till Shopify. Då slutar sajten på Lovable att fungera.
-
-## 4. notify.vermo.se → mejl från sajten (Lovable)
-1. Klicka **Konfigurera notify.vermo.se** i Lovable-editorn.
-2. Lägg in exakt de poster som Lovable visar under värdnamnet `notify`.
-
-## 5. Senare: Shopify-mejl från kundservice@vermo.se
-1. Gå till Shopify → Inställningar → Aviseringar → Avsändarens e-post och ange `kundservice@vermo.se`.
-2. Shopify visar då ett antal CNAME-poster som ska läggas in i One.com. De gör att orderbekräftelser kommer från er egen domän och inte hamnar i skräpposten.
+Utan det skickas orderbekräftelser från en Shopify-adress och oftare till skräpposten.
 
 ## Rör inte
-- A-posten för `vermo.se` (185.158.133.1)
+- A-posterna för `vermo.se` och `www`
+- CNAME-posten för `shop`
+- MX- och SPF-posterna
 - `_lovable`-posterna
-- NS-posterna (ns01/ns02.one.com)
+- domänens namnservrar
 
-## Kontroll
-Säg till efter varje steg, så kontrollerar jag DNS-svaret. Ändringar slår oftast igenom inom några minuter. Ibland tar det upp till 24 timmar.
+**Koppla aldrig vermo.se eller www till Shopify.** Då slutar sajten på Lovable att fungera.

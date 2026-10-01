@@ -1,8 +1,20 @@
 # Shopify-policyer för Vermo (klistra in)
 
-**Var:** Shopify admin → Inställningar → Policyer.
-**Så gör du:** öppna fältet med samma namn som rubriken nedan, markera och ta bort allt som står där, och klistra sedan in texten. Varje text har en kopieringsknapp.
+**Var:** Shopify admin → Settings → Policies (Inställningar → Policyer).
+**Så gör du:** öppna fältet enligt tabellen, markera och ta bort allt som står där, och klistra sedan in texten. Varje text har en kopieringsknapp.
 **Varför:** Shopify-kopplingen får inte skriva policyer (behörigheten `write_legal_policies` saknas), så det här måste göras för hand.
+**E-post:** info@vermo.se, ändrat 1 okt. Brevlådan kundservice@vermo.se finns inte.
+
+| Fält i Shopify (engelska) | Text nedan | Läge 1 okt, kl. 15 |
+|---|---|---|
+| Refund policy | Återbetalningspolicy | Inklistrad, men med kundservice@. **Klistra in igen.** |
+| Shipping policy | Fraktpolicy | Inklistrad, men med kundservice@. **Klistra in igen.** |
+| Contact information | Kontaktinformation | Inklistrad, men med kundservice@. **Klistra in igen.** |
+| Privacy policy | Integritetspolicy | Fortfarande Shopifys engelska mall. **Klistra in.** |
+| Terms of service | Terms of service (köpvillkor) | Tom. **Klistra in.** |
+| Legal notice | Legal notice (juridisk information) | Tom. **Klistra in.** |
+| Terms of sale, Subscription policy | ingen | Lämna tomma. Köpvillkoren ligger under Terms of service, och prenumerationer används inte. |
+
 **Uppdaterad 1 okt:**
 - Sitora står som säljare, som på sajten.
 - Leverans endast inom Sverige.
@@ -10,6 +22,8 @@
 - Ursprung anges per leveransval.
 - Klarna är borttaget eftersom det inte är aktiverat.
 - Telefonnummer är tillagt.
+- E-post är info@vermo.se.
+- Legal notice är tillagd.
 
 ---
 
@@ -20,7 +34,7 @@
 Personligt graverade smycken tillverkas enligt dina anvisningar och är därför undantagna från ångerrätten enligt 2 kap. 11 § 3 p. lagen (2005:59) om distansavtal och avtal utanför affärslokaler.
 
 Presentkort och varor som inte är personligt anpassade har 14 dagars ångerrätt från den dag du tog emot varan.
-– Ångra köpet på sidan Ångra köp på vermo.se, eller kontakta oss på kundservice@vermo.se eller 073-536 28 68.
+– Ångra köpet på sidan Ångra köp på vermo.se, eller kontakta oss på info@vermo.se eller 073-536 28 68.
 – Vid ånger står du för returfrakten.
 – Vi betalar tillbaka senast 14 dagar efter att vi har fått ditt meddelande om ånger. Vi får vänta med återbetalningen tills vi har fått tillbaka varan eller du har visat att den har skickats.
 
@@ -29,7 +43,7 @@ Du har tre års reklamationsrätt enligt konsumentköplagen (2022:260).
 – Fel som visar sig inom två år från leveransen antas ha funnits vid leveransen, om inte annat visas.
 – En reklamation som görs inom två månader från att du märkte felet räknas alltid som gjord i rätt tid.
 – Är felet vårt, till exempel om gravyren inte stämmer med texten i din beställning eller om smycket är skadat eller har materialfel, gör vi om smycket kostnadsfritt eller betalar tillbaka.
-– Skicka foto på smycket och förpackningen tillsammans med ditt ordernummer till kundservice@vermo.se.
+– Skicka foto på smycket och förpackningen tillsammans med ditt ordernummer till info@vermo.se.
 Dina rättigheter enligt konsumentköplagen påverkas inte av detta.
 
 Tvist
@@ -56,7 +70,7 @@ Spårning
 När smycket har skickats får du ett e-postmeddelande med spårningsinformation.
 
 Försenad leverans
-Vid försenad leverans gäller konsumentköplagens regler. Kontakta oss på kundservice@vermo.se eller 073-536 28 68 så undersöker vi leveransen.
+Vid försenad leverans gäller konsumentköplagens regler. Kontakta oss på info@vermo.se eller 073-536 28 68 så undersöker vi leveransen.
 
 Jul
 Sista beställningsdag för leverans före julafton visas på vermo.se. För Snabb leverans är det den 7 december 2026.
@@ -64,7 +78,7 @@ Sista beställningsdag för leverans före julafton visas på vermo.se. För Sna
 
 ---
 
-## Köpvillkor (fältet "Användarvillkor")
+## Terms of service (köpvillkor)
 
 ```text
 Säljare
@@ -72,7 +86,7 @@ Vermo är en skapelse av Sitora. Säljare är Navid Ahmed Chowdhury, enskild nä
 – Org.nr: 020130-6156
 – Momsreg.nr: SE020130615601
 – Postadress: Regnbågsvägen 5 B, 141 32 Huddinge
-– E-post: kundservice@vermo.se
+– E-post: info@vermo.se
 – Telefon: 073-536 28 68
 
 Priser och betalning
@@ -100,7 +114,7 @@ Svensk lag gäller. Du kan vända dig till Allmänna reklamationsnämnden (ARN),
 
 ```text
 Personuppgiftsansvarig
-Navid Ahmed Chowdhury, enskild näringsidkare, som bedriver verksamhet under namnet Sitora (Vermo), org.nr 020130-6156, Regnbågsvägen 5 B, 141 32 Huddinge. E-post kundservice@vermo.se, telefon 073-536 28 68.
+Navid Ahmed Chowdhury, enskild näringsidkare, som bedriver verksamhet under namnet Sitora (Vermo), org.nr 020130-6156, Regnbågsvägen 5 B, 141 32 Huddinge. E-post info@vermo.se, telefon 073-536 28 68.
 
 Uppgifter vi behandlar
 – Namn, adress, e-post, telefon och orderuppgifter.
@@ -146,9 +160,33 @@ Vermo är en skapelse av Sitora.
 – Org.nr: 020130-6156
 – Momsreg.nr: SE020130615601
 – Postadress: Regnbågsvägen 5 B, 141 32 Huddinge
-– E-post: kundservice@vermo.se
+– E-post: info@vermo.se
 – Telefon: 073-536 28 68
 – Webbplats: vermo.se
+```
+
+---
+
+## Legal notice (juridisk information)
+
+```text
+Juridisk information
+Vermo är en skapelse av Sitora.
+
+Säljare och ansvarig för webbplatsen
+Navid Ahmed Chowdhury, enskild näringsidkare, som bedriver verksamhet under namnet Sitora.
+– Org.nr: 020130-6156
+– Momsreg.nr: SE020130615601
+– Postadress: Regnbågsvägen 5 B, 141 32 Huddinge, Sverige
+– E-post: info@vermo.se
+– Telefon: 073-536 28 68
+– Webbplats: vermo.se
+
+Köpvillkor och personuppgifter
+Våra köpvillkor, vår återbetalningspolicy, fraktpolicy och integritetspolicy finns länkade i kassan och på vermo.se.
+
+Tvistlösning
+Om vi inte kommer överens kan du vända dig till Allmänna reklamationsnämnden (ARN), Box 174, 101 23 Stockholm, www.arn.se. Vi följer ARN:s rekommendationer.
 ```
 
 ---
