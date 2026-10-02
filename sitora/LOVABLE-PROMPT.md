@@ -929,6 +929,18 @@ KONTROLL
   - Ny src/components/site/ShopifyPolicy.tsx med reservlänkar.
   - /kopvillkor visar ToS, med Företagsuppgifter (#foretagsuppgifter) sist. /leverans-och-reklamation visar frakt och ångerrätt/reklamation. /integritetspolicy visar integritetstexten och en länk till cookiepolicyn.
   - Testat: inga anrop till facebook eller tiktok i förhandsvisningen, en PageView och en ViewContent efter samtycke, grant efter nytt samtycke, och rubriker och listor syns.
+- **Publicerat av ägaren den 2 okt, ca 14.40. Live-verifiering i Chromium via proxyn:**
+  - Shopify-vägarna /products/hjartat-snabb-leverans?fbclid=test, /collections/all, /cart, /password och /policies/refund-policy ger 301 till rätt sida, och /presentkort ger 307.
+  - Startsidan visar "Våra favoriter" och Nyhetsbrev.
+  - Villkorssidorna visar Shopify-texterna, inklusive Reklamation, Tvist och Gravyrtexter.
+  - Pixlarna och samtycket (se LANSERING.md, punkt 6):
+    - Inget anrop före samtycke.
+    - Efter samtycke: PageView, ViewContent och AddToCart till Meta och TikTok, samt Shopifys consentManagement.
+    - _tracking_consent och _fbc sätts på .vermo.se.
+  - Mitt testbesök (fbclid=CLAUDETEST123, amerikansk IP) syns som några händelser hos Meta och TikTok.
+- **Temat:** Shopify-kopplingen får inte skriva till det publicerade temat. Därför finns en kopia, "External Redirect – vermo.se" (gid://shopify/OnlineStoreTheme/210954158470), med storefront_hostname "vermo.se" och custom_redirects "/>/".
+  - Den förhandsvisas korrekt: canonical https://vermo.se/products/…, och den simulerade omdirigeringen går till vermo.se med samma sökväg och query.
+  - Ägaren publicerar den.
 - **Lovables notering:** ägarens namn, adress och telefon syns nu i villkoren, eftersom de står i Shopify-texterna.
   - De fanns redan på sajten under Kontakt, Ångra köp, Produktsäkerhet och Integritetspolicy.
   - Säljarens namn, adress och kontaktuppgifter ska enligt e-handelslagen vara lätt åtkomliga. Ingen ändring behövs.
