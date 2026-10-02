@@ -403,7 +403,14 @@ KONTROLL INNAN DU ÄR KLAR
   - AddToCartButton: laddning, cirkel med bock och skakning vid fel
   - pling på varukorgsikonen
   - bild-id:n per färg, med guld som reserv
-- **Kontroll** schemalagd kl. 11.32 (trig_01T4CVjWZqcmfHpJeRjc9qcL).
+- **Runda 3 är klar (b4377172), granskad och publicerad på vermo.se** (kontrollerat i CSS: cart-pling och add-to-cart-ring finns):
+  - "Till kassan" är en riktig länk: samma flik på sajten, och ny flik bara när sajten visas i en ram.
+  - Tillverkarraden är exakt enligt Ownprint. Ownprint och Print-on-Demand B.V. nämns i kundtext bara där, och i övrigt bara i AGENTS.md och roadmap.
+  - AddToCartButton: ring, bock och skakning, med ett eget tillstånd vid reducerad rörelse.
+  - Plinget styrs av `addedCount`, som inte sparas mellan sidladdningar.
+  - Bild-id:n per färg med guld som reserv, och alt-texten anger bildens verkliga färg.
+  - PRELAUNCH=false och regeln står i AGENTS.md.
+  - Test 09.35: 92 av 92 variantkombinationer och fem varukorgar är OK.
 
 <details><summary>Prompten för runda 3 (2 okt)</summary>
 
