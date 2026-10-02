@@ -3,11 +3,37 @@
 Kunden ser en produkt och väljer **Snabb leverans** (EU-partnern Ownprint) eller **Standardleverans** (CN-partnern CJdropshipping). Partnernas namn syns aldrig på sajten. Varje val är en egen Shopify-produkt från respektive app, så ordern går automatiskt till rätt partner.
 
 ## Beslut 2 okt (ägarens svar)
-- **Presentask och meddelandekort ingår inte.** Ownprint har bara ett allmänt tackkort som kostar €1,50 extra.
+- **Presentask och meddelandekort ingår inte.** Ownprint har bara ett allmänt tackkort som kostar €1,50 extra. *Osäkert: Ownprints FAQ säger att ask och kort ingår som standard (se 2 okt, eftermiddag).*
   - Löftet tas bort från sajten och fraktpolicyn.
   - Hälsningen erbjuds i stället som gravyr på baksidan (max 50 tecken, ingår).
 - **Tackkortet:** rekommendationen är att inte slå på det vid lanseringen. Det kostar cirka 17 kr per order och är inte personligt. Det prövas senare om data visar att det behövs.
 - **CJ:** ingen produkt uppfyllde kraven. Standardleveransen förblir avstängd (ECONOMY_ENABLED=false), och lanseringen sker med endast Snabb leverans.
+
+## Beslut och fakta 2 okt, eftermiddag
+- **Ägaren:**
+  - Nej till att byta variantbild i Shopify.
+  - Nej till en rabattkod.
+  - Ingen provbeställning behövs, eftersom ägaren redan har ett prov i bra skick.
+  - **Förlanseringsläget är avstängt för gott** (PRELAUNCH=false). Det slås aldrig på igen.
+- **Tillverkare enligt GPSR: Print-on-Demand B.V. (Ownprint).**
+  - Ownprints supportsida säger: *"For OwnPrint users, Print-on-Demand B.V. acts as the Economic Operator for all products fulfilled by us."*
+  - Uppgifter enligt Ownprint: Groene Hilledijk 211A, 3073 AE Rotterdam, Nederländerna, compliance@print-on-demand-jewelry.eu, +31 85 888 2885.
+  - E-postdomänen har MX-poster (Google), så adressen kan ta emot e-post.
+  - Sitora är fortfarande säljare.
+  - Ownprint nämns på sajten bara i tillverkarraden (ägarens beslut).
+- **Förpackning enligt Ownprints FAQ ("What's in the box?"):**
+  - Ingår som standard: kraftkartong, skyddsfolie, presentask (egen logga går att lägga till), meddelandekort "tailored to your design", smycket, handgjord vaxkaka, putsduk och tackkort.
+  - Ownprints standardtackkort ingår utan kostnad. Eget tackkort kostar €0,35 per order.
+  - Ask med egen logga kostar €1,50–1,10 per ask och €30 i startavgift.
+  - **Det motsäger beskedet "bara tackkort, €1,50"** under Beslut 2 okt.
+  - Ägarens prov avgör: om det kom i ask med kort är ask- och kortbilderna sanna, och löftet kan läggas tillbaka. Fraktpolicyn i Shopify säger redan "Presentask och meddelandekort ingår."
+- **Färgbilder:** i Ownprint väljer man i steget Mockups vilka pläteringsfärger som ska få bilder (guld, roséguld, silver). Bara guld valdes, och därför finns inga bilder i silver eller roséguld i Shopify.
+  - Ägaren skapar dem i Ownprint, eller laddar ned dem och lägger in dem på produkten i Shopify.
+  - Sedan kopplas id:na per färg på sajten. Lovable förbereder det i runda 3.
+- **Kassan:** felet "shop.vermo.se avvisade anslutningen" beror på att kassan öppnades inuti Lovables förhandsvisning, som är en ram.
+  - Shopify skickar `X-Frame-Options: DENY`.
+  - I en vanlig flik går kassalänken till "Utcheckningskassa – Vermo" (HTTP 200, svenska), trots lösenordet på temat.
+  - Rättas i Lovable: samma flik på riktiga sajten och ny flik i förhandsvisningen.
 
 ## Ownprint-produkterna i Shopify (2 okt, läst via API)
 Produkterna är aktiva, säljaren är "Vermo", inga jämförpriser är satta, och alla ligger i Ownprints fraktprofil (92 varianter). Sverige har fortfarande "Fri frakt" för 0. Alla är publicerade till kanalen "Lovable".
@@ -53,7 +79,7 @@ Varje produkt har 8–9 bilder i 2000 × 2000. **Alla varianter använder bild 0
 
 - **Ask och kort ingår inte** (ägarens besked 2 okt), så bilderna med ask och kort är vilseledande enligt marknadsföringslagen.
 - **Sajten:** Lovable ska bara visa godkända bild-id:n. Prompten är skickad, se LOVABLE-PROMPT.md 2 okt.
-- **Kassan och mejlen:** variantbilden behöver bytas till en godkänd bild. Det ändrar varianter i en leverantörsprodukt, så **ägaren behöver godkänna** det.
+- **Kassan och mejlen:** visar bild 0 (ask med kort). Ägaren sa nej till att byta variantbild (2 okt). Det är rätt bild om asken faktiskt ingår.
   - Bara bilden byts. Pris, SKU, alternativ och lager rörs inte.
   - Alternativet är att ta bort ask-bilderna i Ownprint-appen.
 - **Gravyrens typsnitt** på Ownprints bilder ("Ebba", "12.06.2021", "Pappa") är rak antikva, inte skrivstil. Sajtens förhandsvisning byts därför till Cormorant Garamond. Det slutliga beskedet ger provbeställningen.

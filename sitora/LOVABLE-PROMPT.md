@@ -373,6 +373,105 @@ KONTROLL INNAN DU ÄR KLAR
 
 </details>
 
+**2 okt, eftermiddag: rättelsen är klar, och nya önskemål från ägaren**
+- **Rättelsen är genomförd** (6b55cfa) och granskad i diffen. Allt i planen är gjort:
+  - vitlistade bild-id:n, med illustrationen som reserv
+  - galleri
+  - fristående SVG (hjärta, mynt med månadens berlock, bar, platta med band) i Cormorant Garamond
+  - Great Vibes borttaget
+  - ny hero och ny og:image
+  - Familjens knapp
+  - tecknen / : °
+  - GPSR-raden
+  - länk från köpvillkoren till Kontakt
+  - Lovable har testat varukorgarna.
+- **Ägarens egna ändringar:**
+  - Heron är förenklad (333a46a).
+  - **PRELAUNCH=false (c03c9ce).** Ägaren vill inte ha förlanseringsläget alls, så det slås aldrig på igen.
+  - vermo.se visar fortfarande oktober-skärmen tills ägaren publicerar.
+- **Ägarens svar:**
+  - Nej till att byta variantbild i Shopify.
+  - Nej till en rabattkod.
+  - Ingen provbeställning, eftersom ägaren redan har ett prov.
+- **Kassafelet "shop.vermo.se avvisade anslutningen":**
+  - Shopify skickar `X-Frame-Options: DENY` och `frame-ancestors 'none'`.
+  - I en vanlig flik går kassalänken till "Utcheckningskassa – Vermo" (HTTP 200, svenska). Lösenordet på temat stoppar alltså inte kassan.
+  - Felet uppstår när kassan hamnar i Lovables förhandsvisning, som är en ram.
+- **Runda 3 skickad** (umsg_01m3xxxsfhe9fvx1297nf9vg98). Lovable genomför direkt utan planrunda, enligt ägarens önskemål:
+  - kassalänk: samma flik på sajten, ny flik i ram
+  - tillverkare: Print-on-Demand B.V. (Ownprint), med Ownprints GPSR-uppgifter
+  - AddToCartButton: laddning, cirkel med bock och skakning vid fel
+  - pling på varukorgsikonen
+  - bild-id:n per färg, med guld som reserv
+- **Kontroll** schemalagd kl. 11.32 (trig_01T4CVjWZqcmfHpJeRjc9qcL).
+
+<details><summary>Prompten för runda 3 (2 okt)</summary>
+
+```text
+Fyra ändringar från ägaren. Genomför dem direkt utan att vänta på att en plan godkänns, eftersom ägaren vill slippa det steget. Publicera inte.
+
+VIKTIGT: Förlanseringsläget ska vara avstängt (PRELAUNCH = false). Ändra det aldrig och slå aldrig på det igen. Skriv in den regeln i AGENTS.md.
+
+1. KASSAN: "SHOP.VERMO.SE AVVISADE ANSLUTNINGEN"
+Shopifys kassa skickar X-Frame-Options: DENY och frame-ancestors 'none', så den får aldrig visas inuti en ram. Ägaren testar i Lovables förhandsvisning, som är en ram, och där blockeras kassan. I en vanlig flik fungerar kassalänken: den går till "Utcheckningskassa – Vermo" på svenska.
+- Byt `window.open(checkoutUrl, "_blank", "noopener,noreferrer")` i varukorg.tsx mot en riktig länk (`<a href={checkoutUrl}>`), som ser ut som knappen gör i dag.
+  - Vanlig flik (window.self === window.top): öppna kassan i samma flik. Det fungerar bäst på mobil och i Instagrams och TikToks inbyggda webbläsare.
+  - Sajten visas i en ram, till exempel Lovables förhandsvisning: lägg till target="_blank" och rel="noopener", så att kassan alltid öppnas i en ny riktig flik och aldrig i ramen.
+  - Avgör om sidan visas i en ram på klienten, efter mount, så att serverrenderingen inte bryts.
+- Byt texten "Kassan öppnas säkert hos Shopify i en ny flik." mot "Du går vidare till Shopifys säkra kassa."
+- Knappen är inaktiv så länge varukorgen uppdateras, som i dag.
+
+2. TILLVERKARE = OWNPRINT (PRINT-ON-DEMAND B.V.)
+Enligt Ownprints supportsida är Print-on-Demand B.V. ansvarig ekonomisk aktör enligt GPSR för allt de tillverkar. De anger uppgifterna nedan för butikerna.
+- I supplier.ts, EU-profilen: ändra `safety.manufacturer` till exakt
+  "Print-on-Demand B.V. (Ownprint), Groene Hilledijk 211A, 3073 AE Rotterdam, Nederländerna, compliance@print-on-demand-jewelry.eu, +31 85 888 2885"
+- Det syns i den hopfällbara raden "Produktsäkerhet och tillverkare" på produktsidan och på /produktsakerhet.
+  - På /produktsakerhet står Sitora kvar som säljare, med raden "Säljare: …".
+  - Köpvillkor, Kontakt, kvitton och mejl ändras inte. Där är det Sitora som säljer.
+- Ownprint och Print-on-Demand B.V. får nämnas bara i tillverkarraden. Ingen annanstans: inte i rubriker, produkttexter eller FAQ. Uppdatera regeln i AGENTS.md.
+- CN-profilen är oförändrad.
+
+3. KÖPKNAPPENS ANIMATION OCH VARUKORGENS "PLING"
+Skapa en gemensam komponent, AddToCartButton, och använd den för både datorknappen och knappen i mobilens fasta köpfält. De ska dela samma tillstånd.
+- **Vila:** "Lägg i varukorgen".
+- **Laddar** (från klick tills addLine är klar):
+  - Knappen behåller sin bredd.
+  - Texten tonas ut och en liten roterande ring tonas in i mitten (SVG-cirkel med stroke-dasharray, rotate med keyframes).
+  - aria-busy="true", och knappen är spärrad mot dubbelklick.
+- **Klart:**
+  - Ringen slutar snurra och sluts till en hel cirkel (stroke-dashoffset till 0, cirka 250 ms ease-out).
+  - Sedan ritas en bock inuti cirkeln (stroke-dashoffset, cirka 300 ms).
+  - "Tillagd" tonas in bredvid.
+  - Efter cirka 1,4 sekunder glider knappen tillbaka till vila (cirka 300 ms).
+- **Fel:** en kort skakning (translateX ±4 px, cirka 300 ms). Sedan vila, och felmeddelandet visas som i dag.
+- **Varukorgsikonen** uppe till höger i sidhuvudet, vid varje lyckad tillägg, en gång per tillägg:
+  - Ett "pling": ikonen studsar (scale 1 → 1,25 med −8° → 0,92 med 6° → 1,05 → 1, totalt cirka 600 ms).
+  - En tunn ring expanderar och tonas ut bakom ikonen en gång.
+  - Siffran poppar (scale 0,6 → 1,15 → 1).
+  - Styr det med en räknare i varukorgen, till exempel `addedCount` som ökar vid varje lyckad addLine, så att animationen startar om varje gång.
+- **60 FPS:** animera bara transform, opacity och stroke-dashoffset. Använd CSS keyframes och inga JS-loopar per bildruta. Lägg will-change bara på de animerade elementen.
+- **Rörelsekänsliga** (prefers-reduced-motion): ingen rotation, studs eller skakning. Visa tillstånden direkt: texten "Lägger till …", bocken utan ritning och siffran utan pop.
+- **Skärmläsare:** "Tillagd i varukorgen." ska fortfarande läsas upp (aria-live).
+
+4. BILDER PER FÄRG (förbereds nu, ägaren skapar bilderna i Ownprint)
+I dag visar alla bilder guldfärg. Ownprint kan skapa produktbilder även i silver och roséguld. Gör så här:
+- Gör `imageIds` i productGroups.ts till en lista per färg: `{ guld: [...], silver: [], rose: [] }`. De nuvarande id:na hamnar under guld.
+- Galleriet visar bilderna för vald färg. Saknas bilder för färgen visas guldbilderna.
+  - Bildtexten blir då: "Bilderna visar guldfärg och exempeltext. Din färg och din text syns i illustrationen."
+  - När det finns bilder i rätt färg: "Bilderna visar exempeltext. Din text syns i illustrationen."
+- Alt-texten ska beskriva bildens verkliga färg, inte vald färg. I dag står det "i silverfärg" även på guldbilder.
+- Produktlistor, sök och varukorg visar huvudbilden för vald färg, eller guld som reserv.
+- Okända bilder visas fortfarande aldrig. Bara id:n i listorna gäller.
+
+KONTROLL
+- Testa i en vanlig flik att "Till kassan" går till Shopifys kassa, och i förhandsvisningen att kassan öppnas i en ny flik.
+- Testa animationen på mobil och dator, och med prefers-reduced-motion.
+- Testa fyra varukorgar igen: Hjärtat Roséguldfärg med baksida, Familjen Guldfärg mars, Vår dag Silverfärg med baksida och Pappa Guldfärg brunt band. Variant, pris och attribut ska vara oförändrade.
+- Svara med en kort lista över ändrade filer.
+```
+
+</details>
+
 **Att göra för ägaren (Shopify admin, efter claim)**
 - Claima butiken senast ca 29 okt.
 - Butiksnamn "Sitora".

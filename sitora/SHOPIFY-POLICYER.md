@@ -8,7 +8,7 @@
 | Fält i Shopify (engelska) | Text nedan | Läge 2 okt, kl. 08.30 (läst via API) |
 |---|---|---|
 | Refund policy | Återbetalningspolicy | Klar (info@vermo.se). |
-| Shipping policy | Fraktpolicy | **Klistra in igen.** Shopify visar fortfarande "Presentask och meddelandekort ingår." Texten nedan har "Gravyr på baksidan ingår." |
+| Shipping policy | Fraktpolicy | **Vänta.** Shopify visar "Presentask och meddelandekort ingår." Enligt Ownprints FAQ ingår ask och kort som standard. Bekräftar ägarens prov det är Shopify-texten rätt. Klistra annars in texten nedan ("Gravyr på baksidan ingår."). |
 | Contact information | Kontaktinformation | Klar. |
 | Privacy policy | Integritetspolicy | Inklistrad. Valfritt: klistra in igen samtidigt som fraktpolicyn, eftersom "korttexter" togs bort 2 okt. |
 | Terms of service | Terms of service (köpvillkor) | Klar. |

@@ -1,5 +1,14 @@
 # Provbeställning: Ownprint (uppdaterad 2 okt 2026)
 
+> **Läget 2 okt, eftermiddag: ingen provbeställning behövs.** Ägaren har redan ett prov i bra skick.
+> Kvar att kontrollera vid **första riktiga ordern**:
+> - I Ownprint-appen ska ordern visa `Front engraving text` och `Back engraving text` exakt, med å/ä/ö.
+> - Tecknen ♥ ° / : & ska graveras rätt.
+>
+> Fråga till ägaren: kom provet i presentask med kort? Ownprints FAQ säger att det ingår som standard.
+>
+> Resten av dokumentet är kvar som referens.
+
 **Leverantör:** Ownprint (ownprint.co). Graverar i Rotterdam, alltså inom EU. Shopify-appen heter "Ownprint: Print on Demand".
 **Syfte:** att testa på en gång:
 - gravyrens kvalitet och typsnitt
