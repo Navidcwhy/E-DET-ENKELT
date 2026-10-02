@@ -513,6 +513,26 @@ KONTROLL
   - previewOnly för Stjärntecknet
   - sitemap
 - Inget publiceras.
+- **Klart (7747c32, 12,7 krediter) och granskat i diffen:**
+  - Alla bild-id:n per produkt och färg stämmer exakt mot listan. Asken, kartongen, engelsk text och Namnets bild 11 syns inte.
+  - Texter, mått, mottagare och färger stämmer. Pärlan finns bara i guld och har en egen materialtext utan "hypoallergen".
+  - Skrivstil (Great Vibes) för Namnet och Armringen. Nya former: vbar, tag, bangle och keyring.
+  - Valfältet är generellt i personalization-konfigurationen:
+    - Familjens månad styr varianten.
+    - Stjärntecknet skickar radegenskapen "Stjärntecken" med exakt värde, t.ex. "Fiskarna/Pisces".
+    - Varukorgen visar bara den svenska delen.
+  - Stjärntecknet är dolt publikt: 404 på produktsidan, och den syns inte i listor, sök eller sitemap. Den syns i förhandsvisningen.
+  - Startsidans rutnät visar nu bara de tre utvalda (Hjärtat, Familjen, Vår dag). "Se alla" leder till alla nio publika.
+  - PRELAUNCH=false.
+- **Testat via Storefront API med sajtens egen mappning:**
+  - Alla 124 variantkombinationer gav rätt variant, 0 fel.
+  - Sex testvarukorgar gav rätt pris och kassa på shop.vermo.se:
+    - Namnet Roséguld med baksida, 499 kr
+    - Stjärntecknet Silver "Fiskarna/Pisces", 499 kr
+    - Initialen Guld, 449 kr
+    - Armringen Silver, 499 kr
+    - Pärlan Guld med baksida, 699 kr
+    - Nyckelringen Rosé, 399 kr
 
 <details><summary>Prompten för runda 4</summary>
 
@@ -669,6 +689,86 @@ Svara med en kort lista över ändrade filer.
 ```
 
 </details>
+
+**2 okt kl. 14: runda 5, rester på live-sajten före annonserna (umsg_01m3y7mjmjfqsrajepmcyewe6y)**
+- **Hittat vid genomsökning av vermo.se** (fanns före runda 4, mitt förbiseende i de första promptarna):
+  - Startsidan:
+    - rubriken "Bästsäljare" utan en enda försäljning
+    - platshållaren "[Anmälan kopplas till databasen i steg 4.]"
+    - metabeskrivningen "två leveransval", fast bara snabb leverans är på
+  - Presentkort i menyn leder till en sida som inte går att köpa från, med "[Presentkorten kopplas till Shopifys gift cards i steg 2.]".
+  - Om Vermo visar "UTKAST – granskas".
+  - Produktsäkerhet:
+    - Listan skulle visa det dolda Stjärntecknet.
+    - Pärlans material saknas.
+  - Integritetspolicyn nämner "korttexter".
+- **Beställt:**
+  - "Våra favoriter" i stället för "Bästsäljare"
+  - nyhetsbrevet kopplat till den befintliga tabellen, med ett nytt samtycke
+  - sann metabeskrivning
+  - Recensioner dolda tills det finns verifierade recensioner
+  - Presentkort ur menyer och sitemap, med tillfällig vidarekoppling till /smycken
+  - utkastetiketten borttagen
+  - Produktsäkerhet rättad
+  - texträttelser
+- Inget publiceras.
+
+<details><summary>Prompten för runda 5</summary>
+
+```text
+Små rättelser före annonserna. Genomför direkt utan planrunda och publicera inte. Ändra inte PRELAUNCH (false), produktkonfigurationen, bilderna eller priserna.
+
+1. STARTSIDAN
+a) Byt rubriken "Bästsäljare" till "Våra favoriter".
+- Butiken har ännu ingen försäljning, så "Bästsäljare" är ett påstående vi inte kan belägga.
+- Flaggan bestseller ligger kvar i koden och styr urvalet.
+
+b) Nyhetsbrevet: ersätt platshållaren "[Anmälan kopplas till databasen i steg 4.]" med den befintliga komponenten NewsletterSignup (tabellen newsletter_signups).
+- Rubrik: "Nyhetsbrev"
+- Text: "Nya smycken och erbjudanden. Ett mejl då och då, inget mer."
+- Samtyckestext, som en ny konstant och inte PRELAUNCH_CONSENT_TEXT: "Ja, jag vill få Vermos nyhetsbrev med nyheter och erbjudanden. Jag kan avregistrera mig när som helst."
+- Spara exakt den visade samtyckestexten i consent_text, och source "startsida".
+- Bekräftelsen efter anmälan:
+  - rubrik "Tack för din anmälan"
+  - text "Du kan avregistrera dig när som helst genom att mejla info@vermo.se."
+  - Texten "Du får information när Vermo öppnar" ska bort.
+- Fältens id ska vara unika på sidan och får inte börja med "prelaunch-".
+- Testa att en anmälan sparas och radera testraden efteråt.
+
+c) Metabeskrivningen säger "två leveransval", men bara snabb leverans är på. Ny text: "Personliga graverade smycken från Vermo. Skapa en unik gåva med din egen text – fri frakt och gravyr på baksidan ingår."
+
+d) "Så funkar det", steg 1: "Halsband, armband eller nyckelring – i guld-, silver- eller roséguldfärg."
+
+e) Dölj sektionen "Recensioner" tills det finns verifierade recensioner, med en flagga i config: REVIEWS_ENABLED = false.
+
+2. PRESENTKORT (de går inte att köpa än)
+- Ta bort "Presentkort" från huvudmenyn, mobilmenyn och sidfoten.
+- Ta bort /presentkort från sitemap.xml.
+- /presentkort ska tillfälligt skicka vidare till /smycken med 302 eller 307, inte 301.
+- Behåll sidans kod och beloppen till senare.
+- Texterna om presentkort och ångerrätt i villkoren och FAQ ändras inte.
+
+3. OM VERMO
+- Ta bort introt "UTKAST – granskas" och ersätt det med "Personliga, graverade smycken."
+- Brödtexten är godkänd som den är.
+
+4. PRODUKTSÄKERHET
+- "Gäller smyckena": visa inte produkter med previewOnly publikt. Det är samma regel som i listor och sök.
+- Byt "Material för halsbanden" mot "Material för halsband, armring och nyckelring".
+- Lägg till en rad per produkt som har materialOverride i productGroups, t.ex. "Pärlan: Pärlor av skalpulver (pärlemor). …". Det kommer utöver Pappa-raden och utan dubbletter.
+
+5. SMÅ TEXTER
+- Integritetspolicyn: byt "gravyr- och korttexter" mot "gravyrtexter" på båda ställena. Kunderna skriver inga korttexter.
+- FAQ: byt "Hör av dig så svarar vi samma arbetsdag." mot "Hör av dig så svarar vi normalt samma arbetsdag.", samma formulering som på Kontakt.
+
+KONTROLL
+- Sök igenom koden efter text som syns för kunder och som står inom hakparenteser, eller innehåller UTKAST, TILLFÄLLIG, PLATSHÅLLARE, "steg 2" eller "steg 4".
+- Lista allt som fortfarande kan visas publikt. Ändra inget utöver punkterna ovan.
+- Svara med en kort lista över ändrade filer.
+```
+
+</details>
+
 
 **Att göra för ägaren (Shopify admin, efter claim)**
 - Claima butiken senast ca 29 okt.

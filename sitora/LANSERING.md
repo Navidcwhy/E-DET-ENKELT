@@ -4,7 +4,9 @@
 - **Sajten:** vermo.se är publicerad med hela butiken. Förlanseringsläget är borttaget för gott.
 - **Kassan:** fungerar på vermo.se. Ägaren testade och fick upp kort, Klarna och Google Pay. Shopify har också Apple Pay och Shop Pay. Planen är Basic (betald).
 - **Funktioner:**
-  - fyra produkter med alla varianter testade
+  - tio produkter, varav nio publika. Stjärntecknet är dolt tills Ownprint har svarat, se OWNPRINT-FRAGA.md.
+  - alla 124 variantkombinationer och sex testvarukorgar testade (2 okt)
+  - bilder i varje vald färg. Pappa finns bara i guld och silver.
   - gravyrillustration i vald färg
   - köpknapp med animation och pling på varukorgen
   - tillverkare (Print-on-Demand B.V.) i produktsäkerhetsraden
@@ -16,13 +18,16 @@
 - **Tackkort:** €0,35 per order, betalas av Vermo.
 
 ## Måste göras innan annonserna startar
-**Läget 2 okt kl. 12:**
+**Läget 2 okt kl. 14:**
 - Klart:
   - 4, tackkortet.
   - 5, fraktpolicyn: kontrollerad via API och den lovar ingen ask.
   - 3, faktureringen: momsnumret är giltigt i VIES och väntar på Ownprints nya kontroll.
+  - Runda 4: sex nya produkter och färgbilder, granskad.
 - Punkt 1 ersätts: Shopify har ännu ingen order. Eftersom varje order betalas för hand i Ownprint kontrolleras gravyrtexten på första riktiga ordern, innan du betalar.
+- **Nytt, 0:** publicera i Lovable när runda 5 är granskad. Runda 5 tar bort rester från de första byggena: "Bästsäljare", platshållare, presentkort som inte går att köpa och "UTKAST". Ägaren gör det på 1 minut.
 - Kvar: 6, pixlarna, och 7, filmerna.
+- Blockerar inte: skicka Ownprint-frågan om Stjärntecknet (OWNPRINT-FRAGA.md).
 
 | # | Vad | Vem | Tid |
 |---|---|---|---|
@@ -35,8 +40,17 @@
 | 7 | **Annonsmaterial:** filma provet, 5–10 korta klipp: uppackning, närbild på gravyren och smycket på. Riktiga klipp säljer bättre än mockups och är sanna. | Ägaren | 1 tim |
 
 ## Bör göras de första två veckorna
-- **Bilder i silver och roséguld** för de fyra produkterna, via Ownprints steg Mockups. Se DESKTOP-PROMPT-2.md.
-- **Fler produkter:** se nedan och DESKTOP-PROMPT-2.md.
+- ~~**Bilder i silver och roséguld** för de fyra produkterna.~~ Klart 2 okt (runda 4).
+- ~~**Fler produkter.**~~ Klart 2 okt: sex nya, se tabellen nedan.
+- **Presentkort före jul:**
+  - Skapa ett presentkort i Shopify (300, 500 och 700 kr) och koppla sidan /presentkort.
+  - Det kostar inget extra på Basic.
+  - Det är det enda som går att sälja efter sista beställningsdag för jul (7 december).
+  - Gör det i november, inte nu: köpflödet för en vara utan gravyr behöver testas.
+- **Nyhetsbrevet:** anmälningarna sparas i Lovable Cloud (tabellen newsletter_signups) med samtycke och tid. Före Black Week:
+  - Importera dem som Shopify-kunder med samtycke till marknadsföring.
+  - Skicka med Shopify Email.
+- **Recensioner:** sektionen på startsidan är dold tills det finns riktiga recensioner. Välj en recensionsapp som fungerar med en fristående sajt, t.ex. Judge.me, och be om omdöme cirka 10 dagar efter leverans.
 - **Svenska rubriker i orderbekräftelsen:** se nedan.
 - **Betalikoner på sajten** (Klarna, Apple Pay, Google Pay, kort). Alla är nu bekräftat aktiva.
 - **Pappa:** €16,50 i inköp ger bara cirka 200 kr i täckningsbidrag vid 599 kr. Med 649 kr blir det cirka 240 kr.
@@ -47,8 +61,8 @@
 - Google Search Console.
 - Erbjudandet "Köp två, spara 100 kr" till Black Week. Två Hjärtat ger då cirka 480 kr i täckningsbidrag, mot cirka 255 kr för ett.
 
-## Sortimentet: räcker fyra produkter?
-- **Ja, för att starta.** Annonser bör ändå bara driva trafik till 1–2 vinnare (Hjärtat, Familjen), och en fokuserad butik konverterar bra.
+## Sortimentet (tio produkter sedan 2 okt)
+- **Fyra hade räckt för att starta.** Annonser bör ändå bara driva trafik till 1–2 vinnare (Hjärtat, Familjen), och en fokuserad butik konverterar bra.
 - **Lägg till 4–6 produkter före Black Week och julen.** Ett billigare instegspris ger fler presenttillfällen och höjer ordervärdet. Sista beställningsdag för jul är 7 december.
 - **Inköpspriserna hos Ownprint är nästan desamma för alla produkter.** Ett lägre pris ger därför direkt lägre marginal.
 - **Antagande:** en annonserad försäljning kostar 150–300 kr i början. Det ska valideras med en testbudget på 2 000–3 000 kr.
