@@ -224,7 +224,7 @@ Granskning av koden hittade:
   - Inga leverantörsnamn i kundtext.
   - "Kina" står bara på de dolda Standard-raderna (FAQ och leveranssidan, som bara visas i förhandsvisningen).
   - Skrivstilen (Great Vibes) laddas i __root.tsx. De gamla AI-produktbilderna används inte längre.
-- **Rättelse skickad till Lovable** (umsg_01m3xvpjx6fbxag9rsccq6bt5e): bild-id:n som allowlist, ett galleri, en fristående SVG-illustration av gravyren i Cormorant Garamond, ny hero, Familjens knapp, tecknen, GPSR-raden, en länk från köpvillkoren till /kontakt och PRELAUNCH=true. Inget publiceras. Prompten finns nedan.
+- **Rättelse skickad till Lovable** (umsg_01m3xvpjx6fbxag9rsccq6bt5e). Planen var klar kl. 08.35 (2,7 krediter), täcker alla sju punkterna och **väntar på att ägaren godkänner den i editorn**. Innehåll: bild-id:n som allowlist, ett galleri, en fristående SVG-illustration av gravyren i Cormorant Garamond, ny hero, Familjens knapp, tecknen, GPSR-raden, en länk från köpvillkoren till /kontakt och PRELAUNCH=true. Inget publiceras. Prompten finns nedan.
 - **Till nästa Lovable-runda (litet):** integritetspolicyn på sajten säger "Gravyr- och korttexter raderas …". Ändra till "Gravyrtexter", eftersom inga kort ingår.
 - **Shopify, kontrollerat 08.30:** fraktpolicyn säger fortfarande "Presentask och meddelandekort ingår." Ägaren klistrar in den igen från SHOPIFY-POLICYER.md.
 
