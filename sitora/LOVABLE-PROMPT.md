@@ -187,6 +187,180 @@ Granskning av koden hittade:
   - Varukorgen visar de tekniska fältnamnen på engelska ("Front Engraving", "Spelling Approved"). De bör visas med svenska etiketter.
   - FAQ säger "Vi levererar endast inom Sverige" två gånger.
 
+**2 okt: Ownprint-kopplingen är klar (commit 03f9040 och 09627fc, 9,9 krediter) och granskad**
+- **Fungerar:**
+  - Handles för de fyra snabba produkterna. Testprodukten är borttagen ur mappningen och **arkiverad** i Shopify.
+  - Variantval: alla 92 kombinationer av färg, baksida, månad och band ger rätt köpbar variant med rätt pris. Testat mot Storefront API med sajtens egen matchningslogik.
+  - Attributen `Front engraving text`, `Back engraving text`, `_Stavning godkänd` och `_Leveransval`. Fem testvarukorgar gav exakt text med å/ä/ö och ♥, och kassan ligger på shop.vermo.se.
+  - Gränserna 20/50 tecken med räknare.
+  - Måtten stämmer med Ownprints beskrivningar.
+  - "Veganskt läder".
+  - Inget typsnittsval.
+  - Löftena om presentask och meddelandekort är borta ur texterna.
+- **Brister som måste rättas före lansering:**
+  1. **Bilderna:**
+     - Sajten visar Shopify-bild 0. För Hjärtat, Familjen och Vår dag är det en svart presentask med tryckt kort ("Till dig, med all min kärlek."). Ask och kort ingår inte, så bilden är vilseledande.
+     - Samma bild är variantbild och syns därför i kassan och orderbekräftelsen. Se PRODUKTER.md, "Bilderna från Ownprint".
+  2. **Förhandsvisningen:**
+     - Texten läggs på fasta koordinater ovanpå fotot. Med Ownprints foton hamnar den bredvid hänget, i fel storlek, och fotot har redan exempeltext ("Ebba"). Kontrollerat med en lokal rendering.
+     - Den använder skrivstil, men Ownprints bilder visar rak antikva.
+  3. **Hero-bilden** (AI) visar ett annat hjärta än det vi säljer, med skrivstil.
+  4. **Småsaker:**
+     - Familjens köpknapp säger "Kombinationen är inte tillgänglig" innan en månad har valts.
+     - "Ingår: … – ingår" står dubbelt.
+     - "/", ":" och "°" är spärrade, trots att Vår dag lovar att koordinater får plats.
+- **Ägarens ändring 43a0bf4 (08.07), "Renaderade företagsuppgifter":**
+  - Köpvillkoren visar inte längre namn, adress och telefon. Produktsidan visar inte längre tillverkaren.
+  - Juridiskt går det, eftersom /kontakt och /produktsakerhet har alla uppgifter.
+  - Men GPSR art. 19 kräver att själva produkterbjudandet anger tillverkare samt post- och e-postadress. Dessutom leder footerlänken "Företagsuppgifter" till en sektion utan adress och telefon.
+- **Publicering:**
+  - vermo.se är publicerad med en **äldre version**. Förlanseringssidan visar kundservice@vermo.se, en adress som inte finns.
+  - Koden har nu PRELAUNCH=false. Publiceras den som den är blir hela butiken öppen, trots att kassan är blockerad av butikslösenordet.
+  - Därför: sätt PRELAUNCH=true, publicera, och sätt false vid lansering.
+- **Rättelse till Lovable** (skickas när genomsökningen av hela koden är klar): bild-id:n som allowlist, ett galleri, en fristående SVG-illustration av gravyren i Cormorant Garamond, ny hero, Familjens knapp, tecknen, GPSR-raden, en länk från köpvillkoren till /kontakt och PRELAUNCH=true. Inget publiceras. Prompten finns nedan.
+
+<details><summary>Prompten (2 okt)</summary>
+
+```text
+Granskning av commit 09627fc (Ownprint-kopplingen) och 43a0bf4 (företagsuppgifter).
+
+Det här fungerar och ska behållas:
+- handles och variantval
+- priserna
+- attributen "Front engraving text", "Back engraving text" och "_Stavning godkänd"
+- teckengränserna 20 och 50
+- måtten
+- veganskt läder
+
+Jag har testat alla 92 variantkombinationer och fem varukorgar mot Storefront API. Alla blev rätt.
+
+Men bilderna och förhandsvisningen måste rättas före lansering. Gör först en plan och vänta på godkännande. Publicera inte.
+
+1. BILDER: VISA ALDRIG ASK, KORT ELLER ENGELSK TEXT
+Flera av Ownprints bilder visar sådant som inte ingår, och de är därför vilseledande:
+- svart presentask med tryckt kort ("Till dig, med all min kärlek." och "Till världens bästa pappa.")
+- kartong med texten "MORE THAN JUST JEWELRY"
+- engelsk text
+- gravyr av foton eller fotspår, som vi inte erbjuder
+
+Bild 0 är en av dem, och sajten använder den i dag som huvudbild.
+
+Gör så här:
+- Lägg till `imageIds: string[]` på leveransvalet i productGroups.ts.
+- Hämta `id` på bilderna i Storefront-frågan.
+- Visa bara bilder vars id står i listan, i listans ordning. Andra Shopify-bilder visas aldrig, inte heller bilder som partnern lägger till senare.
+- Första id:t är huvudbilden i produktlistor, sök, varukorgen (bilden som skickas med addLine) och på produktsidan.
+
+Godkända bilder:
+- hjartat-snabb-leverans:
+  gid://shopify/ProductImage/100780440977798,
+  gid://shopify/ProductImage/100780440945030,
+  gid://shopify/ProductImage/100780440879494,
+  gid://shopify/ProductImage/100780440912262
+- familjen-snabb-leverans:
+  gid://shopify/ProductImage/100781280002438,
+  gid://shopify/ProductImage/100781279904134,
+  gid://shopify/ProductImage/100781279969670,
+  gid://shopify/ProductImage/100781279936902,
+  gid://shopify/ProductImage/100781280100742 (tabell med födelsestenarnas färger)
+- var-dag-snabb-leverans:
+  gid://shopify/ProductImage/100781319061894,
+  gid://shopify/ProductImage/100781319029126,
+  gid://shopify/ProductImage/100781318963590,
+  gid://shopify/ProductImage/100781318996358
+- pappa-snabb-leverans:
+  gid://shopify/ProductImage/100781359071622,
+  gid://shopify/ProductImage/100781358973318,
+  gid://shopify/ProductImage/100781359038854,
+  gid://shopify/ProductImage/100781359006086,
+  gid://shopify/ProductImage/100781359104390,
+  gid://shopify/ProductImage/100781359137158
+
+Övrigt om bilderna:
+- Om ingen godkänd bild hittas: visa gravyrillustrationen från punkt 2, aldrig en okänd Shopify-bild.
+- Produktsidan får ett bildgalleri med de godkända bilderna: huvudbild och miniatyrer, och svepbart på mobil.
+- Alt-texter på svenska, till exempel "Hjärtat i guldfärg med exempelgravyr, bild 2 av 4".
+- Under galleriet: "Bilderna visar exempeltext och oftast guldfärg. Din färg och din text syns i illustrationen."
+
+2. GRAVYRFÖRHANDSVISNINGEN: LÄGG INTE TEXT OVANPÅ FOTON
+I dag lägger EngravingPreview kundens text på fasta koordinater mitt i bilden. Med Ownprints foton blir det fel:
+- texten hamnar utanför smycket och blir större än hänget
+- fotona har redan exempeltext ("Ebba", "12.06.2021", "Pappa") som syns samtidigt
+
+Gör om förhandsvisningen till en fristående SVG-illustration, alltså inte ovanpå något foto.
+
+Form per produkt:
+- Hjärtat: hjärta.
+- Familjen: runt mynt med en liten berlock i födelsemånadens färg. Ungefärliga färger:
+  jan #8B1A2B, feb #6B3FA0, mar #7FD3E6, apr #F2F2F2 med tunn kant, maj #1E8C4E, jun #E7A6C8,
+  jul #C2182B, aug #9ACD32, sep #1F3F9A, okt #F4A3C0, nov #F2C14E, dec #2E7DD7.
+  Ingen berlock förrän en månad är vald.
+- Vår dag: smal bar med proportionerna 6 × 39 mm.
+- Pappa: ny form "plate", en liggande rektangulär platta på ett band i vald bandfärg (svart eller brunt). Pappa använder i dag "bar", vilket är fel form.
+
+Utseende och innehåll:
+- Metallfärg efter vald färg, med diskret gradient: Silverfärg #C0C0C0, Guldfärg #D4AF37, Roséguldfärg #B76E79.
+- Texten sätts i rak antikva, var(--font-display) (Cormorant Garamond), aldrig i skrivstil. Ownprints produktbilder visar gravyr i rak antikva.
+  - Ta bort `font="script"` och skrivstilen ur förhandsvisningen.
+- Framsidan visas på en rad som skalas för att få plats.
+- När kunden har valt hälsning på baksidan: visa en andra illustration, "Baksida", bredvid eller under.
+  - Radbrytning till högst 3 rader på hjärta och mynt, och högst 2 rader på bar och platta.
+  - Texten skalas för att få plats.
+- Bildtext: "Illustration av gravyren. Typsnitt, storlek och radbrytning anpassas till smycket och kan skilja något."
+
+Placering:
+- Illustrationen placeras direkt under galleriet. På mobil kommer den direkt efter huvudbilden.
+- Den uppdateras medan kunden skriver och väljer färg, månad och band.
+- Startsidan, steg 2: byt "Se texten direkt på smycket medan du skriver." mot "Se en förhandsvisning av gravyren medan du skriver."
+
+3. HERO-BILDEN
+hero-heart-sv.jpg är AI-genererad: ett symmetriskt hjärta i roséguld med "Alltid med dig" i skrivstil. Det vi säljer är Ownprints sneda hjärta med gravyr i rak antikva.
+- Byt hero-bilden på startsidan och förlanseringssidan, och og:image, mot Hjärtats godkända foto:
+  https://cdn.shopify.com/s/files/1/1109/0355/8534/files/customzied_mockup_0d8d616d-5c3f-4519-b0e5-c9eed43cb4b0.jpg?v=1790861993
+  - Ladda ned den till src/assets och public om det går. Använd annars URL:en med width-parameter.
+  - Bilden är kvadratisk (2000 × 2000). Hjärtat ligger till höger om mitten, så beskär så att hjärtat syns i heron på både mobil och dator.
+- Ta bort de gamla AI-bilderna (src/assets/product-*.jpg, src/assets/hero-heart*.jpg, public/hero-heart-sv.jpg) när de inte längre används.
+
+4. FAMILJEN: FÖDELSEMÅNAD
+- Så länge ingen månad är vald ska köpknappen säga "Välj födelsemånad", inte "Kombinationen är inte tillgänglig".
+- Knappen ska vara klickbar när bara månaden saknas. Ett klick flyttar fokus till månadsväljaren och visar felet.
+- Visa ingen röd varning innan kunden har försökt. Visa hjälptexten "Ingen månad är förvald." som i dag.
+
+5. SMÅSAKER
+- includedItems: "Ingår: Fri frakt · Gravera en hälsning på baksidan – ingår · Inga tullavgifter" säger "ingår" två gånger. Ändra punkten till "Hälsning graverad på baksidan".
+  - Bannern och USP-raden får behålla sin text.
+- Tillåtna tecken: lägg till "/", ":" och "°", så att datum som 14/6 2019 och koordinater som 59°19'N fungerar.
+  - Ändra Vår dags hjälptext till: "Datum eller namn på framsidan (max 20 tecken). Koordinater, t.ex. 59°19'N 18°04'E, får plats på baksidan."
+  - Tecknen kontrolleras i provbeställningen.
+- Sök igenom hela koden efter löften om ask eller kort ("presentask", "meddelandekort", "presentförpackning", "i ask", "kort med"). Ta bort de som finns kvar.
+
+6. ÄGARENS ÄNDRING 43a0bf4: BEHÅLL DEN, MEN KOMPLETTERA
+- Produktsidan:
+  - GPSR (EU 2023/988, art. 19) kräver att själva erbjudandet anger tillverkarens namn samt post- och e-postadress.
+  - Lägg tillbaka det som en hopfällbar rad, "Produktsäkerhet och tillverkare", längst ned i "Om smycket".
+  - Den ska vara stängd från början och innehålla `profile.safety.manufacturer` och varningen om smådelar.
+- Köpvillkor:
+  - Footerlänken "Företagsuppgifter" går till #foretagsuppgifter, där adress och telefon nu saknas.
+  - Lägg till meningen "Fullständiga uppgifter med namn, adress och telefon finns på sidan Kontakt." och länka till /kontakt.
+
+7. FÖRLANSERING
+- vermo.se är publicerad med en äldre version. Förlanseringssidan visar kundservice@vermo.se, en adress som inte finns.
+- Sätt PRELAUNCH = true i src/config/launch.ts.
+  - När ägaren publicerar nästa gång visar vermo.se då bara förlanseringssidan, med info@vermo.se.
+  - Förhandsvisningen och förhandsvisningskakan visar fortfarande hela butiken.
+  - Vid lansering sätts PRELAUNCH = false igen.
+- Publicera inte i den här ändringen.
+
+KONTROLL INNAN DU ÄR KLAR
+- Inga bilder med ask, kort eller engelsk text visas någonstans, varken i listor, sök, på produktsidan, i varukorgen eller i heron.
+- Illustrationen visar rätt form, färg, berlock och band, med texten i Cormorant Garamond.
+- Testa fyra varukorgar igen: Hjärtat Roséguldfärg med baksida, Familjen Guldfärg mars utan baksida, Vår dag Silverfärg med baksida och Pappa Guldfärg brunt band.
+  - Variant, pris och attribut ska vara oförändrade.
+- Svara med en kort lista över ändrade filer.
+```
+
+</details>
+
 **Att göra för ägaren (Shopify admin, efter claim)**
 - Claima butiken senast ca 29 okt.
 - Butiksnamn "Sitora".

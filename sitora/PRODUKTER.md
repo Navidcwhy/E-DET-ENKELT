@@ -35,6 +35,30 @@ Produkterna är aktiva, säljaren är "Vermo", inga jämförpriser är satta, oc
 
 **Kontroll:** Storefront API (kanalen Lovable) ser alla fyra produkterna. En testvarukorg med "Front engraving text"/"Back engraving text" skapades, och kassan ligger på shop.vermo.se. Inga CJ-produkter är upplagda än.
 
+**Kontroll efter Lovables koppling (2 okt, commit 09627fc):**
+- Alla 92 kombinationer som sajten kan välja ger rätt variant, är köpbara och kostar rätt (599/699/599/599 SEK). Kombinationerna är färg × baksida × födelsemånad × band.
+- Alla alternativvärden är NFC-normaliserade, så "é" och "ä" matchar exakt.
+- Fem testvarukorgar gav rätt variant, pris, `Front engraving text` och `Back engraving text`. Kassan ligger på shop.vermo.se. ♥ och å/ä/ö gick igenom oförändrade.
+- Testprodukten är **arkiverad**. Den kan återställas, och sajten använder den inte längre.
+
+## Bilderna från Ownprint (2 okt)
+Varje produkt har 8–9 bilder i 2000 × 2000. **Alla varianter använder bild 0 som variantbild**, och den visas därför i Shopifys kassa och orderbekräftelse.
+
+| Produkt | Visa aldrig (vilseledande) | Godkända, i ordning (första = huvudbild) |
+|---|---|---|
+| Hjärtat | 0, 1, 7: svart ask med tryckt kort "Till dig, med all min kärlek." · 6: kartong "MORE THAN JUST JEWELRY" | 5, 4, 2, 3 |
+| Familjen | 0, 1, 6, 7 (samma som Hjärtat) | 5, 2, 4, 3, 8 (tabell över födelsestenar) |
+| Vår dag | 0, 1, 6, 7 (samma som Hjärtat) | 5, 4, 2, 3 |
+| Pappa | 6: engelsk text på plattan · 7: gravyr av foton och fotspår, som vi inte erbjuder · 8: ask med kort "Till världens bästa pappa." | 3, 0, 2, 1, 4, 5 |
+
+- **Ask och kort ingår inte** (ägarens besked 2 okt), så bilderna med ask och kort är vilseledande enligt marknadsföringslagen.
+- **Sajten:** Lovable ska bara visa godkända bild-id:n. Prompten är skickad, se LOVABLE-PROMPT.md 2 okt.
+- **Kassan och mejlen:** variantbilden behöver bytas till en godkänd bild. Det ändrar varianter i en leverantörsprodukt, så **ägaren behöver godkänna** det.
+  - Bara bilden byts. Pris, SKU, alternativ och lager rörs inte.
+  - Alternativet är att ta bort ask-bilderna i Ownprint-appen.
+- **Gravyrens typsnitt** på Ownprints bilder ("Ebba", "12.06.2021", "Pappa") är rak antikva, inte skrivstil. Sajtens förhandsvisning byts därför till Cormorant Garamond. Det slutliga beskedet ger provbeställningen.
+- **Hero-bilden** på vermo.se är AI-genererad: ett symmetriskt hjärta med "Alltid med dig" i skrivstil, alltså inte produkten vi säljer. Den byts mot Hjärtats bild 5 tills egna foton finns.
+
 ## Läget 1 okt (kontrollerat via Shopify-kopplingen)
 | Område | Läge |
 |---|---|

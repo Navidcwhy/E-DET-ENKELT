@@ -1,25 +1,63 @@
-# Provbeställning: Ownprint (1 okt 2026)
+# Provbeställning: Ownprint (uppdaterad 2 okt 2026)
 
 **Leverantör:** Ownprint (ownprint.co). Graverar i Rotterdam, alltså inom EU. Shopify-appen heter "Ownprint: Print on Demand".
-**Syfte:** att samtidigt testa kvalitet, å/ä/ö, leveranstid till dörren, förpackning och orderflödet från Vermo-butiken.
+**Syfte:** att testa på en gång:
+- gravyrens kvalitet och typsnitt
+- specialtecken
+- leveranstid till dörren
+- förpackning
+- hela orderflödet från vermo.se till Ownprint
 
-## Steg
-1. **Koppla appen:** skapa ett konto på ownprint.co och installera Ownprint-appen i Vermo-butiken i Shopify.
-2. **Skapa produkterna** i Ownprint-appen (se tabellen) och publicera dem till Shopify. Butiken på vermo.se är stängd för besökare, så de syns bara i förhandsvisningen.
-3. **Prov 1 via Shopify-temat**, med Ownprints eget gravyrfält. Öppna sedan ordern i Shopify admin och ta en skärmdump av raden med gravyrtexten (fältnamnen). Med den byter vi nycklarna i Lovable.
-4. **Prov 2–4 via vermo.se/?preview=vermo2026**, med vår egen gravyrruta och vanlig kassa. Kontrollera i Ownprint att gravyrtexten kommer fram exakt.
-5. **Mät** beställningsdatum och leveransdatum, gravyrens skärpa, å/ä/ö, plätering, presentask och meddelandekort.
+**Klart:**
+- De fyra produkterna finns i Shopify och är kopplade på sajten.
+- Ownprint läser fälten `Front engraving text` och `Back engraving text`.
+- Sajten skickar dem exakt så. Det är testat med varukorgar 2 okt.
 
-## Prover
-| # | Produkt | Färg | Gravyr | Testar |
-|---|---|---|---|---|
-| 1 | Hjärta | Guld | Fram: "Åsa". Bak: "Alltid med dig". Kort: "Till min dotter" | å, baksida, kort, Ownprints eget gravyrfält |
-| 2 | Mynt | Silver | "Märta" / "Björn" (två rader) | ä, ö, flera rader, vår butik |
-| 3 | Bar | Roséguld | "Linnéa 14.06.2019" | é, siffror |
-| 4 | Armband | Silver | "Bästa pappa" | herrprodukt |
+## Före beställningen
+1. **Vänta tills Lovables bildrättelse är klar** (se LOVABLE-PROMPT.md, 2 okt), så att du testar den riktiga förhandsvisningen.
+2. **Betalning.** Välj ett av sätten:
+   - **A (rekommenderas):** en rabattkod på 100 %, för ett enda köp och giltig i 7 dagar. Ordern blir 0 kr och går igenom kassan utan kortbetalning, och Ownprint debiterar dig produktionen som vanligt. Säg till, så skapar jag koden.
+   - **B:** betala vanligt med kort. Kräver att Shopify Payments är aktiverat. Pengarna går till dig själv, minus avgift.
+3. **Butikslösenordet.** Shopify-temat är lösenordsskyddat, och det blockerar kassan. Öppna shop.vermo.se, ange lösenordet och använd sedan samma webbläsare.
+4. **Öppna butiken via förhandsvisningen:** vermo.se/?preview=vermo2026. Annars visas bara förlanseringssidan.
 
-**Kostnad (uppskattning):** 3 × €12 + €16,50 + baksida €3,50 + frakt €6,95 + 3 × €3 ≈ €72, alltså cirka 800 kr.
+## Prover (en order, fyra rader)
+| # | Produkt | Val | Fram (max 20) | Bak (max 50) | Testar |
+|---|---|---|---|---|---|
+| 1 | Hjärtat | Roséguldfärg, med baksida | `Åsa & Öjvind` | `Alltid med dig ♥ 14/6` | å, Ö, &, ♥, /, baksida |
+| 2 | Familjen | Guldfärg, mars, utan baksida | `Märta, Björn & Liv` | – | ä, ö, lång text på myntet, födelsesten |
+| 3 | Vår dag | Silverfärg, med baksida | `Linnéa 14.06.2019` | `59°19'N 18°04'E` | é, siffror, °, ' |
+| 4 | Pappa | Guldfärg, brunt band, med baksida | `Bästa pappa` | `Från Ella: 2026` | ä, kolon, band, plattan |
+
+**Kostnad (uppskattning):**
+- Produkter: €11,5 + €13,5 + €11,5 + €16,5.
+- Baksida: 3 × €3,50.
+- Frakt: €6,95 + 3 × €3.
+- Totalt cirka €79, alltså cirka 880 kr.
+
+## Kontrollera
+1. **I Shopify admin**, på ordern:
+   - Varje rad har rätt variant (färg, baksida, månad, band).
+   - `Front engraving text` och `Back engraving text` står exakt som du skrev, med å/ä/ö.
+2. **I Ownprint-appen:** ordern har tagits emot med samma texter. Ta en skärmdump.
+3. **När paketet kommer:**
+   - **Typsnitt:** rak antikva, som på Ownprints bilder? Jämför med sajtens illustration.
+   - **Tecken:** ♥, °, /, : och & ska vara graverade och inte bytta eller borttagna.
+   - **Skärpa och placering:** hur 18–20 tecken på myntet och 50 tecken på baksidan ser ut.
+   - **Plätering:** färgton per färg. Stämmer Roséguldfärg med bilden?
+   - **Förpackning:**
+     - Vad ingår (påse, ask, kort)?
+     - Finns Ownprints logga eller priser? Packsedeln?
+     - Fotografera allt. Bilderna blir sajtens "Så kommer ditt smycke".
+   - **Leveranstid:** beställningsdag, avsändningsdag och leveransdag. Jämför med löftet 2–5 + 1–10 arbetsdagar.
+4. **Mejl:** orderbekräftelsen och fraktbekräftelsen kommer från info@vermo.se, och bilden i mejlet visar ingen ask.
 
 ## Beslut runt 12 oktober
-- **Godkänt:** Ownprint blir leverantör. Byt `[PRODUKTIONSPARTNER]` och tillverkare/EU-ansvarig (Print-on-Demand B.V.) i Lovable och Shopify, och mät upp `supplier.ts`.
-- **Underkänt** (å/ä/ö fungerar inte, dålig kvalitet eller mer än 10 arbetsdagar): utvärdera CJ (Kina) med senare julklappsdeadline, se PLAN.md avsnitt 4b.
+- **Godkänt:**
+  - Lansera med Snabb leverans.
+  - Byt hero- och produktbilder mot egna foton av proverna.
+  - Justera förhandsvisningens typsnitt och de tillåtna tecknen efter resultatet.
+- **Underkänt** (å/ä/ö fungerar inte, dålig kvalitet eller mer än 10 arbetsdagar):
+  - Reklamera hos Ownprint och gör ett nytt prov.
+  - CJ är pausad tills vidare (se PRODUKTER.md).
+- Tillverkare enligt GPSR är fortfarande **Sitora**, eftersom vi säljer under eget varumärke. Ownprint anges inte på sajten.
