@@ -9,6 +9,37 @@ Kunden ser en produkt och väljer **Snabb leverans** (EU-partnern Ownprint) elle
 - **Tackkortet:** rekommendationen är att inte slå på det vid lanseringen. Det kostar cirka 17 kr per order och är inte personligt. Det prövas senare om data visar att det behövs.
 - **CJ:** ingen produkt uppfyllde kraven. Standardleveransen förblir avstängd (ECONOMY_ENABLED=false), och lanseringen sker med endast Snabb leverans.
 
+## Nya produkter 2 okt (skapade via Desktop-prompt 2, publicerade till Lovable av Claude)
+| Produkt | Handle | Pris | Variant | Särskilt |
+|---|---|---|---|---|
+| Namnet | `namnet-snabb-leverans` | 499 | baksida × färg | Ownprints design i **skrivstil** ("Sophia"). Bar 10 × 40 mm. |
+| Stjärntecknet | `stjarntecknet-snabb-leverans` | 499 | baksida × färg | Valfältet **"Stjärntecken"** med 12 värden ("Väduren/Aries" …). Bilderna visar Lejonet. **Bara i förhandsvisningen** tills Ownprint svarar, se OWNPRINT-FRAGA.md. |
+| Initialen | `initialen-snabb-leverans` | 449 | baksida × färg | Bricka 22 × 39 mm, stor initial i rak antikva |
+| Armringen | `armringen-snabb-leverans` | 499 | baksida × färg | Armring 6,5 × 5 cm, mynt 20 mm, dekorativ "A&M"-design i skrivstil |
+| Pärlan | `parlan-snabb-leverans` | 699 | baksida (bara Guldfärg) | 18 + 5 cm, pärlor av skalpulver (pärlemor) 6 mm, mynt 20 mm. Inga påståenden om "hypoallergen". |
+| Nyckelringen | `nyckelringen-snabb-leverans` | 399 | baksida × färg | Hjärta 20 × 25 mm, design "M♥J" |
+
+**Gemensamt för de nya:**
+- Alla ligger i Ownprints fraktprofil, och Sverige har Fri frakt 0 (kontrollerat).
+- Inga jämförpriser.
+- Fälten är `Front engraving text` (20) och `Back engraving text` (50).
+- Den gamla Stjärntecknet (stjärntecknet som variant, 72 varianter, inget namnfält) är arkiverad.
+
+**Bilder:**
+- Hjärtat, Familjen, Vår dag och alla nya produkter (utom Pärlan) har bilder i guld, roséguld och silver.
+- Klassade 2 okt: asken, kartongen och engelsk text är dolda.
+- **Namnets bild 11 visar fel produkt** (en liggande silverbar) och visas aldrig.
+- Pärlan: leverantörsfoton i guld. Måttbilden har engelsk text och är dold.
+- Pappa fick inga nya silverbilder, men två befintliga visar silver.
+- Id:na per färg finns i Lovable-prompten för runda 4 (LOVABLE-PROMPT.md).
+
+**Täckningsbidrag före annons** (se LANSERING.md):
+- Namnet, Armringen och Stjärntecknet: ca 180 kr.
+- Initialen: ca 145 kr.
+- Nyckelringen: ca 105 kr, eller ca 150 kr som extra vara.
+- Pärlan: ca 270 kr.
+- Inköp enligt Desktop-rapporten: silver €11, guld och roséguld €12, baksida +€3,50.
+
 ## Beslut 2 okt, kväll
 - **Asken:**
   - Ägarens prov kom i presentask, men asken **lovas inte i text**, varken på sajten eller i policyerna. Ask-bilderna visas inte heller.

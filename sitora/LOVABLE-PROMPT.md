@@ -501,6 +501,175 @@ KONTROLL
   - PRELAUNCH=false.
   - Gäller på vermo.se när ägaren publicerar.
 
+**2 okt kl. 13: runda 4, sex nya produkter och färgbilder (umsg_01m3y6gbx8edb9tt0kx93rysk6)**
+- **Shopify:** de sex nya är publicerade till Lovable-kanalen (Namnet, Stjärntecknet, Initialen, Armringen, Pärlan, Nyckelringen).
+- **Bilderna:** 206 bilder är klassade per färg och stil. Asken, kartongen, engelsk text och fel produkt är bortvalda.
+- **Beställt i Lovable:**
+  - produktgrupper med texter och mått
+  - typsnitt per produkt (skrivstil för Namnet och Armringen)
+  - nya former: vbar, tag, bangle och keyring
+  - bild-id:n per färg
+  - ett generellt valfält för Stjärntecken med radegenskapen "Stjärntecken"
+  - previewOnly för Stjärntecknet
+  - sitemap
+- Inget publiceras.
+
+<details><summary>Prompten för runda 4</summary>
+
+```text
+Sex nya produkter och bilder i alla färger. Genomför direkt utan planrunda och publicera inte. Ändra inte PRELAUNCH (false).
+
+Alla nya produkter finns i Shopify och är publicerade till kanalen Lovable. De har samma upplägg som Hjärtat:
+- varianter: "back engraving" (Without/With back engraving) × "plating" (Roséguldfärg/Guldfärg/Silverfärg)
+- radegenskaper: "Front engraving text" (max 20) och "Back engraving text" (max 50)
+- Pärlan finns bara i Guldfärg.
+- Stjärntecknet har dessutom ett valfält, se nedan.
+
+1. NYA PRODUKTGRUPPER (productGroups.ts, alla med fast-leverans EU)
+Ordning på sajten: Hjärtat, Familjen, Vår dag, Namnet, Stjärntecknet, Initialen, Armringen, Pärlan, Pappa, Nyckelringen. Bestseller ändras inte (Hjärtat, Familjen, Vår dag).
+
+a) Namnet: handle namnet-snabb-leverans
+- tagline "Namnhalsband med ditt namn"
+- beskrivning "En smal lodrät bar med ett namn i skrivstil – personligt och lätt att bära varje dag."
+- mått ["Bar: 10 × 40 mm", "Kedja: 45 + 5 cm"]
+- mottagare mamma, dotter, partner, syster-van
+- färger silver, guld, rose
+- framsida: etikett "Namn", hjälptext "Namnet graveras i skrivstil (max 20 tecken).", placeholder "T.ex. Sophia"
+- form "vbar" (ny, lodrät bar 10 × 40)
+- typsnitt i illustrationen: skrivstil
+
+b) Stjärntecknet: handle stjarntecknet-snabb-leverans, previewOnly: true (se punkt 4)
+- tagline "Mynt med stjärntecken och namn"
+- beskrivning "Ett graverat mynt med ditt stjärntecken och ett namn."
+- mått ["Mynt: 20 × 20 mm", "Kedja: 45 + 5 cm"]
+- mottagare mamma, dotter, partner, syster-van
+- färger silver, guld, rose
+- framsida: etikett "Namn", hjälptext "Namnet graveras under stjärntecknet (max 20 tecken).", placeholder "T.ex. Elsa"
+- form "coin" med stjärnteckenssymbolen (♈︎–♓︎ i textstil) ovanför namnet
+- typsnitt rak antikva
+- Galleriets bildtext: "Bilderna visar stjärntecknet Lejonet och exempeltext."
+
+c) Initialen: handle initialen-snabb-leverans
+- tagline "Bricka med en initial"
+- beskrivning "En rektangulär bricka med en stor initial – enkel, tidlös och personlig."
+- mått ["Bricka: 22 × 39 mm", "Kedja: 45 + 5 cm"]
+- mottagare mamma, dotter, partner, syster-van, pappa
+- färger silver, guld, rose
+- framsida: etikett "Initial eller kort text", hjälptext "Graveras stort på brickan. En bokstav blir tydligast (max 20 tecken).", placeholder "A"
+- form "tag" (ny, stående bricka 22 × 39 med avfasade hörn)
+- typsnitt rak antikva
+
+d) Armringen: handle armringen-snabb-leverans
+- tagline "Armring med era initialer"
+- beskrivning "En öppen armring med ett graverat mynt – era initialer i en dekorativ design."
+- mått ["Armring: 6,5 × 5 cm (en storlek)", "Mynt: 20 mm"]
+- mottagare partner, mamma, dotter, syster-van
+- färger silver, guld, rose
+- framsida: etikett "Initialer", hjälptext "T.ex. A & M. Graveras i en dekorativ design på myntet (max 20 tecken).", placeholder "A & M"
+- form "bangle" (ny: tunn öppen båge med ett hängande mynt där texten står)
+- typsnitt skrivstil
+
+e) Pärlan: handle parlan-snabb-leverans
+- tagline "Pärlarmband med graverat mynt"
+- beskrivning "Pärlor och guldfärgade kulor med ett graverat mynt för en initial, ett datum eller ett namn."
+- mått ["Armband: 18 cm + 5 cm förlängning", "Mynt: 20 mm", "Pärlor: 6 mm", "Kulor: 4 mm"]
+- materialOverride "Pärlor av skalpulver (pärlemor). Kulor, kedja och mynt i rostfritt stål med 18K guldplätering. Vaxad bomullstråd i pärldelen."
+- Skriv INTE "hypoallergen" eller "äkta pärlor".
+- mottagare mamma, partner, syster-van, dotter
+- färger bara guld
+- framsida: etikett "Gravyr framsida", hjälptext "T.ex. en initial och ett datum (max 20 tecken).", placeholder "H 17.03.96"
+- form "coin"
+- typsnitt rak antikva
+
+f) Nyckelringen: handle nyckelringen-snabb-leverans
+- tagline "Graverad nyckelring"
+- beskrivning "En hjärtformad nyckelring med era initialer – en vardaglig påminnelse."
+- mått ["Hjärta: 20 × 25 mm", "Nyckelring: 4–5 cm"]
+- mottagare pappa, partner
+- färger silver, guld, rose
+- framsida: etikett "Initialer eller kort text", hjälptext "T.ex. M ♥ J (max 20 tecken).", placeholder "M ♥ J"
+- form "keyring" (ny: hjärta med en liten ring ovanför)
+- typsnitt rak antikva
+
+Baksidan för alla nya: samma som i dag (valfri hälsning, max 50 tecken, ingår).
+
+2. TYPSNITT PER PRODUKT
+- Lägg till `font: "serif" | "script"` per produkt. Standard är serif (Cormorant Garamond).
+- Namnet och Armringen använder skrivstil. Ownprints design för dem är skriven skrivstil, enligt deras bilder.
+- Ladda tillbaka Great Vibes från Google Fonts för det, med display=swap.
+
+3. GODKÄNDA BILDER PER FÄRG (gid://shopify/ProductImage/<id>, i den här ordningen)
+Befintliga guld-listor är oförändrade, utom för Pappa.
+- hjartat: rose 100798222860678, 100798222827910, 100798222762374, 100798222795142 · silver 100798241046918, 100798241014150, 100798240948614, 100798240981382
+- familjen: rose 100798284104070, 100798284005766, 100798284071302, 100798284038534, 100781280100742 · silver 100798292885894, 100798292787590, 100798292853126, 100798292820358, 100781280100742
+- var-dag: rose 100798323655046, 100798323622278, 100798323556742, 100798323589510 · silver 100798333747590, 100798333714822, 100798333649286, 100798333682054
+- pappa (ersätt guld-listan): guld 100781359071622, 100781358973318, 100781359006086, 100781359137158, 100781359104390 · silver 100781359038854, 100781359104390
+- namnet: guld 100798383063430, 100798382965126, 100798382997894, 100798383030662 · rose 100798391714182, 100798391615878, 100798391681414 · silver 100798393155974, 100798393057670, 100798393090438, 100798393123206
+- armringen: guld 100798565351814, 100798565319046 · rose 100798566269318, 100798566236550 · silver 100798566465926, 100798566433158
+- initialen: guld 100798575640966, 100798575608198, 100798575542662, 100798575575430 · rose 100798576624006, 100798576591238, 100798576525702, 100798576558470 · silver 100798576886150, 100798576853382, 100798576787846, 100798576820614
+- nyckelringen: guld 100798628594054, 100798628561286 · rose 100798632198534, 100798632165766 · silver 100798632427910, 100798632395142
+- parlan: guld 100798656086406, 100798656217478, 100798656184710, 100798656250246, 100798656119174, 100798656283014
+- stjarntecknet: guld 100798946345350, 100798946247046, 100798946312582, 100798946279814 · rose 100798954537350, 100798954439046, 100798954504582, 100798954471814 · silver 100798954799494, 100798954701190, 100798954766726, 100798954733958
+
+Alla andra bilder ska fortsätta vara dolda:
+- asken
+- kartongen
+- engelsk text
+- Namnets bild 11, som visar fel produkt
+
+Galleriet byter nu till rätt färg när kunden väljer färg.
+
+4. STJÄRNTECKNET: VALFÄLT OCH FÖRHANDSVISNINGSLÄGE
+Valfältet:
+- Obligatoriskt fält "Stjärntecken" med en tom startrad "Välj stjärntecken".
+- Alternativen ska visas med svenskt namn och datum. Värdet som skickas ska vara EXAKT värdet till höger:
+  Väduren (21 mars–19 april) = "Väduren/Aries"
+  Oxen (20 april–20 maj) = "Oxen/Taurus"
+  Tvillingarna (21 maj–20 juni) = "Tvillingarna/Gemini"
+  Kräftan (21 juni–22 juli) = "Kräftan/Cancer"
+  Lejonet (23 juli–22 augusti) = "Lejonet/Leo"
+  Jungfrun (23 augusti–22 september) = "Jungfrun/Virgo"
+  Vågen (23 september–22 oktober) = "Vågen/Libra"
+  Skorpionen (23 oktober–21 november) = "Skorpionen/Scorpio"
+  Skytten (22 november–21 december) = "Skytten/Sagittarius"
+  Stenbocken (22 december–19 januari) = "Stenbocken/Capricorn"
+  Vattumannen (20 januari–18 februari) = "Vattumannen/Aquarius"
+  Fiskarna (19 februari–20 mars) = "Fiskarna/Pisces"
+- Skicka det som radegenskap med nyckeln EXAKT "Stjärntecken". Det är Ownprints fältnamn.
+- Varukorgen visar etiketten "Stjärntecken" och bara den svenska delen.
+- Köpknappen beter sig som för Familjens månad: "Välj stjärntecken" tills ett tecken är valt.
+- Lös det generellt, med ett valfritt valfält per produkt i personalization-konfigurationen, inte som specialfall i koden.
+
+Förhandsvisningsläget:
+- previewOnly: true betyder att produkten bara visas när showPreviewOptions är sant (Lovables förhandsvisning eller kakan ?preview=vermo2026).
+- Publikt syns den inte i listor, sök, sitemap eller som produktsida (404).
+- Det här påverkar INTE förlanseringsläget. PRELAUNCH ska vara false.
+- Orsak: vi väntar på att Ownprint bekräftar att de graverar det stjärntecken kunden väljer.
+
+5. SITEMAP OCH LISTOR
+- Lägg till de nya produktsidorna i sitemap.xml, utom de med previewOnly.
+- Mottagarfilter, sök och startsidans lista tar med de nya automatiskt.
+
+KONTROLL
+Testa varukorgar via sajtens egen kod:
+- Namnet Roséguldfärg med baksida
+- Stjärntecknet Silverfärg, Fiskarna (kontrollera att radegenskapen "Stjärntecken" = "Fiskarna/Pisces")
+- Initialen Guldfärg
+- Armringen Silverfärg
+- Pärlan Guldfärg med baksida
+- Nyckelringen Roséguldfärg
+
+Alla ska ge rätt variant och pris (499/499/449/499/699/399). De fyra befintliga ska vara oförändrade.
+
+Kontrollera också:
+- Galleriet byter bilder när färgen byts.
+- Inga bilder med ask eller kort syns någonstans.
+
+Svara med en kort lista över ändrade filer.
+```
+
+</details>
+
 **Att göra för ägaren (Shopify admin, efter claim)**
 - Claima butiken senast ca 29 okt.
 - Butiksnamn "Sitora".
