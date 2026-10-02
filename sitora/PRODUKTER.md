@@ -2,6 +2,32 @@
 
 Kunden ser en produkt och väljer **Snabb leverans** (EU-partnern Ownprint) eller **Standardleverans** (CN-partnern CJdropshipping). Partnernas namn syns aldrig på sajten. Varje val är en egen Shopify-produkt från respektive app, så ordern går automatiskt till rätt partner.
 
+## Ownprint-produkterna i Shopify (2 okt, läst via API)
+Produkterna är aktiva, säljaren är "Vermo", inga jämförpriser är satta, och alla ligger i Ownprints fraktprofil (92 varianter). Sverige har fortfarande "Fri frakt" för 0. Alla är publicerade till kanalen "Lovable".
+
+| Grupp | Handle | Pris | Variantalternativ |
+|---|---|---|---|
+| Hjärtat | `hjartat-snabb-leverans` | 599 | back engraving (Without/With back engraving) × plating (Roséguldfärg/Guldfärg/Silverfärg) |
+| Familjen | `familjen-snabb-leverans` | 699 | birthstone (January–December) × back engraving × plating (72 varianter) |
+| Vår dag | `var-dag-snabb-leverans` | 599 | back engraving × plating |
+| Pappa | `pappa-snabb-leverans` | 599 | band (Brown Leather/Black Leather) × back engraving × plating (Guldfärg/Silverfärg) |
+
+**Ownprints fält** (metafältet `ownprint.personalization_fields`):
+- `Front engraving text`: max 20 tecken, obligatoriskt.
+- `Back engraving text`: max 50 tecken. Visas bara när varianten är "With back engraving".
+- Födelsesten, band och baksida väljs via **variant**, inte via fält.
+- Det finns **inget fält** för meddelandekort eller typsnitt.
+
+**Konsekvenser för sajten:**
+- Varianten måste väljas utifrån färg, baksida (med/utan text), födelsesten och band.
+- Teckengränsen är 20 för framsidan och 50 för baksidan.
+- Inget val av typsnitt.
+- Pappa är **veganskt läder**, inte läder.
+- Meddelandekort och presentask ska bara lovas om Ownprints förpackning bekräftar dem.
+- Baksidesgravyren kostar oss cirka €3,50 extra (ingår för kunden enligt beslut).
+
+**Kontroll:** Storefront API (kanalen Lovable) ser alla fyra produkterna. En testvarukorg med "Front engraving text"/"Back engraving text" skapades, och kassan ligger på shop.vermo.se. Inga CJ-produkter är upplagda än.
+
 ## Läget 1 okt (kontrollerat via Shopify-kopplingen)
 | Område | Läge |
 |---|---|
