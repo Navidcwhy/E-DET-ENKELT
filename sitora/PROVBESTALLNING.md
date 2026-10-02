@@ -5,7 +5,8 @@
 > - I Ownprint-appen ska ordern visa `Front engraving text` och `Back engraving text` exakt, med å/ä/ö.
 > - Tecknen ♥ ° / : & ska graveras rätt.
 >
-> Fråga till ägaren: kom provet i presentask med kort? Ownprints FAQ säger att det ingår som standard.
+> Provet kom i presentask (ägaren 2 okt). Asken lovas ändå inte i text.
+> Testordern finns i LANSERING.md, punkt 1.
 >
 > Resten av dokumentet är kvar som referens.
 
