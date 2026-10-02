@@ -16,6 +16,14 @@
 - **Tackkort:** €0,35 per order, betalas av Vermo.
 
 ## Måste göras innan annonserna startar
+**Läget 2 okt kl. 12:**
+- Klart:
+  - 4, tackkortet.
+  - 5, fraktpolicyn: kontrollerad via API och den lovar ingen ask.
+  - 3, faktureringen: momsnumret är giltigt i VIES och väntar på Ownprints nya kontroll.
+- Punkt 1 ersätts: Shopify har ännu ingen order. Eftersom varje order betalas för hand i Ownprint kontrolleras gravyrtexten på första riktiga ordern, innan du betalar.
+- Kvar: 6, pixlarna, och 7, filmerna.
+
 | # | Vad | Vem | Tid |
 |---|---|---|---|
 | 1 | **En riktig testorder på vermo.se**, t.ex. Hjärtat med text på fram- och baksidan och å/ä/ö. Kontrollera i Ownprint-appen att `Front engraving text` och `Back engraving text` kom fram exakt. Låt den produceras, eller avbryt i Ownprint och återbetala i Shopify. *Det enda som inte är bevisat är att Ownprint läser texten från sajtens ordrar.* | Ägaren, sedan Claude kontrollerar | 15 min |

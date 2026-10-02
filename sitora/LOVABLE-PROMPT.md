@@ -479,6 +479,18 @@ KONTROLL
 
 </details>
 
+**2 okt kl. 12: snyggare ångermejl (umsg_01m3y0jwj2e6j9mtqgn2mxw6xc)**
+- **Problem:**
+  - All text var guldbrun (#8A6A3B) på vit bakgrund.
+  - I mörkt läge (ägarens webbmejl) blir bakgrunden grå medan texten förblir brun, så den blir svårläst.
+  - Ingen logga och ingen struktur.
+- **Beställt:**
+  - En gemensam EmailLayout: color-scheme light, vitt kort på #F4EFE8 och ordmärket VERMO.
+  - Brödtext i #1C1B19, 16 px, och guld bara som accent.
+  - Referensen i en ruta och en sidfot med länkar.
+  - En svensk version av Lovables avregistreringsrad, om det går.
+  - Testanmälan till info@vermo.se, och testraden raderas efteråt.
+
 **Att göra för ägaren (Shopify admin, efter claim)**
 - Claima butiken senast ca 29 okt.
 - Butiksnamn "Sitora".
