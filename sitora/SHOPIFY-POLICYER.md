@@ -5,14 +5,14 @@
 **Varför:** Shopify-kopplingen får inte skriva policyer (behörigheten `write_legal_policies` saknas), så det här måste göras för hand.
 **E-post:** info@vermo.se, ändrat 1 okt. Brevlådan kundservice@vermo.se finns inte.
 
-| Fält i Shopify (engelska) | Text nedan | Läge 1 okt, kl. 15 |
+| Fält i Shopify (engelska) | Text nedan | Läge 2 okt, kl. 08.30 (läst via API) |
 |---|---|---|
-| Refund policy | Återbetalningspolicy | Inklistrad, men med kundservice@. **Klistra in igen.** |
-| Shipping policy | Fraktpolicy | **Ändrad 2 okt:** presentask och meddelandekort ingår inte. **Klistra in igen.** |
-| Contact information | Kontaktinformation | Inklistrad, men med kundservice@. **Klistra in igen.** |
-| Privacy policy | Integritetspolicy | Fortfarande Shopifys engelska mall. **Klistra in.** |
-| Terms of service | Terms of service (köpvillkor) | Tom. **Klistra in.** |
-| Legal notice | Legal notice (juridisk information) | Tom. **Klistra in.** |
+| Refund policy | Återbetalningspolicy | Klar (info@vermo.se). |
+| Shipping policy | Fraktpolicy | **Klistra in igen.** Shopify visar fortfarande "Presentask och meddelandekort ingår." Texten nedan har "Gravyr på baksidan ingår." |
+| Contact information | Kontaktinformation | Klar. |
+| Privacy policy | Integritetspolicy | Inklistrad. Valfritt: klistra in igen samtidigt som fraktpolicyn, eftersom "korttexter" togs bort 2 okt. |
+| Terms of service | Terms of service (köpvillkor) | Klar. |
+| Legal notice | Legal notice (juridisk information) | Klar. |
 | Terms of sale, Subscription policy | ingen | Lämna tomma. Köpvillkoren ligger under Terms of service, och prenumerationer används inte. |
 
 **Uppdaterad 1 okt:**
@@ -118,7 +118,7 @@ Navid Ahmed Chowdhury, enskild näringsidkare, som bedriver verksamhet under nam
 
 Uppgifter vi behandlar
 – Namn, adress, e-post, telefon och orderuppgifter.
-– Gravyr- och korttexter. De kan innehålla andra personers namn och används bara för att tillverka och hantera ordern.
+– Gravyrtexter. De kan innehålla andra personers namn och används bara för att tillverka och hantera ordern.
 – För nyhetsbrev: e-postadress, samtycke och tidpunkten för samtycket.
 – Betalkortsuppgifter hanteras av betaltjänsten, inte av oss.
 
@@ -142,7 +142,7 @@ Butiken och kassan drivs av Shopify. För vissa ändamål, till exempel Shop Pay
 
 Lagringstid
 – Bokföringsunderlag: sju år.
-– Gravyr- och korttexter: raderas senast tre år efter leverans.
+– Gravyrtexter: raderas senast tre år efter leverans.
 – Nyhetsbrevsuppgifter: tills du avregistrerar dig eller återkallar samtycket.
 – Övriga uppgifter: bara så länge de behövs för ändamålet eller enligt lag.
 
