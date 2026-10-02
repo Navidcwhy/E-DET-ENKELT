@@ -9,6 +9,17 @@ Kunden ser en produkt och väljer **Snabb leverans** (EU-partnern Ownprint) elle
 - **Tackkortet:** rekommendationen är att inte slå på det vid lanseringen. Det kostar cirka 17 kr per order och är inte personligt. Det prövas senare om data visar att det behövs.
 - **CJ:** ingen produkt uppfyllde kraven. Standardleveransen förblir avstängd (ECONOMY_ENABLED=false), och lanseringen sker med endast Snabb leverans.
 
+## Beslut 2 okt, kväll
+- **Asken:**
+  - Ägarens prov kom i presentask, men asken **lovas inte i text**, varken på sajten eller i policyerna. Ask-bilderna visas inte heller.
+  - Kassan och orderbekräftelsen visar fortfarande Shopifys bild 0 (asken), vilket stämmer med verkligheten.
+- **Tackkort:** €0,35 per order, betalas av Vermo. Kalkylen är uppdaterad i LANSERING.md.
+- **Kassan:** fungerar på vermo.se, testad av ägaren (kort, Klarna, Google Pay). Den fungerar inte i Lovables förhandsvisning, och det är väntat.
+- **Sortimentet:**
+  - Billigare produkter (399–499 kr) läggs till enligt LANSERING.md och DESKTOP-PROMPT-2.md.
+  - Specialprodukterna ligger kvar på 599/699 kr.
+  - 399 kr används bara som extravara, inte i annonser.
+
 ## Beslut och fakta 2 okt, eftermiddag
 - **Ägaren:**
   - Nej till att byta variantbild i Shopify.
