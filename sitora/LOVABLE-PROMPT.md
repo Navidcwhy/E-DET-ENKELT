@@ -801,6 +801,21 @@ KONTROLL
 - **Efter publicering:**
   - Temainställningen "External Redirect": storefront_hostname "vermo.se" och custom_redirects "/>/", så att sökvägen följer med. Görs via API:t (write_themes finns).
   - Ägaren tar bort lösenordet.
+- **Klart (bb827b0, 5,6 krediter) och granskat i diffen:**
+  - Ny src/lib/tracking.ts:
+    - Pixlarna laddas bara efter samtycke till marknadsföring och bara på vermo.se och www.vermo.se. Ett PLACEHOLDER-id stänger av pixeln.
+    - fbq consent grant/revoke och ttq grantConsent/revokeConsent.
+    - setTrackingConsent med headlessStorefront, shop.vermo.se, vermo.se och den publika token, vid varje sparat eller inläst val.
+  - Händelserna:
+    - PageView via PageViewTracker i __root, en gång per adress.
+    - ViewContent på produktsidan.
+    - AddToCart i cart.tsx efter lyckad läggning, med variant-id som siffror och event-id.
+    - Inga kassahändelser och ingen gravyrtext.
+  - Serverrutter ger 301 för /products/<handle> (Stjärntecknet publikt → /smycken), /collections, /cart, /password, /pages, /account och /policies/*. Query-parametrarna följer med, enligt Lovables test på localhost.
+  - Cookiepolicyn har en lista över kakorna.
+- **Två brister rättas i runda 7:**
+  - ViewContent tappas för landningssidan när samtycket ges först där.
+  - Nytt samtycke efter återkallat samtycke anropade inte grant igen.
 
 <details><summary>Prompten för runda 6</summary>
 
@@ -886,6 +901,76 @@ KONTROLL
   - setTrackingConsent loggas med rätt värden.
 - /products/hjartat-snabb-leverans?fbclid=test ska ge 301 till /smycken/hjartat?fbclid=test.
 - /products/stjarntecknet-snabb-leverans ska publikt ge 301 till /smycken.
+- Svara med en kort lista över ändrade filer.
+```
+
+</details>
+
+**2 okt kl. 14.25: runda 7, Meta-pixeln och villkoren från Shopify (umsg_01m3y96gnmf1pbemzfw0yg050r)**
+- **Meta är kopplat av ägaren.** Shopifys pixellista visar facebook_pixel 1042319362191805 (appen Facebook & Instagram), datadelningen "optimized" och facebookCapiEnabled true.
+- **Ägarens önskemål:** "Lägg även in alla villkor till Lovable". Sajtens villkorssidor ska visa exakt Shopifys policytexter, dvs. samma som kassan länkar till.
+  - Sidorna hämtar texterna via Storefront API (shop.termsOfService, shippingPolicy, refundPolicy och privacyPolicy fungerar med den publika token; testat 2 okt).
+  - Då behöver texterna bara ändras på ett ställe: i Shopify.
+  - Legal notice och kontaktinformation finns inte i Storefront API. De finns redan på sajten via company-config, under Kontakt och Företagsuppgifter.
+- **Beställt:**
+  - metaPixelId.
+  - ViewContent när samtycket ges på produktsidan.
+  - grant igen efter återkallat samtycke.
+  - /kopvillkor, /leverans-och-reklamation och /integritetspolicy renderar Shopify-texterna: rubrikrader som h2, "– " som punktlista, bara säkra taggar, 10 minuters cache och reservlänkar till Shopifys policysidor.
+- **Ägaren:** klistra in integritetspolicyn igen i Shopify. Där står fortfarande "Gravyr- och korttexter". Rätt text finns i SHOPIFY-POLICYER.md.
+
+<details><summary>Prompten för runda 7</summary>
+
+```text
+Meta-pixeln, två rättelser i spårningen och villkoren från Shopify. Genomför direkt utan planrunda och publicera inte. Ändra inte PRELAUNCH (false), produkterna, bilderna eller priserna.
+
+1. META-PIXELN
+- I tracking i src/config/campaign.ts: metaPixelId = "1042319362191805".
+- Allt annat gäller som för TikTok: laddas bara efter samtycke till marknadsföring, bara på vermo.se och www.vermo.se, och inga kassa- eller köphändelser från sajten.
+
+2. RÄTTELSER I src/lib/tracking.ts OCH PRODUKTSIDAN
+a) ViewContent på landningssidan
+- I dag tappas ViewContent för produktsidan besökaren landar på, om samtycket ges först när hen redan är på sidan. Det gäller de flesta som kommer från annonser.
+- Om samtycket till marknadsföring ges medan besökaren är kvar på en produktsida, skicka ViewContent för den produkten en gång, på samma sätt som PageView redan gör.
+- Ingen dubbel ViewContent för samma produktvisning.
+
+b) Nytt samtycke efter återkallat samtycke
+- Om besökaren återkallar och sedan ger samtycke igen under samma besök, anropa fbq('consent', 'grant') och ttq.grantConsent() igen.
+- I dag görs det bara vid första laddningen.
+
+3. VILLKOREN DIREKT FRÅN SHOPIFY (en enda källa)
+Shopifys policyer är de som visas i kassan. Sajten ska visa exakt samma texter, så att de aldrig skiljer sig. Hämta dem via Storefront API på servern (SSR):
+shop { termsOfService { title body url } shippingPolicy { title body url } refundPolicy { title body url } privacyPolicy { title body url } }
+- Använd @inContext(country: SE, language: SV).
+- Cacha på servern i högst 10 minuter.
+
+Sidor (adresser, rubriker och sidfotens länkar är oförändrade):
+- /kopvillkor: termsOfService.
+  - Behåll avsnittet Företagsuppgifter med id "foretagsuppgifter", hämtat från company-config, sist på sidan. Sidfotens länk dit ska fungera.
+- /leverans-och-reklamation: shippingPolicy, med underrubriken "Frakt och leverans". Därefter refundPolicy, med underrubriken "Ångerrätt, reklamation och återbetalning".
+- /integritetspolicy: privacyPolicy. Sist kommer raden "Om kakor och pixlar: se vår cookiepolicy." med en länk till /cookiepolicy.
+- /angra-kop, /cookiepolicy, /produktsakerhet och /kontakt behåller sitt nuvarande innehåll.
+
+Visning av Shopify-texten:
+- Shopifys body är HTML där varje stycke börjar med en kort rubrikrad följd av <br>, t.ex. "<p>Ångerrätt<br>Personligt graverade …</p>".
+  - Visa rubrikraden som en h2 i samma stil som i dag, och resten som brödtext.
+  - Rader som börjar med "– " visas som punktlista.
+- Tillåt bara enkla taggar: p, br, a, strong, em, ul, ol, li, h2 och h3. Ta bort allt annat. Länkar till andra webbplatser öppnas i ny flik med rel="noopener noreferrer".
+- Webbadresser i texten som inte redan är länkar (t.ex. www.arn.se, www.imy.se, https://privacy.shopify.com) görs klickbara.
+- Om hämtningen misslyckas visas texten: "Villkoren kunde inte laddas just nu. De finns också här:" med en länk till Shopifys sida för respektive policy:
+  - Köpvillkor: https://checkout.shopify.com/110903558534/policies/69404524934.html?locale=sv
+  - Frakt: https://checkout.shopify.com/110903558534/policies/69403312518.html?locale=sv
+  - Ångerrätt och reklamation: https://checkout.shopify.com/110903558534/policies/69403246982.html?locale=sv
+  - Integritet: https://checkout.shopify.com/110903558534/policies/69319131526.html?locale=sv
+- Metatitlar och metabeskrivningar på sidorna ändras inte.
+
+KONTROLL
+- I förhandsvisningen:
+  - Inga anrop till facebook eller tiktok.
+  - Efter "Acceptera alla" på en produktsida loggas PageView och ViewContent en gång var.
+  - Återkalla och ge samtycke igen: grant loggas.
+- De tre villkorssidorna visar Shopifys texter med rubriker och punktlistor. Kontrollera t.ex. att "Reklamation" och "Tvist" finns på /leverans-och-reklamation.
+- Länken till /kopvillkor#foretagsuppgifter fungerar.
 - Svara med en kort lista över ändrade filer.
 ```
 

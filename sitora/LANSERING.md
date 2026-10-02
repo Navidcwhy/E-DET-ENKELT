@@ -18,7 +18,7 @@
 - **Tackkort:** €0,35 per order, betalas av Vermo.
 
 ## Måste göras innan annonserna startar
-**Läget 2 okt kl. 14.15:**
+**Läget 2 okt kl. 14.25:**
 - Klart:
   - 4, tackkortet.
   - 5, fraktpolicyn: kontrollerad via API och den lovar ingen ask.
@@ -26,12 +26,17 @@
   - Runda 4: sex nya produkter och färgbilder, granskad.
   - Runda 5: resterna från de första byggena är borttagna och granskade ("Bästsäljare", platshållare, presentkort, "UTKAST").
 - Punkt 1 ersätts: Shopify har ännu ingen order. Eftersom varje order betalas för hand i Ownprint kontrolleras gravyrtexten på första riktiga ordern, innan du betalar.
-- **0, publicera i Lovable** när runda 6 (spårningen) är granskad. Runda 4, 5 och 6 går då ut samtidigt. Ägaren gör det på 1 minut.
+- **0, publicera i Lovable** när runda 7 är granskad. Runda 4–7 går då ut samtidigt. Ägaren gör det på 1 minut.
 - **6, spårningen, pågår:**
   - TikTok är kopplat i Shopify (pixel DAVPCUBC77UD1K9H6HKG).
-  - Meta återstår: ägaren slår på datadelningen i appen Facebook & Instagram.
-  - Lösenordet ska bort.
-  - Runda 6 lägger pixlarna på sajten och för över samtycket till kassan.
+  - Meta är kopplat (pixel 1042319362191805, med Conversions API).
+  - Runda 6 lägger pixlarna på sajten och för över samtycket till kassan. Den är klar och granskad.
+  - Runda 7 lägger till Meta-id:t, två rättelser och villkoren från Shopify. Den körs nu.
+  - Kvar för ägaren:
+    - publicera
+    - ta bort lösenordet
+    - klistra in integritetspolicyn igen
+  - Kvar för Claude efter publiceringen: temainställningen för produktlänkarna.
 - Kvar: 7, filmerna.
 - Blockerar inte: skicka Ownprint-frågan om Stjärntecknet (OWNPRINT-FRAGA.md).
 
