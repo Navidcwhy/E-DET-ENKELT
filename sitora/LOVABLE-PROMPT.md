@@ -490,6 +490,16 @@ KONTROLL
   - Referensen i en ruta och en sidfot med länkar.
   - En svensk version av Lovables avregistreringsrad, om det går.
   - Testanmälan till info@vermo.se, och testraden raderas efteråt.
+- **Klart (8f62061, 3,6 krediter) och granskat i diffen:**
+  - EmailLayout med color-scheme light, vitt kort på #F4EFE8 och ordmärket VERMO med guldlinje.
+  - Brödtext #1C1B19 i 16 px, och guld bara på etiketter och länkar.
+  - Referensruta och sidfot med länkar.
+  - Den interna notisen har raden "Svara på det här mejlet …".
+  - Lovable har renderat mejlen i ljust och mörkt läge.
+  - Två testmejl gick till info@vermo.se (ordernummer TEST-EMAIL-DESIGN), och testraden är raderad.
+  - Lovables engelska avregistreringsrad går inte att ändra per mejl, så den är kvar.
+  - PRELAUNCH=false.
+  - Gäller på vermo.se när ägaren publicerar.
 
 **Att göra för ägaren (Shopify admin, efter claim)**
 - Claima butiken senast ca 29 okt.
