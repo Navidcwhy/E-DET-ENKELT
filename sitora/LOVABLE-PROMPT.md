@@ -217,7 +217,14 @@ Granskning av koden hittade:
   - vermo.se är publicerad med en **äldre version**. Förlanseringssidan visar kundservice@vermo.se, en adress som inte finns.
   - Koden har nu PRELAUNCH=false. Publiceras den som den är blir hela butiken öppen, trots att kassan är blockerad av butikslösenordet.
   - Därför: sätt PRELAUNCH=true, publicera, och sätt false vid lansering.
-- **Rättelse till Lovable** (skickas när genomsökningen av hela koden är klar): bild-id:n som allowlist, ett galleri, en fristående SVG-illustration av gravyren i Cormorant Garamond, ny hero, Familjens knapp, tecknen, GPSR-raden, en länk från köpvillkoren till /kontakt och PRELAUNCH=true. Inget publiceras. Prompten finns nedan.
+- **Genomsökning av hela koden (75 filer, ref 09627fc):**
+  - Inga löften om ask eller kort finns kvar.
+  - Allt "läder" står som "veganskt läder".
+  - Inga påståenden om 304/316.
+  - Inga leverantörsnamn i kundtext.
+  - "Kina" står bara på de dolda Standard-raderna (FAQ och leveranssidan, som bara visas i förhandsvisningen).
+  - Skrivstilen (Great Vibes) laddas i __root.tsx. De gamla AI-produktbilderna används inte längre.
+- **Rättelse skickad till Lovable** (umsg_01m3xvpjx6fbxag9rsccq6bt5e): bild-id:n som allowlist, ett galleri, en fristående SVG-illustration av gravyren i Cormorant Garamond, ny hero, Familjens knapp, tecknen, GPSR-raden, en länk från köpvillkoren till /kontakt och PRELAUNCH=true. Inget publiceras. Prompten finns nedan.
 
 <details><summary>Prompten (2 okt)</summary>
 
@@ -332,7 +339,10 @@ hero-heart-sv.jpg är AI-genererad: ett symmetriskt hjärta i roséguld med "All
 - Tillåtna tecken: lägg till "/", ":" och "°", så att datum som 14/6 2019 och koordinater som 59°19'N fungerar.
   - Ändra Vår dags hjälptext till: "Datum eller namn på framsidan (max 20 tecken). Koordinater, t.ex. 59°19'N 18°04'E, får plats på baksidan."
   - Tecknen kontrolleras i provbeställningen.
-- Sök igenom hela koden efter löften om ask eller kort ("presentask", "meddelandekort", "presentförpackning", "i ask", "kort med"). Ta bort de som finns kvar.
+- När skrivstilen inte används längre:
+  - Ta bort laddningen av Great Vibes från Google Fonts i src/routes/__root.tsx.
+  - Ta bort --font-script och skrivstilsvalet i personalization.ts.
+  - Den uppläsningsbara texten i förhandsvisningen ska säga "rak stil".
 
 6. ÄGARENS ÄNDRING 43a0bf4: BEHÅLL DEN, MEN KOMPLETTERA
 - Produktsidan:
