@@ -8,7 +8,7 @@
 | Fält i Shopify (engelska) | Text nedan | Läge 1 okt, kl. 15 |
 |---|---|---|
 | Refund policy | Återbetalningspolicy | Inklistrad, men med kundservice@. **Klistra in igen.** |
-| Shipping policy | Fraktpolicy | Inklistrad, men med kundservice@. **Klistra in igen.** |
+| Shipping policy | Fraktpolicy | **Ändrad 2 okt:** presentask och meddelandekort ingår inte. **Klistra in igen.** |
 | Contact information | Kontaktinformation | Inklistrad, men med kundservice@. **Klistra in igen.** |
 | Privacy policy | Integritetspolicy | Fortfarande Shopifys engelska mall. **Klistra in.** |
 | Terms of service | Terms of service (köpvillkor) | Tom. **Klistra in.** |
@@ -63,7 +63,7 @@ Frakten är fri för alla leveransval.
 
 Leveransval och leveranstider
 Varje smycke graveras efter din beställning. Du väljer leveransval på produktsidan, och beräknad leveranstid visas där och i varukorgen. Tiderna är uppskattningar i arbetsdagar.
-– Snabb leverans: graveras och skickas från vår produktionspartner inom EU. Produktion 2–5 arbetsdagar och frakt 1–10 arbetsdagar. Presentask och meddelandekort ingår. Inga tullavgifter.
+– Snabb leverans: graveras och skickas från vår produktionspartner inom EU. Produktion 2–5 arbetsdagar och frakt 1–10 arbetsdagar. Gravyr på baksidan ingår. Inga tullavgifter.
 – Standardleverans: erbjuds inte ännu. När den erbjuds graveras och skickas smycket från vår produktionspartner i Kina, och leveranstiden blir längre. Leveranstid och vad som ingår visas då på produktsidan och här.
 
 Spårning

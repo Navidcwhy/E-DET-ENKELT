@@ -2,6 +2,13 @@
 
 Kunden ser en produkt och väljer **Snabb leverans** (EU-partnern Ownprint) eller **Standardleverans** (CN-partnern CJdropshipping). Partnernas namn syns aldrig på sajten. Varje val är en egen Shopify-produkt från respektive app, så ordern går automatiskt till rätt partner.
 
+## Beslut 2 okt (ägarens svar)
+- **Presentask och meddelandekort ingår inte.** Ownprint har bara ett allmänt tackkort som kostar €1,50 extra.
+  - Löftet tas bort från sajten och fraktpolicyn.
+  - Hälsningen erbjuds i stället som gravyr på baksidan (max 50 tecken, ingår).
+- **Tackkortet:** rekommendationen är att inte slå på det vid lanseringen. Det kostar cirka 17 kr per order och är inte personligt. Det prövas senare om data visar att det behövs.
+- **CJ:** ingen produkt uppfyllde kraven. Standardleveransen förblir avstängd (ECONOMY_ENABLED=false), och lanseringen sker med endast Snabb leverans.
+
 ## Ownprint-produkterna i Shopify (2 okt, läst via API)
 Produkterna är aktiva, säljaren är "Vermo", inga jämförpriser är satta, och alla ligger i Ownprints fraktprofil (92 varianter). Sverige har fortfarande "Fri frakt" för 0. Alla är publicerade till kanalen "Lovable".
 
@@ -77,7 +84,11 @@ Ownprints frakt inom EU kostar €6,95 för första varan och €3 per extra var
 | Vår dag | 599 kr | 449 kr |
 | Pappa | 599 kr | 449 kr |
 
-- **Täckningsbidrag före annonser** (uppskattat): Hjärtat snabb ≈ 253 kr. Hjärtat standard ≈ 220 kr, men det förutsätter att CJ-kostnaden är ca 120 kr inklusive frakt. Verifiera i appen.
+- **Täckningsbidrag före annonser** (uppdaterat 2 okt, räknat med cirka 11,2 kr/€ och kortavgift cirka 13 kr):
+  - Intäkt för Hjärtat snabb: 599 kr inklusive moms, alltså 479 kr exklusive moms.
+  - Kostnad: produkt cirka €11,5, frakt €6,95 och baksidesgravyr €3,50 när kunden använder den. Tackkort tillkommer med €1,50 om det slås på.
+  - **Täckningsbidrag:** cirka 240 kr utan baksida, 220 kr med baksida och 205 kr med baksida och tackkort.
+  - Standard (CJ) är pausad, eftersom ingen produkt uppfyllde kraven (2 okt).
 - **Gravyr:** framsidan ingår alltid. Baksidan ingår vid snabb leverans. Vid standard erbjuds den bara om CJ-produkten stöder det.
 
 ## Steg för ägaren
