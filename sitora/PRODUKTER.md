@@ -20,6 +20,16 @@ Kunden ser en produkt och väljer **Snabb leverans** (EU-partnern Ownprint) elle
   - Specialprodukterna ligger kvar på 599/699 kr.
   - 399 kr används bara som extravara, inte i annonser.
 
+## Ownprints orderflöde (enligt deras supportsida, 2 okt)
+- **Betalning:**
+  - Det finns inget sparat kort med automatisk dragning.
+  - Varje order granskas och betalas under Orders (kort eller OwnPrint Points). Efter betalningen går den automatiskt till produktion.
+  - Faktureringsuppgifter och momsnummer: Settings → Billing.
+- **Moms:** säljare i EU med verifierat momsnummer betalar ingen moms. Utan momsnummer tillkommer moms.
+- **Stoppade ordrar** ("on hold", t.ex. oklar personalisering): orsaken syns på Orders-sidan.
+- **"Enable Personalization"** lägger Ownprints personaliseringsblock i Shopify-temat. Det behövs inte, eftersom temat bara skickar vidare och vermo.se skickar fälten själv. Testordern bekräftar att Ownprint läser dem.
+- **Daglig rutin:** betala nya ordrar i Ownprint samma dag. Leveranslöftet (2–5 + 1–10 arbetsdagar) förutsätter det.
+
 ## Beslut och fakta 2 okt, eftermiddag
 - **Ägaren:**
   - Nej till att byta variantbild i Shopify.
