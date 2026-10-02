@@ -18,7 +18,7 @@
 - **Tackkort:** €0,35 per order, betalas av Vermo.
 
 ## Måste göras innan annonserna startar
-**Läget 2 okt kl. 14.50:**
+**Läget 2 okt kl. 15.20:**
 - Klart:
   - 4, tackkortet.
   - 5, fraktpolicyn: kontrollerad via API och den lovar ingen ask.
@@ -35,9 +35,16 @@
     - Kakor på .vermo.se: _tracking_consent (kassan på shop.vermo.se kan läsa den), _fbc med fbclid, _fbp, _ttp och _tt_enable_cookie.
     - Köp och kassa rapporteras av Shopifys Meta- och TikTok-appar, och Meta även via Conversions API.
 - Punkt 1 ersätts: Shopify har ännu ingen order. Eftersom varje order betalas för hand i Ownprint kontrolleras gravyrtexten på första riktiga ordern, innan du betalar.
-- **Kvar för ägaren, ett klick:** publicera temakopian "External Redirect – vermo.se" (Webbshop → Teman → … → Publicera).
-  - Den skickar shop.vermo.se/products/<handle> till vermo.se/<samma sökväg>, och sajten skickar sedan vidare till /smycken/<slug> med fbclid/ttclid kvar. Testat med temaförhandsvisning.
-  - Gamla temat har storefront_hostname "go.to.lovable.app/?t=OTY0M2JmNmYuOjE5Yy41NmVnLjllMzkuMTE2MzZlM2Y3OmQ4". Det kan publiceras igen om något krånglar.
+- **Temat "External Redirect – vermo.se" är publicerat av ägaren (2 okt, ca 15.15).** Hela kedjan testad i Chromium:
+  - Kataloglänken shop.vermo.se/products/hjartat-snabb-leverans?fbclid=E2ETEST går till vermo.se/smycken/hjartat?fbclid=E2ETEST.
+  - shop.vermo.se/ går till vermo.se/, /collections/all till /smycken och /cart till /varukorg.
+  - /policies/* visar Shopifys egna policysidor med samma text som sajten.
+  - Samtycke på sajten, lägg i varukorg och sedan Till kassan:
+    - Kassan laddar ("Utcheckningskassa - Vermo"), och _tracking_consent på .vermo.se följer med.
+    - Meta-appen skickar PageView och InitiateCheckout från kassan. Samtycket når alltså kassan.
+    - TikTok-appen skickar Pageview från kassan. TikToks kassa- och köphändelser bekräftas vid första riktiga köpet i Events Manager.
+  - Produkterna har nu onlineStoreUrl, så katalogerna hos Meta och TikTok får produktlänkar.
+  - Det gamla temat "External Redirect" ligger kvar opublicerat som reserv.
 - Kvar: 7, filmerna.
 - Blockerar inte: skicka Ownprint-frågan om Stjärntecknet (OWNPRINT-FRAGA.md).
 
