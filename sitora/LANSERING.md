@@ -18,7 +18,7 @@
 - **Tackkort:** €0,35 per order, betalas av Vermo.
 
 ## Måste göras innan annonserna startar
-**Läget 2 okt kl. 14.25:**
+**Läget 2 okt kl. 14.40:**
 - Klart:
   - 4, tackkortet.
   - 5, fraktpolicyn: kontrollerad via API och den lovar ingen ask.
@@ -31,11 +31,11 @@
   - TikTok är kopplat i Shopify (pixel DAVPCUBC77UD1K9H6HKG).
   - Meta är kopplat (pixel 1042319362191805, med Conversions API).
   - Runda 6 lägger pixlarna på sajten och för över samtycket till kassan. Den är klar och granskad.
-  - Runda 7 lägger till Meta-id:t, två rättelser och villkoren från Shopify. Den körs nu.
+  - Runda 7 lägger till Meta-id:t, två rättelser och villkoren från Shopify. Den är klar och granskad.
   - Kvar för ägaren:
     - publicera
-    - ta bort lösenordet
-    - klistra in integritetspolicyn igen
+    - stänga av "Privat läge" (Webbshop → Inställningar → Butiksåtkomst; tidigare hette det Lösenordsskydd)
+    - ändra "Gravyr- och korttexter" till "Gravyrtexter" i integritetspolicyn
   - Kvar för Claude efter publiceringen: temainställningen för produktlänkarna.
 - Kvar: 7, filmerna.
 - Blockerar inte: skicka Ownprint-frågan om Stjärntecknet (OWNPRINT-FRAGA.md).

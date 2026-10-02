@@ -918,6 +918,20 @@ KONTROLL
   - grant igen efter återkallat samtycke.
   - /kopvillkor, /leverans-och-reklamation och /integritetspolicy renderar Shopify-texterna: rubrikrader som h2, "– " som punktlista, bara säkra taggar, 10 minuters cache och reservlänkar till Shopifys policysidor.
 - **Ägaren:** klistra in integritetspolicyn igen i Shopify. Där står fortfarande "Gravyr- och korttexter". Rätt text finns i SHOPIFY-POLICYER.md.
+- **Klart (0b4149f, 4,6 krediter), granskat i Lovables logg:**
+  - metaPixelId är satt.
+  - ViewContent lyssnar på sitora:consent-updated och skickas en gång per produktvisning. trackEvent returnerar om händelsen skickades.
+  - loadMeta och loadTiktok anropar grant igen efter återkallat samtycke.
+  - Ny src/lib/policies.functions.ts:
+    - En serverfunktion med 10 minuters cache. Vid fel används senaste cachen.
+    - Sanering med tillåtna taggar och säkra länkar. Webbadresser görs klickbara, och externa länkar öppnas i ny flik.
+    - Rubrikrader blir h2 och "– " blir punktlista.
+  - Ny src/components/site/ShopifyPolicy.tsx med reservlänkar.
+  - /kopvillkor visar ToS, med Företagsuppgifter (#foretagsuppgifter) sist. /leverans-och-reklamation visar frakt och ångerrätt/reklamation. /integritetspolicy visar integritetstexten och en länk till cookiepolicyn.
+  - Testat: inga anrop till facebook eller tiktok i förhandsvisningen, en PageView och en ViewContent efter samtycke, grant efter nytt samtycke, och rubriker och listor syns.
+- **Lovables notering:** ägarens namn, adress och telefon syns nu i villkoren, eftersom de står i Shopify-texterna.
+  - De fanns redan på sajten under Kontakt, Ångra köp, Produktsäkerhet och Integritetspolicy.
+  - Säljarens namn, adress och kontaktuppgifter ska enligt e-handelslagen vara lätt åtkomliga. Ingen ändring behövs.
 
 <details><summary>Prompten för runda 7</summary>
 
