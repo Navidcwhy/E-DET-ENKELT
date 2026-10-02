@@ -712,6 +712,20 @@ Svara med en kort lista över ändrade filer.
   - Produktsäkerhet rättad
   - texträttelser
 - Inget publiceras.
+- **Klart (d892d92, 5,4 krediter) och granskat i diffen:**
+  - "Våra favoriter".
+  - Nyhetsbrevet:
+    - Ny konstant NEWSLETTER_CONSENT_TEXT, och samma text sparas i consent_text.
+    - source "startsida". Tabellens kontroll av source utökades med en migration.
+    - Fälten har unika id.
+    - Lovable testade en anmälan och raderade testraden.
+  - Metabeskrivningen och steg 1 i "Så funkar det" är rättade.
+  - REVIEWS_ENABLED=false.
+  - Presentkort är borttaget ur menyerna, sidfoten och sitemap, och /presentkort ger 307 till /smycken.
+  - "UTKAST" är borta.
+  - Produktsäkerhet: previewOnly filtreras bort, och Pärlans material har en egen rad.
+  - "gravyrtexter" och "normalt samma arbetsdag".
+  - PRELAUNCH=false. Inga produkter, bilder eller priser ändrades.
 
 <details><summary>Prompten för runda 5</summary>
 
@@ -769,6 +783,113 @@ KONTROLL
 
 </details>
 
+
+**2 okt kl. 14.15: runda 6, annonsspårning (umsg_01m3y8h4g8fnpaenae84hag8x1)**
+- **Läget i Shopify, avläst via API:t och butikens sidkod:**
+  - TikTok är kopplat. Apppixeln DAVPCUBC77UD1K9H6HKG har datadelningen "optimized" och rapporterar kassan och köpen.
+  - **Meta är inte kopplat än.** Ingen Meta-pixel finns i butikens pixellista, och facebookCapiEnabled är false.
+  - Shopify kräver samtycke för Sverige (consentPolicy SE: consentRequired true). Utan överfört samtycke skickar kassan inga köp till TikTok och Meta.
+  - Butiken har fortfarande lösenord. Alla shop.vermo.se-adresser går till /password, och temat skickar sedan alla till startsidan. Produkterna saknar därför onlineStoreUrl, och katalogerna saknar alltså produktlänkar.
+  - Kassan fungerar. Med vanliga webbläsarhuvuden går kedjan cart/c → shop.app → shop.vermo.se/checkouts/cn och ger 200. Utan dem hamnar curl på /password, vilket inte gäller riktiga besökare.
+- **Gjort via API:t:** de fem nya publika produkterna är publicerade till Facebook & Instagram och TikTok, utom Stjärntecknet. Nu ligger alla nio publika där.
+- **Beställt i Lovable:**
+  - TikTok-pixeln och Meta-pixeln, som är avstängd tills id:t finns. De laddas bara efter samtycke till marknadsföring och bara på vermo.se.
+  - setTrackingConsent till Shopify med headlessStorefront, checkoutRootDomain shop.vermo.se och storefrontRootDomain vermo.se.
+  - Händelserna PageView, ViewContent och AddToCart med variant-id. Inga kassa- eller köphändelser, eftersom apparna redan skickar dem.
+  - 301 från Shopifys sökvägar (/products/<handle> → /smycken/<slug> m.fl.) med bevarade query-parametrar.
+  - En kaklista i cookiepolicyn.
+- **Efter publicering:**
+  - Temainställningen "External Redirect": storefront_hostname "vermo.se" och custom_redirects "/>/", så att sökvägen följer med. Görs via API:t (write_themes finns).
+  - Ägaren tar bort lösenordet.
+
+<details><summary>Prompten för runda 6</summary>
+
+```text
+Spårning för annonser (TikTok och Meta) och samtycke till Shopify-kassan. Genomför direkt utan planrunda och publicera inte. Ändra inte PRELAUNCH (false), produkterna, bilderna, priserna eller andra texter än de som står här.
+
+BAKGRUND
+- TikTok är kopplat i Shopify med pixel-id DAVPCUBC77UD1K9H6HKG. Meta kopplas inom kort, och id:t kommer senare.
+- Shopifys TikTok- och Meta-appar rapporterar redan kassa, betalning och köp från kassan på shop.vermo.se.
+  - Sajten ska därför INTE skicka InitiateCheckout, AddPaymentInfo, CompletePayment eller Purchase, eftersom det skulle dubbelräkna.
+- Shopify kräver samtycke för svenska besökare. Kassan skickar köphändelser bara om besökarens samtycke från vermo.se förs över till Shopify (punkt 3).
+
+1. PIXEL-ID (tracking i src/config/campaign.ts)
+- tiktokPixelId = "DAVPCUBC77UD1K9H6HKG"
+- metaPixelId och googleTagId är kvar som platshållare.
+- Ett id som börjar med "PLACEHOLDER" betyder att pixeln är avstängd, och inget skript laddas för den.
+
+2. SAMTYCKET STYR PIXLARNA
+- Meta- och TikTok-skripten laddas först när besökaren har samtyckt till Marknadsföring i cookierutan, dvs. befintliga CookieConsent och händelsen sitora:consent-updated.
+- Läs också det sparade samtycket när sidan startar.
+- Före samtycke får det inte finnas något skript, någon kaka eller något anrop till Meta eller TikTok.
+- Om besökaren återkallar samtycket:
+  - Skicka inga fler händelser (Meta: fbq('consent', 'revoke'), TikTok: ttq.revokeConsent()).
+  - Ladda inte skripten vid nästa sidvisning.
+- Pixlarna skickar bara på vermo.se och www.vermo.se. På andra adresser, t.ex. Lovables förhandsvisning, laddas inga pixlar, och varje händelse loggas i stället i konsolen med sina parametrar (för test).
+
+3. SAMTYCKET TILL SHOPIFY-KASSAN (viktigast)
+- Ladda Shopifys Customer Privacy API: https://cdn.shopify.com/shopifycloud/consent-tracking-api/v0.1/consent-tracking-api.js
+  - Det är en nödvändig funktion, eftersom det bara sparar besökarens val. Därför får det laddas oavsett val.
+  - Bara på vermo.se och www.vermo.se. På andra adresser loggas anropet i konsolen.
+- Varje gång samtycket sparas, eller läses in vid start (även "Endast nödvändiga"), anropa:
+  window.Shopify.customerPrivacy.setTrackingConsent({
+    analytics: <Statistik>,
+    marketing: <Marknadsföring>,
+    preferences: <Statistik>,
+    sale_of_data: <Marknadsföring>,
+    headlessStorefront: true,
+    checkoutRootDomain: "shop.vermo.se",
+    storefrontRootDomain: "vermo.se",
+    storefrontAccessToken: <den befintliga publika Storefront-token>
+  }, callback)
+- Vänta tills skriptet har laddats. Ett fel här får aldrig stoppa sidan, cookierutan eller köpet.
+
+4. HÄNDELSER FRÅN SAJTEN (bara efter samtycke)
+- PageView: vid varje sidvisning, även vid sidbyte i appen. Den första laddningen räknas bara en gång.
+- ViewContent: på produktsidan, en gång per produkt och sidvisning (inte vid färgbyte).
+- AddToCart: när varan faktiskt ligger i varukorgen, samtidigt som plinget, inte vid klick.
+- Parametrar:
+  - Meta: content_ids [variant-id], content_type "product", content_name (produktens namn, t.ex. "Hjärtat"), value (pris i kronor inkl. moms × antal), currency "SEK".
+  - TikTok: contents [{ content_id: variant-id, content_type: "product", content_name, quantity, price }], value, currency "SEK".
+  - Variant-id är siffrorna i Shopifys gid (gid://shopify/ProductVariant/123 → "123"). Lägg formateringen i en enda funktion, så att den lätt kan ändras.
+  - Varje händelse får ett unikt event-id (Meta: { eventID }, TikTok: { event_id }).
+- Skicka aldrig gravyrtexter, stjärntecken, e-post eller andra personuppgifter till Meta eller TikTok.
+- previewOnly-produkter skickar inga händelser.
+
+5. PRODUKTLÄNKAR FRÅN SHOPIFY
+Meta- och TikTok-katalogerna länkar till shop.vermo.se/products/<handle>. Den adressen ska skickas vidare till vermo.se med samma sökväg. Lägg till permanenta omdirigeringar (301) på sajten. Query-parametrar, t.ex. fbclid, ttclid och utm_*, ska alltid följa med.
+- /products/<handle> → /smycken/<slug> för den produktgrupp som har det handle:t, t.ex. hjartat-snabb-leverans → /smycken/hjartat.
+  - Okänt handle eller previewOnly-produkt (publikt) → /smycken.
+- /collections och /collections/<allt> → /smycken
+- /cart → /varukorg
+- /password, /pages/<allt>, /account och /account/<allt> → /
+- /policies/refund-policy och /policies/shipping-policy → /leverans-och-reklamation
+- /policies/privacy-policy → /integritetspolicy
+- /policies/terms-of-service och /policies/legal-notice → /kopvillkor
+- /policies/contact-information → /kontakt
+- Lägg inte till dem i sitemap.xml.
+
+6. COOKIEPOLICYN
+Komplettera med en kort lista över kakor, med namn, syfte och lagringstid:
+- Nödvändiga:
+  - Shopify _tracking_consent: sparar ditt samtyckesval så att kassan respekterar det, 1 år.
+  - Vermos cookieval i webbläsaren.
+- Marknadsföring:
+  - Meta _fbp och _fbc: mäter annonser och visar relevanta annonser, 90 dagar.
+  - TikTok _ttp och _tt_enable_cookie: samma syfte, upp till 13 månader.
+Övrig text ändras inte.
+
+KONTROLL
+- I förhandsvisningen:
+  - Inga anrop till facebook.net, facebook.com eller tiktok.com, varken före eller efter samtycke.
+  - Efter "Acceptera alla" loggas PageView, ViewContent och AddToCart med rätt parametrar i konsolen.
+  - setTrackingConsent loggas med rätt värden.
+- /products/hjartat-snabb-leverans?fbclid=test ska ge 301 till /smycken/hjartat?fbclid=test.
+- /products/stjarntecknet-snabb-leverans ska publikt ge 301 till /smycken.
+- Svara med en kort lista över ändrade filer.
+```
+
+</details>
 
 **Att göra för ägaren (Shopify admin, efter claim)**
 - Claima butiken senast ca 29 okt.

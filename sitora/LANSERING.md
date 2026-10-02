@@ -18,15 +18,21 @@
 - **Tackkort:** €0,35 per order, betalas av Vermo.
 
 ## Måste göras innan annonserna startar
-**Läget 2 okt kl. 14:**
+**Läget 2 okt kl. 14.15:**
 - Klart:
   - 4, tackkortet.
   - 5, fraktpolicyn: kontrollerad via API och den lovar ingen ask.
   - 3, faktureringen: momsnumret är giltigt i VIES och väntar på Ownprints nya kontroll.
   - Runda 4: sex nya produkter och färgbilder, granskad.
+  - Runda 5: resterna från de första byggena är borttagna och granskade ("Bästsäljare", platshållare, presentkort, "UTKAST").
 - Punkt 1 ersätts: Shopify har ännu ingen order. Eftersom varje order betalas för hand i Ownprint kontrolleras gravyrtexten på första riktiga ordern, innan du betalar.
-- **Nytt, 0:** publicera i Lovable när runda 5 är granskad. Runda 5 tar bort rester från de första byggena: "Bästsäljare", platshållare, presentkort som inte går att köpa och "UTKAST". Ägaren gör det på 1 minut.
-- Kvar: 6, pixlarna, och 7, filmerna.
+- **0, publicera i Lovable** när runda 6 (spårningen) är granskad. Runda 4, 5 och 6 går då ut samtidigt. Ägaren gör det på 1 minut.
+- **6, spårningen, pågår:**
+  - TikTok är kopplat i Shopify (pixel DAVPCUBC77UD1K9H6HKG).
+  - Meta återstår: ägaren slår på datadelningen i appen Facebook & Instagram.
+  - Lösenordet ska bort.
+  - Runda 6 lägger pixlarna på sajten och för över samtycket till kassan.
+- Kvar: 7, filmerna.
 - Blockerar inte: skicka Ownprint-frågan om Stjärntecknet (OWNPRINT-FRAGA.md).
 
 | # | Vad | Vem | Tid |
@@ -36,7 +42,7 @@
 | 3 | **Ownprint → Settings → Billing:** fyll i faktureringsuppgifterna och lägg in och verifiera momsnumret SE020130615601. Enligt Ownprint tar de inte ut moms av säljare i EU med verifierat momsnummer. Annars tillkommer 21 % holländsk moms, cirka 40 kr per order. | Ägaren | **Ifyllt 2 okt.** VIES visar numret som giltigt (2 okt 11.49: "Chowdhury, Navid Ahmed"). Ownprint visade "VIES temporarily unavailable – VAT is charged until validated" och kontrollerar igen automatiskt. |
 | 4 | **Ownprint:** ladda upp Vermos tackkort, med texten nedan. Annars följer Ownprints standardkort med. | Ägaren | 10 min |
 | 5 | **Shopify-fraktpolicyn:** klistra in texten från SHOPIFY-POLICYER.md. Den nuvarande lovar "Presentask och meddelandekort ingår." | Ägaren | 2 min |
-| 6 | **Spårning för annonser:** skapa en Meta-pixel (dataset) och en TikTok-pixel och skicka id:na. Installera apparna "Facebook & Instagram" och "TikTok" i Shopify, som rapporterar köpen i kassan. Claude lägger in sidvisning, lägg i varukorg och till kassan på sajten, och de körs bara efter samtycke. | Ägaren och Claude | 30 min |
+| 6 | **Spårning för annonser.** **TikTok:** kopplat, och pixeln DAVPCUBC77UD1K9H6HKG rapporterar kassan och köpen. **Meta:** Shopify → Försäljningskanaler → Facebook & Instagram → Inställningar → Datadelning: slå på, välj "Maximal" och välj din pixel/dataset. Claude läser av id:t själv. **Lösenordet:** Webbshop → Inställningar → Lösenordsskydd av. Det är ofarligt, eftersom temat skickar alla vidare till vermo.se. Det behövs för produktlänkarna i katalogerna. **Claude (runda 6):** pixlarna på sajten efter samtycke, och samtycket förs över till kassan. Det är nödvändigt eftersom Shopify kräver samtycke i Sverige, annars räknas inga köp. | Ägaren och Claude | 5 min för ägaren |
 | 7 | **Annonsmaterial:** filma provet, 5–10 korta klipp: uppackning, närbild på gravyren och smycket på. Riktiga klipp säljer bättre än mockups och är sanna. | Ägaren | 1 tim |
 
 ## Bör göras de första två veckorna
