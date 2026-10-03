@@ -20,7 +20,7 @@ Asken i A/B är graverad "Mamma" men smycket i C "Ebba". Därför finns två ver
   - Text: "Julklappen hon aldrig tar av sig" (0–2,5 s), "Graverat med hennes namn" (2,65–8,65 s), "Fri frakt · vermo.se / Beställ senast 7 december för leverans före jul" (8,8 s till slutet).
 - **vermo_mamma_kroken_10s.mp4:** B, bildruta 0–81 ("Mamma"-asken), sedan C:s bildrutor 61–135 (smycket lyfts) och 210–288 (kramen). Scenen där "Ebba" syns tydligt är bortklippt.
   - Text: kroken, "Graverat med dina ord" och samma slutbild.
-- **Format:** H.264 High, 1080×1920, 24 fps och en tyst ljudspår, så att musik kan läggas till i TikTok och Meta.
+- **Format:** H.264 High, 1080×1920, 24 fps och ett tyst ljudspår, så att musik kan läggas till i TikTok och Meta.
 - **Typsnitt:** Cormorant Garamond SemiBold, sajtens rubriktypsnitt, och Inter Medium.
 - **Texterna** ligger mellan 270 och 550 px från toppen, inom säkra zonen för Reels och TikTok.
 - **Testa båda** som separata annonser. Kroken mot berättelsen är själva testet.
