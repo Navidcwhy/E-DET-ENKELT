@@ -49,8 +49,8 @@ Asken i A/B är graverad "Mamma" men smycket i C "Ebba". Därför finns två ver
   - Kampanjmål Försäljning, optimerat för köp, Sverige, Advantage+-målgrupp.
   - En annonsgrupp med fyra annonser: A/B + C, C, E och G.
   - 150 kr/dag i 7 dagar.
-- **TikTok:** de tre bästa, 150 kr/dag i 7 dagar, AI-märkta.
-- **Total budget:** ca 2 100 kr.
+- **TikTok:** de tre bästa, 200 kr/dag i 7 dagar, AI-märkta. TikTok kräver minst cirka 20 USD per dag och annonsgrupp.
+- **Total budget:** ca 2 450 kr (Meta 1 050 kr, TikTok 1 400 kr). Uppsättningen finns i ANNONSUPPSATTNING.md.
 - **Bedöm varje video efter ca 150 kr** (branschtumregler, som ersätts av egna värden efter vecka 1):
   - Hook rate (3 s-visningar delat med visningar): minst 25 %.
   - Länk-CTR: minst 1 % på Meta och minst 0,8 % på TikTok.
