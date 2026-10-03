@@ -92,6 +92,12 @@ KANAL = `meta` eller `tiktok`.
    - TikTok kan kräva verifiering av företaget, t.ex. registreringsbevis för den enskilda firman.
    - Tryck **Publicera**.
 
+## Obs: UTM-länkarna syns inte i Shopify (kontrollerat 3 okt)
+- Shopify Analytics räknar bara besök på Shopify-sidor. För senaste 7 dagarna visar den 2 sessioner, båda "direct", fast sajten har haft många besök.
+- Sajten (Lovable) skickar alltså inte besöken till Shopify, och UTM följer inte med till kassan.
+- **Facit för vilken film som säljer är Metas och TikToks egna rapporter.** De bygger på pixel och Conversions API.
+- **Möjlig Lovable-ändring** (en liten runda): spara utm_* från landningen och skicka dem som dolda radattribut (`_utm_source`, `_utm_campaign`, `_utm_content`) när varukorgen skapas. Då står annonsen på varje order i Shopify.
+
 ## Efter start
 - **Granskning:** båda plattformarna granskar annonserna, oftast inom några timmar.
 - **Gör ingenting de första 48 timmarna.** Därefter gäller gränserna i ANNONSTEST.md:
