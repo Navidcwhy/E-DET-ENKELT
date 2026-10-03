@@ -41,6 +41,11 @@ KANAL = `meta` eller `tiktok`.
      - **Advantage+-målgrupp**, plats **Sverige**.
      - Lägsta ålder 25 som kontroll. Förslag: kvinnor 25–60, intressen smycken och presenter.
    - Placeringar: **Advantage+-placeringar** (Reels och Stories får de stående filmerna).
+   - *Granskat från skärmbilder (3 okt, kl. 15.59):*
+     - *Konverteringsplatsen stod på "Webbplats och app". Den ska vara **Webbplats**.*
+     - *Konverteringshändelse saknades. Den ska vara dataset Vermo och **Köp**.*
+     - *Slutdatum saknades. Det ska vara 10 okt kl. 23.59.*
+     - *Annonsör "Vermo", samma som betalaren, är OK.*
 3. **Tre annonser** i samma annonsgrupp (namn enligt tabellen):
    - Identitet: Facebook-sidan och Instagram-kontot Vermo.
    - Format: en video. Ladda upp filen.
