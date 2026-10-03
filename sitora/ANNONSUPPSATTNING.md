@@ -27,7 +27,13 @@ KANAL = `meta` eller `tiktok`.
 1. **Kampanj:**
    - Skapa → mål **Försäljning**.
    - Namn: `Vermo | Försäljning | Kreativtest okt`.
-   - Kampanjbudget av, eftersom budgeten sätts per annonsgrupp.
+   - **Advantage+-katalogannonser: AV.** Testet gäller våra tre filmer. Shopify-katalogen innehåller dessutom alla Ownprint-bilder, även ask, kartong och engelsk text som är dolda på sajten. Katalogen visar också en varning om ogiltiga händelsedata, som åtgärdas först.
+   - **Kampanjens beloppsgräns: 1 050 kr**, så att testet aldrig kan kosta mer.
+   - **Budget:**
+     - Kampanjbudget 150 kr/dag med en annonsgrupp går bra, och ger samma resultat som budget per annonsgrupp.
+     - Meta kan lägga upp till 262,50 kr en enskild dag, men högst 1 050 kr per vecka.
+   - **A/B-test** av, och **specialkategorier** tomma.
+   - *Ägaren satte upp kampanjnivån den 3 okt, kl. 15.45. Granskat från skärmbilder: katalogannonserna var på och ingen beloppsgräns fanns.*
 2. **Annonsgrupp:** `SE | Advantage+ | 150 kr`
    - Konverteringsplats **Webbplats**. Dataset/pixel **Vermo (1042319362191805)**. Händelse **Köp**.
    - Budget **150 kr/dag**. Start i kväll, slut efter 7 dagar.
