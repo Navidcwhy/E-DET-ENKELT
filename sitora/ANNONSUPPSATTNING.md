@@ -59,6 +59,16 @@ KANAL = `meta` eller `tiktok`.
    - **Beskrivning:** `Fri frakt · 599 kr` eller `Fri frakt · 699 kr`.
    - **Uppmaning:** **Handla nu**. Webbadress enligt tabellen med `utm_source=meta`. Visningslänk `vermo.se`.
    - Erbjuder Ads Manager **Kreativt test** (Creative testing) för annonserna: använd det. Då fördelas budgeten jämnt mellan de tre videorna.
+   - *Annonsnivån granskad från skärmbilder (3 okt, kl. 16.20). Så görs den:*
+     - **Annons 1** heter `mamma_kroken`.
+       - Video: Mamma-kroken. URL: `https://vermo.se/smycken/hjartat`. Visningslänk: `vermo.se`.
+       - Under **Test av innehåll → Konfigurera test** läggs Julberättelsen till som version 2, med samma text och länk. Då får båda Hjärtat-filmerna leverans.
+     - **Annons 2** heter `familjen_rose` och ligger i samma annonsgrupp.
+       - Video: Familjen rosé. URL: `https://vermo.se/smycken/familjen`.
+     - **Webbadressparametrar** för båda: `utm_source=meta&utm_medium=paid&utm_campaign=jul_test&utm_content={{ad.name}}`. Meta fyller i annonsens namn själv.
+     - **Avmarkera "Annonser från flera annonsörer"**, så att filmen och texten inte beskärs och annonsen inte visas bredvid konkurrenter.
+     - **Identitet:** välj Instagram-profilen Vermo. Varningen under Evenemangsinformation visade att den saknades.
+     - **Anpassade destinationer** ska vara inaktiverade. **Evenemang** och **Språk** ska vara av.
 4. **Betalmetod:** Ads Manager → Fakturering. Kontrollera allt och tryck **Publicera**.
 
 ## TikTok (Ads Manager)
