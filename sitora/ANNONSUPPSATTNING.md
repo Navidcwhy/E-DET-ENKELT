@@ -162,6 +162,20 @@ Prompten finns i DESKTOP-PROMPT-META.md. Inget publicerat, inget borttaget och i
     - Testet får inte höja budgeten, ändra beloppsgränsen eller flytta slutdatumet. Kräver det något annat hoppas det över.
   - **Ägaren** lägger till betalmetod och verifierar telefonnumret och skriver sedan "Publicera".
 
+**Sjätte rapporten (4 okt): inte publicerat ännu**
+- **Ålder: strikt 25+.**
+  - När katalogen togs bort försvann WhatsApp ur placeringarna. Plattformarna är nu Facebook, Instagram, Audience Network och Threads.
+  - Därför finns inget val för okänd ålder kvar.
+- **Test av innehåll är överhoppat.** Meta kräver nya kopior av annonserna och en egen testbudget, föreslagen till 30 kr/dag.
+  - Meta fördelar alltså budgeten mellan de tre annonserna själv.
+  - Efter 48 timmar bedöms varje film, och spenderat per placering kontrolleras. Audience Network kan blåsa upp klickfrekvensen.
+- **Betalmetod:** Mastercard ···· 0349. Meta har satt en daglig gräns för kontot på 504,33 kr, vilket är över kampanjens högsta dagsbelopp på 262,50 kr.
+- **Telefonnummer:** Desktop såg det som overifierat. Ägaren har verifierat det i annonskontot efter rapporten.
+- **Kontrollistan:** under "Skapa Facebook-sida" visas Sitora med knappen "Bekräfta".
+  - Den kopplar bara sidan till annonskontot och ändrar inget på sidan.
+  - Ägaren godkänner att Desktop klickar på den.
+- **Meta kryssade i "mån 7 dec" igen** i mamma_kroken. Det är urkryssat i alla tre annonserna och kontrolleras en sista gång före publicering.
+
 ## TikTok (Ads Manager)
 1. **Kampanj:**
    - Mål **Försäljning**, webbplats.
