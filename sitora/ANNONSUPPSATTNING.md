@@ -71,6 +71,26 @@ KANAL = `meta` eller `tiktok`.
      - **Anpassade destinationer** ska vara inaktiverade. **Evenemang** och **Språk** ska vara av.
 4. **Betalmetod:** Ads Manager → Fakturering. Kontrollera allt och tryck **Publicera**.
 
+## Claude Desktop-körningen 4 okt: rapport och svar
+Prompten finns i DESKTOP-PROMPT-META.md. Inget publicerat, inget borttaget och inga betalningsuppgifter ändrade.
+- **Klart enligt rapporten:**
+  - Valutan är SEK. Kampanjens inställningar och beloppsgräns (1 050 kr) stämde redan.
+  - Annonsgruppen har bytt namn, lägsta ålder är 25 och starten är flyttad till 4 okt.
+  - Annonsen heter nu mamma_kroken och har visningslänk vermo.se, AI-märkning, UTM-parametrar och förbättringarna avstängda (utom "Relevanta kommentarer").
+  - Knappen är "Köp nu", eftersom "Handla nu" saknas i listan.
+- **Rotorsak till blockeringen:**
+  - Annonskontot 3439617542952505 låg utanför företagsportföljen "Shopify: sitorassentiments…" (1089341350349253), som äger datasetet 1042319362191805.
+  - Ads Manager kräver en portfölj för webbplatshändelser.
+  - **Svar:** lägg till annonskontot i portföljen och ge det åtkomst till datasetet. Det är permanent.
+- **Sidan:** det fanns ingen Vermo-sida, så annonsen använde sidan Sitora. **Svar:** byt namn på sidan till Vermo.
+- **Instagram:** kontot var inte kopplat till annonskontot. **Svar:** koppla det via portföljen, eller via "Anslut profil" (ägaren loggar in).
+- **Filmerna:**
+  - Mediebiblioteket hade 1000019137–1000019139.mp4, troligen uppladdade från mobilen.
+  - Våra filmer känns igen på längd och text: mamma_kroken 9,8 s, julberattelsen 12,0 s och familjen_rose 8,4 s.
+  - Varje annons får bara sin film. De fyra bilderna tas bort ur annonsen.
+- **Annonsgruppens egen gräns (150 kr/dag):** tas bort. Kampanjens gräns på 1 050 kr räcker som tak.
+- **Upptäckt:** produktsidorna nämner inte sista beställningsdag 7 december, som annonstexten gör.
+
 ## TikTok (Ads Manager)
 1. **Kampanj:**
    - Mål **Försäljning**, webbplats.
