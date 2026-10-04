@@ -1002,6 +1002,77 @@ KONTROLL
 
 </details>
 
+**4 okt kl. 13.54: runda 8, julklappsraden vid köpknappen (umsg_01m43c82gjf64vb4h363b86amc)**
+- **Varför:** annonserna och filmerna säger "Beställ senast 7 december för leverans före jul", men produktsidan nämnde inte datumet. Claude Desktop upptäckte det vid granskningen i Ads Manager.
+- **Klart (4d3cb1d, 2,1 krediter), granskat i diffen:**
+  - delivery.ts har två nya funktioner:
+    - christmasDeadlineLabel(profile) ger "7 december", hämtat från christmasDeadline i supplier.ts.
+    - showChristmasDeadlineNote(profile, now) avgör om raden visas.
+  - Raden visas bara om tre villkor gäller:
+    - Leveransprofilen är aktiv.
+    - Deadline har inte passerat.
+    - Sajtens egen beräkning, estimateDelivery().latest, blir senast 23 december.
+  - Villkoren kontrolleras när sidan visas, så raden försvinner utan ny publicering.
+  - Placering och utseende:
+    - På dator ligger raden under pris och köpknapp. På mobil ligger den i den fasta köpraden.
+    - Texten är text-xs med en presentikon i accent-strong.
+    - Den ryms på en rad vid 360 px: ca 282 av 296 px.
+  - Lovable testade i Playwright vid 1280, 390 och 360 px.
+- **Rättelse (0dd1d8f, 1,5 krediter):**
+  - Problemet: den högre köpraden dolde sidfotens Företagsuppgifter och copyright-rad på mobil. Den gamla h-20 i Personalizer hjälpte inte, eftersom sidfoten kommer efter den.
+  - Lösningen: köpraden har nu attributet data-mobile-buy-bar, och body får padding-bottom 6rem under lg när köpraden finns. Den gamla h-20 är borttagen.
+  - Verifierat vid 390 och 360 px.
+- **Obs:** med nuvarande ledtid (högst 15 arbetsdagar) döljs raden från 3 december. Se "Bekräfta julklappsdeadline" i LANSERING.md.
+- **Ägaren publicerar.**
+
+<details><summary>Prompterna för runda 8</summary>
+
+```text
+Julklappsraden vid köpknappen. Genomför direkt utan planrunda och publicera inte. Ändra inte PRELAUNCH (false), produkterna, bilderna, priserna, värdena i src/config/supplier.ts eller kampanjfasen.
+
+BAKGRUND
+Annonserna säger "Beställ senast 7 december för leverans före jul". Produktsidan ska säga samma sak vid köpknappen, så att besökaren känner igen löftet.
+
+1. RADEN
+- Text: "Beställ senast 7 december för leverans före jul."
+- Datumet hämtas från christmasDeadline i den valda leveransprofilen i src/config/supplier.ts. Formatera det som i DeliveryOptionsInfo (sv-SE, dag och månad, Europe/Stockholm). Skriv inget datum i koden.
+- Lägg logiken i src/lib/delivery.ts, t.ex. christmasDeadlineLabel(profile) och showChristmasDeadlineNote(profile, now).
+
+2. NÄR RADEN VISAS (alla villkor måste gälla)
+- Den valda leveransprofilen är aktiverad (enabled).
+- Deadline har inte passerat (samma kontroll som isPastChristmasDeadline).
+- Sajtens egen leveransberäkning för en beställning i dag, estimateDelivery(profile).latest, blir senast 23 december samma år. Annars skulle raden motsäga "beräknad leverans" på samma sida.
+- Kontrollen görs när sidan visas, inte vid bygget, så att raden försvinner av sig själv utan ny publicering.
+
+3. PLACERING OCH STIL (Personalizer.tsx)
+- Dator: direkt under raden med pris och köpknapp.
+- Mobil: i den fasta bottenraden, som en egen rad ovanför pris och köpknapp. Den ska rymmas på en rad vid 360 px bredd. Höj utfyllnaden under innehållet (h-20) så att den högre bottenraden inte döljer något.
+- Liten text (text-xs) med en liten presentikon (lucide Gift, aria-hidden) i samma guldbruna färg som övriga guldtexter (accent-strong).
+- Ingen nedräkning, ingen animation och ingen ny banner.
+
+KONTROLL
+- I förhandsvisningen på /smycken/hjartat syns raden under köpknappen på dator och i bottenraden vid 390 px bredd, utan att något döljs.
+- Svara med en kort lista över ändrade filer.
+```
+
+```text
+Rättelse till förra ändringen. Publicera inte.
+
+PROBLEMET
+På mobil täcker den fasta köpraden på produktsidan nu nedersta delen av sidfoten när man har scrollat längst ner: länken Företagsuppgifter och copyright-raden syns inte. Utfyllnaden h-20 i Personalizer hjälper inte, eftersom sidfoten kommer efter den. Felet fanns delvis innan, men den högre köpraden gör det värre.
+
+GÖR SÅ HÄR
+- Ge sidan en nedre utfyllnad som är minst lika hög som den fasta köpraden med julraden. Gäller bara under lg och bara när köpraden visas. Till exempel ett data-attribut på köpraden och body:has([data-mobile-buy-bar]) { padding-bottom: … } i styles.css, eller något motsvarande.
+- Ta bort den gamla utfyllnaden h-20 om den inte längre behövs.
+- Ändra inget på dator och inget annat på sidan.
+
+KONTROLL
+- Vid 390 och 360 px på /smycken/hjartat syns hela sidfoten, inklusive Företagsuppgifter, ovanför köpraden när man har scrollat längst ner.
+- Svara med en kort lista över ändrade filer.
+```
+
+</details>
+
 **Att göra för ägaren (Shopify admin, efter claim)**
 - Claima butiken senast ca 29 okt.
 - Butiksnamn "Sitora".

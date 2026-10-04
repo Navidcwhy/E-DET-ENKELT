@@ -89,7 +89,10 @@ Prompten finns i DESKTOP-PROMPT-META.md. Inget publicerat, inget borttaget och i
   - Våra filmer känns igen på längd och text: mamma_kroken 9,8 s, julberattelsen 12,0 s och familjen_rose 8,4 s.
   - Varje annons får bara sin film. De fyra bilderna tas bort ur annonsen.
 - **Annonsgruppens egen gräns (150 kr/dag):** tas bort. Kampanjens gräns på 1 050 kr räcker som tak.
-- **Upptäckt:** produktsidorna nämner inte sista beställningsdag 7 december, som annonstexten gör.
+- **Upptäckt:** produktsidorna nämnde inte sista beställningsdag 7 december, som annonstexten gör.
+  - Åtgärdat i Lovable runda 8: raden står nu vid köpknappen.
+  - 7 december är ännu inte bekräftat, se LANSERING.md.
+- **Profilbild för sidan och Instagram:** `sitora/brand/vermo-profilbild-mork.png` (rekommenderas) och `vermo-profilbild-ljus.png`, båda i 1080×1080 med sajtens ordmärke.
 
 ## TikTok (Ads Manager)
 1. **Kampanj:**

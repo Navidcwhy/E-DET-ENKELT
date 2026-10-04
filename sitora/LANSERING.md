@@ -61,6 +61,11 @@
 ## Bör göras de första två veckorna
 - ~~**Bilder i silver och roséguld** för de fyra produkterna.~~ Klart 2 okt (runda 4).
 - ~~**Fler produkter.**~~ Klart 2 okt: sex nya, se tabellen nedan.
+- **Bekräfta julklappsdeadline 7 december före 1 november.** Annonserna, filmerna och sajten lovar leverans före jul vid beställning senast 7 december.
+  - Sajtens egen ledtid är 2–5 arbetsdagar produktion och 1–10 arbetsdagar frakt, alltså högst 15 arbetsdagar. En beställning 7 december kan då komma först 30 december.
+  - Raden vid köpknappen (Lovable runda 8) döljs därför automatiskt från 3 december med nuvarande ledtid, så att sajten aldrig motsäger sig själv. Bannern och filmerna säger fortfarande 7 december.
+  - **Snabbast att validera:** provbeställningens faktiska frakttid (PROVBESTALLNING.md) och Ownprints svar om frakttid och julstopp för Sverige (fråga 3 i LEVERANTORSMEJL.md).
+  - **Sedan:** 7 december håller om produktion plus frakt är högst 12 arbetsdagar, t.ex. 5 + 7. Då sänks maxvärdena i supplier.ts. Annars flyttas deadline till 2 december, och decemberfilmerna klipps om.
 - **Presentkort före jul:**
   - Skapa ett presentkort i Shopify (300, 500 och 700 kr) och koppla sidan /presentkort.
   - Det kostar inget extra på Basic.
