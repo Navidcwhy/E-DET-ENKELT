@@ -1082,6 +1082,39 @@ KONTROLL
 
 </details>
 
+**4 okt kl. 15.23: runda 9, sidscroll på mobil (umsg_01m43hb33ge2qa06wgxsqpgtj7)**
+- **Varför:** gravyrförhandsvisningen blev 374 px bred i en 350 px-kolumn, så produktsidorna gick att scrolla 4 px i sidled på mobil. Felet upptäcktes vid live-kontrollen av runda 8. Ägaren godkände rättelsen.
+- **Klart (e3a9c67, 2,5 krediter), granskat i diffen:**
+  - EngravingPreview.tsx: min-w-0 på grid och kort, och svg w-full h-auto i stället för h-full.
+  - Orsaken var att svg:n med h-full styrde kortets minsta bredd. Felet fanns även på dator, där kortet var 596 px i en kolumn på 572 px.
+  - ProductThumbnail.tsx: illustrationen centreras med flex, eftersom svg:n nu har automatisk höjd. Det gäller bara produkter utan bild.
+  - Lovable mätte i Playwright:
+    - scrollWidth är lika med clientWidth vid 390 och 360 px på Hjärtat och Familjen, med och utan baksidesgravyr.
+    - På dator är de två korten 280 px vardera i kolumnen på 572 px.
+    - Startsidan och /smycken har ingen sidscroll.
+- **Ägaren publicerar.**
+
+<details><summary>Prompten för runda 9</summary>
+
+```text
+Rättelse: sidscroll på mobil på produktsidorna. Genomför direkt utan planrunda och publicera inte. Ändra inget annat.
+
+PROBLEMET
+På /smycken/hjartat och /smycken/familjen blir gravyrförhandsvisningen 374 px bred på en 390 px bred skärm, fast kolumnen bara är 350 px. Det gäller EngravingPreview, kortet "surface aspect-[6/5] p-4" med Framsida. Sidan går därför att scrolla 4 px i sidled (scrollWidth 394, clientWidth 390). Orsaken är troligen aspect-[6/5] tillsammans med svg h-full i ett grid utan min-w-0.
+
+GÖR SÅ HÄR
+- Kortet får aldrig bli bredare än sin kolumn. Till exempel min-w-0 på korten och deras grid, och svg med w-full h-auto (viewBox 240×200 ger höjden) i stället för h-full i en aspect-ruta.
+- Utseendet ska vara detsamma som i dag: etiketten Framsida/Baksida, illustrationen i samma storlek och proportioner, och två kort bredvid varandra på bredare skärmar när baksidan används.
+- Kontrollera också att galleriet och resten av produktsidan inte ger sidscroll.
+
+KONTROLL
+- Vid 390 och 360 px på /smycken/hjartat och /smycken/familjen är document.documentElement.scrollWidth lika med clientWidth, även med baksidesgravyr ifylld.
+- På dator ser förhandsvisningen ut som förut.
+- Svara med en kort lista över ändrade filer.
+```
+
+</details>
+
 **Att göra för ägaren (Shopify admin, efter claim)**
 - Claima butiken senast ca 29 okt.
 - Butiksnamn "Sitora".
