@@ -195,6 +195,12 @@ Prompten finns i DESKTOP-PROMPT-META.md. Inget publicerat, inget borttaget och i
   - Därefter TikTok.
 
 ## TikTok (Ads Manager)
+*Prompten till Claude Desktop finns i DESKTOP-PROMPT-TIKTOK.md (4 okt). Skillnader mot planen nedan:*
+- *Taket är 1 400 kr för kampanjen.*
+- *Händelsen faller tillbaka till Påbörja betalning eller Lägg i varukorg om Slutför betalning inte går att välja.*
+- *Identiteten är ett TikTok-konto som heter Vermo, annars en anpassad identitet med namnet Vermo och den mörka profilbilden.*
+- *Kommentarer, nedladdning, Stitch och Duett är avstängda.*
+
 1. **Kampanj:**
    - Mål **Försäljning**, webbplats.
    - Namn: `Vermo | Försäljning | Kreativtest okt`.
