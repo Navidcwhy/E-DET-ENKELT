@@ -128,7 +128,19 @@ Prompten finns i DESKTOP-PROMPT-META.md. Inget publicerat, inget borttaget och i
     - 4:5 förankrad i överkant (y 0–1350) visar alla texter i alla tre filmerna.
     - 1:1 förankras i överkant för Hjärtat-filmerna. För familjen_rose läggs rutan på ca y 230–1310.
   - **Musik:** Ads Manager har inget musikval för video. Testet körs tyst, lika för alla tre. Spår kan läggas in i filerna till nästa omgång och till TikTok.
-- **Påminnelse:** julklappsraden på vermo.se syns först när ägaren publicerar Lovable runda 8.
+- **Påminnelse:** julklappsraden på vermo.se syns först när ägaren publicerar Lovable runda 8. Det är gjort och verifierat live 4 okt.
+
+**Fjärde rapporten (4 okt): datasetet går bara att använda i portföljens konto**
+- **Delning:** "Dela med ett annonskonto" listar bara konton i portföljen. Det personliga kontot kan inte få datasetet så länge det står utanför portföljen.
+- **Datasetet har inga kopplade annonskonton**, inte heller Shopify-kontot 2766771640404009.
+- **Kontroll av Shopify-kontot:** valutan är SEK och sidan Sitora går att välja. Tidszonen visas inte i kontoinställningarna.
+- **Desktop skapade ett tomt utkast** i Shopify-kontot, "Ny Försäljning-kampanj". Det är inte publicerat.
+- **Beslut: alternativ A.** Att vänta några veckor skulle kosta inlärning före Black Week.
+  - Datasetet kopplas till Shopify-kontot. Det görs under Datauppsättningar och pixlar → Kopplade resurser och går att ta tillbaka.
+  - Kampanjen byggs om där i utkastet, med samma inställningar, påslagna reglage och beskärningen ovan.
+  - Den gamla kampanjen i det personliga kontot stängs av men tas inte bort.
+  - **Ägaren själv:** lägger till betalmetod och verifierar telefonnumret i Shopify-kontot (Kontoöversikt → "Kom igång med konfigureringen").
+  - Slutdatumet ska vara 23.59 svensk tid. Tidszonen kontrolleras i annonsgruppens schema.
 
 ## TikTok (Ads Manager)
 1. **Kampanj:**
