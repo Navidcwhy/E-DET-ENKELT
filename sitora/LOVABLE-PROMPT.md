@@ -1023,7 +1023,16 @@ KONTROLL
   - Lösningen: köpraden har nu attributet data-mobile-buy-bar, och body får padding-bottom 6rem under lg när köpraden finns. Den gamla h-20 är borttagen.
   - Verifierat vid 390 och 360 px.
 - **Obs:** med nuvarande ledtid (högst 15 arbetsdagar) döljs raden från 3 december. Se "Bekräfta julklappsdeadline" i LANSERING.md.
-- **Ägaren publicerar.**
+- **Publicerat av ägaren den 4 okt. Live-verifiering i Chromium via proxyn:**
+  - /smycken/hjartat och /smycken/familjen innehåller raden i serverns HTML, en gång för dator och en gång för mobil.
+  - Beräknad leverans visar "7–23 okt", vilket stämmer med villkoret.
+  - Synligt på dator under köpknappen och på mobil (390 och 360 px) i köpraden, på en rad.
+  - Sidfoten syns hela: Företagsuppgifter ligger ovanför köpraden.
+  - Inga anrop till Meta eller TikTok utan samtycke, och inga fel i konsolen.
+- **Upptäckt, fanns före runda 8:**
+  - Gravyrförhandsvisningen i EngravingPreview (surface aspect-[6/5]) blir 374 px bred på en 390 px-skärm. Produktsidorna kan därför glida 4 px i sidled på mobil.
+  - Orsaken är troligen aspect-ratio tillsammans med svg h-full i ett grid utan min-w-0.
+  - Startsidan har inte problemet.
 
 <details><summary>Prompterna för runda 8</summary>
 
