@@ -1,6 +1,7 @@
 # Vermo: kvar före lansering och annonser (2 okt 2026)
 
 ## Läget nu
+- **Annonser:** Meta-kampanjen publicerades 4 okt kl. 17.16 i konto 2766771640404009. Budgeten är 150 kr/dag, med högst 1 050 kr, och kampanjen slutar 10 okt. TikTok återstår. Detaljer finns i ANNONSUPPSATTNING.md.
 - **Sajten:** vermo.se är publicerad med hela butiken. Förlanseringsläget är borttaget för gott.
 - **Kassan:** fungerar på vermo.se. Ägaren testade och fick upp kort, Klarna och Google Pay. Shopify har också Apple Pay och Shop Pay. Planen är Basic (betald).
 - **Funktioner:**

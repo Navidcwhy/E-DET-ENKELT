@@ -176,6 +176,24 @@ Prompten finns i DESKTOP-PROMPT-META.md. Inget publicerat, inget borttaget och i
   - Ägaren godkänner att Desktop klickar på den.
 - **Meta kryssade i "mån 7 dec" igen** i mamma_kroken. Det är urkryssat i alla tre annonserna och kontrolleras en sista gång före publicering.
 
+**PUBLICERAD 4 okt kl. 17.16 i konto 2766771640404009**
+- **Före publiceringen:**
+  - Kontolistan är grön (betalmetod, telefon, e-post och sidan Sitora). Sitora är bekräftad utan ändringar på sidan.
+  - "mån 7 dec" var urkryssat i alla tre annonserna, och reglagen var på.
+  - Beloppsgränsen är 1 050 kr, budgeten 150 kr/dag och slutet 10 okt kl. 23.59 Stockholmstid.
+  - Inga nya villkor eller kostnader behövde godkännas.
+- **Status direkt efter:** kampanjen, annonsgruppen, julberattelsen och familjen_rose stod på "Förbereder", mamma_kroken på "Granskas". Spenderat: 0 kr.
+- **Metas förslag efter publiceringen** var att öka budgeten till 305 kr/dag, eftersom kampanjen annars kunde få 0 resultat per dag. Det avböjdes, och budgeten ligger kvar på 150 kr/dag.
+  - Prognosen bygger på att kontot är nytt och saknar köphistorik.
+  - Testets gränser (CTR, CPC, lägg i varukorg) fungerar med 150 kr/dag.
+- **Utökad inriktning: Ja** betyder Advantage+-målgrupp. Minimiåldern är fortfarande 25.
+- **Placeringar:** 19 placeringar på Facebook, Instagram, Audience Network och Threads.
+- **Kvar i det personliga kontot:** den gamla kampanjen är avstängd och utkasten orörda.
+- **Nästa steg:**
+  - Ändra ingenting förrän 6 okt kl. 17.16.
+  - Granska sedan per film och per placering enligt ANNONSTEST.md.
+  - Därefter TikTok.
+
 ## TikTok (Ads Manager)
 1. **Kampanj:**
    - Mål **Försäljning**, webbplats.
