@@ -142,6 +142,26 @@ Prompten finns i DESKTOP-PROMPT-META.md. Inget publicerat, inget borttaget och i
   - **Ägaren själv:** lägger till betalmetod och verifierar telefonnumret i Shopify-kontot (Kontoöversikt → "Kom igång med konfigureringen").
   - Slutdatumet ska vara 23.59 svensk tid. Tidszonen kontrolleras i annonsgruppens schema.
 
+**Femte rapporten (4 okt): kampanjen är ombyggd i Shopify-kontot 2766771640404009**
+- **ID:n:**
+  - Kampanj 120250857227530005, annonsgrupp 120250857227510005.
+  - mamma_kroken 120250857227520005, julberattelsen 120250857567470005 och familjen_rose 120250857567480005.
+  - Allt är utkast och reglagen är på. Spenderat: 0 kr. Den gamla kampanjen i det personliga kontot är avstängd.
+- **Granskat och godkänt:**
+  - Utkastet hade Shopify-katalogen påslagen. Den är nu "Använd inte en katalog".
+  - Datasetet och Köp är satta, och slutdatumet är 10 okt kl. 23.59 svensk tid.
+  - Sitora med "Använd Facebook-sida", Köp nu, UTM, AI-märkning och avstängda förbättringar är som tidigare.
+- **Beskärning:**
+  - Verktyget har bara 9:16, 1:1 och 16:9. Flödena använder därför 1:1 (överkant, och för familjen_rose från strax ovanför slutskylten). Stories, Reels och Utforska visar hela 9:16-filmen.
+  - Desktop kontrollerade att alla texter syns.
+- **Meta föreslog igen evenemanget "mån 7 dec"** i familjen_rose. Det är urbockat.
+- **Varningar:** inga köp de senaste 14 dagarna (väntat), högerkolumnen kräver bild och liggande 16:9-placeringar använder originalfilmen. Ingen åtgärd.
+- **Beslut:**
+  - **Ålder:** strikt 25+. Personer på WhatsApp med okänd ålder tas inte med.
+  - **Test av innehåll med alla tre annonserna,** så att budgeten fördelas jämnt och varje film når cirka 300 kr, som stopp-regeln kräver.
+    - Testet får inte höja budgeten, ändra beloppsgränsen eller flytta slutdatumet. Kräver det något annat hoppas det över.
+  - **Ägaren** lägger till betalmetod och verifierar telefonnumret och skriver sedan "Publicera".
+
 ## TikTok (Ads Manager)
 1. **Kampanj:**
    - Mål **Försäljning**, webbplats.

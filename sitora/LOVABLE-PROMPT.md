@@ -1092,7 +1092,11 @@ KONTROLL
     - scrollWidth är lika med clientWidth vid 390 och 360 px på Hjärtat och Familjen, med och utan baksidesgravyr.
     - På dator är de två korten 280 px vardera i kolumnen på 572 px.
     - Startsidan och /smycken har ingen sidscroll.
-- **Ägaren publicerar.**
+- **Publicerat av ägaren den 4 okt. Live-verifiering i Chromium via proxyn:**
+  - scrollWidth är lika med clientWidth på /smycken/hjartat, /smycken/familjen, /smycken och startsidan, både vid 390 och 360 px.
+  - Produktsidorna kontrollerades vid 360 px även med baksidesgravyr ifylld.
+  - På dator är gravyrkortet 572 px, lika brett som kolumnen.
+  - Inga fel i konsolen.
 
 <details><summary>Prompten för runda 9</summary>
 
