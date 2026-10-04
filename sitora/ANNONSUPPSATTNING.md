@@ -94,6 +94,22 @@ Prompten finns i DESKTOP-PROMPT-META.md. Inget publicerat, inget borttaget och i
   - 7 december är ännu inte bekräftat, se LANSERING.md.
 - **Profilbild för sidan och Instagram:** `sitora/brand/vermo-profilbild-mork.png` (rekommenderas) och `vermo-profilbild-ljus.png`, båda i 1080×1080 med sajtens ordmärke.
 
+**Andra rapporten och ägarens beslut (4 okt, eftermiddag):**
+- **Klart:**
+  - Annonsgruppens egen gräns är borttagen. Konverteringsplatsen är Webbplats.
+  - Schemat är från i dag kl. 13.21 till 10 okt kl. 23.59. Publiceras det i morgon blir slutet 11 okt.
+- **Portföljen hade redan ett annonskonto** som Shopify skapade: 2766771640404009, utan betalmetod.
+  - **Beslut:** flytta ändå in annonskonto 3439617542952505, så att kampanjen och betalmetoden finns kvar. Shopifys konto används inte.
+- **Sidan Sitora används till annat:** biografin gäller bröllopstryck och Nordic Meadow på Etsy.
+  - **Ägarens beslut:** sidan Sitora behålls oförändrad och används som avsändare i annonserna.
+  - Det går att försvara: sidfoten på vermo.se säger redan "En skapelse av Sitora", och Sitora är säljarens firmanamn.
+  - Nackdelen är att den som trycker på avsändaren hamnar på en sida om bröllopstryck. Räkna med något lägre förtroende och klickfrekvens. Avsändaren är densamma i alla annonser, så jämförelsen mellan filmerna håller ändå.
+  - **Före Black Week:** skapa en egen Vermo-sida. Det kräver inget Instagram, och profilbilden är klar.
+- **Instagram:**
+  - **Ägarens beslut:** inget Instagram-konto kopplas. Annonserna visas ändå på Instagram, under sidan Sitora ("Använd Facebook-sida").
+  - Kommentarer på annonserna hanteras i Meta Business Suite.
+- **Filmerna i mediebiblioteket** (1000019137–1000019139) är andra klipp, inte våra. Ägaren lägger våra tre filer i Hämtade filer.
+
 ## TikTok (Ads Manager)
 1. **Kampanj:**
    - Mål **Försäljning**, webbplats.
