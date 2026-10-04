@@ -110,6 +110,26 @@ Prompten finns i DESKTOP-PROMPT-META.md. Inget publicerat, inget borttaget och i
   - Kommentarer på annonserna hanteras i Meta Business Suite.
 - **Filmerna i mediebiblioteket** (1000019137–1000019139) är andra klipp, inte våra. Ägaren lägger våra tre filer i Hämtade filer.
 
+**Tredje rapporten, sammanfattning enligt steg 6 (4 okt):**
+- **Klart som utkast:** tre annonser i en annonsgrupp.
+  - mamma_kroken, julberattelsen och familjen_rose har rätt filmer (längd och text kontrollerad) och identiteten Sitora.
+  - Knappen är "Köp nu". AI-märkning och UTM är satta, och alla förbättringar är avstängda utom "Relevanta kommentarer".
+  - Metas förval av ett evenemang "mån 7 dec" är borttaget. Spenderat: 0 kr.
+- **Innehållstestet** kräver minst två testannonser. Därför är julberattelsen en egen annons.
+- **Blockerande:**
+  - Meta nekade flytten till portföljen, eftersom den redan har sitt största tillåtna antal annonskonton. Fler tillåts först efter några veckor.
+  - Utan dataset kan annonsgruppen inte publiceras.
+- **Beslut:**
+  - **Dataset:** prova först att dela datasetet direkt med annonskontot, vilket går att ta tillbaka.
+    - Räcker det inte byggs kampanjen om i portföljens konto 2766771640404009.
+    - Där lägger ägaren själv till betalmetoden. Den gamla kampanjen stängs av men tas inte bort.
+  - **Annonserna** slås på före publiceringen. Annars skapas de pausade.
+  - **Beskärning:** textblocken ligger på y 236–549 i Hjärtat-filmerna och 236–1304 i familjen_rose (av 1920).
+    - 4:5 förankrad i överkant (y 0–1350) visar alla texter i alla tre filmerna.
+    - 1:1 förankras i överkant för Hjärtat-filmerna. För familjen_rose läggs rutan på ca y 230–1310.
+  - **Musik:** Ads Manager har inget musikval för video. Testet körs tyst, lika för alla tre. Spår kan läggas in i filerna till nästa omgång och till TikTok.
+- **Påminnelse:** julklappsraden på vermo.se syns först när ägaren publicerar Lovable runda 8.
+
 ## TikTok (Ads Manager)
 1. **Kampanj:**
    - Mål **Försäljning**, webbplats.
